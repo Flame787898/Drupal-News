@@ -24,13 +24,12 @@ third_party_settings:
   field_group:
     group_article:
       children:
-        - group_announcement
-        - group_content
         - group_promo_image
+        - group_announcement
       label: Article
-      region: content
+      region: first
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tabs
       format_settings:
         classes: ''
@@ -43,9 +42,9 @@ third_party_settings:
         - field_announcement
         - field_tags
       label: Announcement
-      region: content
+      region: first
       parent_name: group_article
-      weight: 20
+      weight: 23
       format_type: tab
       format_settings:
         classes: ''
@@ -58,9 +57,9 @@ third_party_settings:
       children:
         - field_article_content
       label: Content
-      region: content
-      parent_name: group_article
-      weight: 21
+      region: first
+      parent_name: ''
+      weight: 3
       format_type: tab
       format_settings:
         classes: ''
@@ -73,7 +72,7 @@ third_party_settings:
       children:
         - field_promo_image
       label: 'Promo image'
-      region: content
+      region: first
       parent_name: group_article
       weight: 22
       format_type: tab
@@ -140,27 +139,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
