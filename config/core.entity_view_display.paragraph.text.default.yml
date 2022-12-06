@@ -1,0 +1,77 @@
+uuid: 492c81f4-5d95-483a-b0e6-61df0f66a998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text.field_body
+    - field.field.paragraph.text.field_title
+    - paragraphs.paragraphs_type.text
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c47c2f58-fea2-4f48-8590-1bf7caccc76b:
+            uuid: c47c2f58-fea2-4f48-8590-1bf7caccc76b
+            region: content
+            configuration:
+              id: 'field_block:paragraph:text:field_title'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          288fa1ba-8bb5-4b7c-af1f-a43ef8580516:
+            uuid: 288fa1ba-8bb5-4b7c-af1f-a43ef8580516
+            region: content
+            configuration:
+              id: 'field_block:paragraph:text:field_body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.text.default
+targetEntityType: paragraph
+bundle: text
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

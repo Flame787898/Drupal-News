@@ -1,0 +1,21 @@
+uuid: d84e289b-5690-4a6b-9f9b-6da2a290f2db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_announcement
+    - node.type.article
+  module:
+    - text
+id: node.article.field_announcement
+field_name: field_announcement
+entity_type: node
+bundle: article
+label: announcement
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
