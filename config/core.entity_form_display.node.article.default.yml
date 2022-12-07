@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.field_announcement
     - field.field.node.article.field_article_content
+    - field.field.node.article.field_category
     - field.field.node.article.field_promo_image
     - field.field.node.article.field_tags
     - node.type.article
@@ -24,10 +25,11 @@ third_party_settings:
   field_group:
     group_article:
       children:
+        - group_content
         - group_promo_image
         - group_announcement
       label: Article
-      region: first
+      region: content
       parent_name: ''
       weight: 4
       format_type: tabs
@@ -39,12 +41,13 @@ third_party_settings:
         width_breakpoint: 640
     group_announcement:
       children:
+        - field_category
         - field_announcement
         - field_tags
       label: Announcement
-      region: first
+      region: content
       parent_name: group_article
-      weight: 23
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -57,8 +60,8 @@ third_party_settings:
       children:
         - field_article_content
       label: Content
-      region: first
-      parent_name: ''
+      region: content
+      parent_name: group_article
       weight: 3
       format_type: tab
       format_settings:
@@ -72,9 +75,9 @@ third_party_settings:
       children:
         - field_promo_image
       label: 'Promo image'
-      region: first
+      region: content
       parent_name: group_article
-      weight: 22
+      weight: 4
       format_type: tab
       format_settings:
         classes: ''
@@ -96,7 +99,7 @@ content:
     third_party_settings: {  }
   field_announcement:
     type: text_textarea
-    weight: 9
+    weight: 27
     region: content
     settings:
       rows: 5
@@ -120,6 +123,12 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_category:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_promo_image:
     type: media_library_widget
     weight: 11
@@ -129,7 +138,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS

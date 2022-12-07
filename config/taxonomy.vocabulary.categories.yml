@@ -1,0 +1,8 @@
+uuid: 17a38614-42a0-4a18-bdad-51969b56693e
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'Categories for articles page'
+weight: 0
