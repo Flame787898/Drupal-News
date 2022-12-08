@@ -1,0 +1,8 @@
+uuid: 3d39e8ae-8085-4249-b84a-4728037d96d6
+langcode: en
+status: true
+dependencies: {  }
+id: about-us
+label: 'About Us'
+description: 'footer menu'
+locked: false
