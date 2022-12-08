@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.article.field_announcement
     - field.field.node.article.field_article_content
     - field.field.node.article.field_category

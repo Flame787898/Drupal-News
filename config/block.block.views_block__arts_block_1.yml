@@ -1,0 +1,29 @@
+uuid: 95ed4774-0ff4-4ad2-9904-4fa5b9ba4213
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.arts
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__arts_block_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:arts-block_1'
+settings:
+  id: 'views_block:arts-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/taxonomy/*'

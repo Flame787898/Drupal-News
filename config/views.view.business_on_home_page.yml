@@ -1,18 +1,23 @@
-uuid: e1504114-b243-41a0-ae2a-367aed696b31
+uuid: 54a844be-e557-42f4-b1ff-ff1f17259993
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_category
+    - field.storage.node.field_promo_image
     - node.type.article
     - taxonomy.vocabulary.categories
   content:
+    - 'taxonomy_term:categories:8e03a847-4158-42f2-bf09-0c72d297b313'
+    - 'taxonomy_term:categories:a94bf4fc-6997-49a1-bf2a-f69eced9ed0e'
     - 'taxonomy_term:categories:ed976dc2-2b53-4650-b85b-902a1a0b1520'
   module:
+    - media
     - node
     - taxonomy
     - user
-id: article
-label: Magazines
+id: business_on_home_page
+label: 'Related news on homepage'
 module: views
 description: ''
 tag: ''
@@ -25,8 +30,137 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Magazine
+      title: ''
       fields:
+        field_promo_image:
+          id: field_promo_image
+          table: node__field_promo_image
+          field: field_promo_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_link: media
+            image_style: ''
+            image_loading:
+              attribute: lazy
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_category:
+          id: field_category
+          table: node__field_category
+          field: field_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -34,19 +168,35 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
-            word_boundary: false
-            ellipsis: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -145,7 +295,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 3
       exposed_form:
         type: basic
         options:
@@ -205,6 +355,7 @@ display:
           plugin_id: bundle
           value:
             article: article
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -218,18 +369,20 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 3
+            2: 2
+            3: 3
+            4: 4
           group: 1
           exposed: false
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
+            operator_id: field_category_target_id_op
+            label: 'category (field_category)'
+            description: null
             use_operator: false
-            operator: ''
+            operator: field_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_category_target_id
             required: false
             remember: false
             multiple: false
@@ -250,19 +403,18 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: categories
-          type: textfield
+          type: select
           hierarchy: false
           limit: true
           error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
@@ -273,20 +425,7 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: '<a href="/" class="all__news">View All News</a>'
-            format: basic_html
-          tokenize: false
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -296,7 +435,9 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_promo_image'
   block_1:
     id: block_1
     display_title: Block
@@ -312,4 +453,6 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_promo_image'

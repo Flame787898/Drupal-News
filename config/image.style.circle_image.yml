@@ -1,0 +1,7 @@
+uuid: 35eda4f4-8fe0-48a4-8c2f-d27918049c11
+langcode: en
+status: true
+dependencies: {  }
+name: circle_image
+label: circle_image
+effects: {  }

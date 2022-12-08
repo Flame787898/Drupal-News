@@ -1,9 +1,9 @@
-uuid: 30888782-fc94-48d5-a621-01d1039a3c9a
+uuid: b2fc0a8d-1ab4-46cc-8af8-54d4ab4baa51
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.articles_no_image_
     - field.field.node.article.field_announcement
     - field.field.node.article.field_article_content
     - field.field.node.article.field_category
@@ -14,7 +14,6 @@ dependencies:
   module:
     - field_layout
     - layout_builder
-    - media
     - text
     - user
 third_party_settings:
@@ -25,39 +24,22 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.article.teaser
+id: node.article.articles_no_image_
 targetEntityType: node
 bundle: article
-mode: teaser
+mode: articles_no_image_
 content:
   field_announcement:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_category:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_promo_image:
-    type: media_thumbnail
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   field_article_content: true
+  field_category: true
   field_comments: true
+  field_promo_image: true
   field_tags: true
   links: true
