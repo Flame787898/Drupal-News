@@ -1,0 +1,30 @@
+uuid: b2de89c4-7b1e-4595-ba41-db897abc5292
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+  module:
+    - block_content
+    - system
+  theme:
+    - bartik
+id: categorydescription
+theme: bartik
+region: content
+weight: -17
+provider: null
+plugin: 'block_content:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+settings:
+  id: 'block_content:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+  label: 'Category description'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'
