@@ -1,0 +1,8 @@
+uuid: 1dba224b-05d6-4755-8950-8e8a60a805f0
+langcode: en
+status: true
+dependencies: {  }
+id: user_comments
+label: 'User comments'
+target_entity_type_id: block_content
+description: 'User comments'

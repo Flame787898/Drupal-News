@@ -1,9 +1,9 @@
-uuid: 0a89dd9e-e5af-477e-9d6b-4da94463e9df
+uuid: 98a26fb4-0b7d-4ce8-b95b-461bec5f08bd
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.user.compact
+    - core.entity_view_mode.user.full
     - field.field.user.user.field_about_user
     - field.field.user.user.field_comments
     - field.field.user.user.field_social_link_
@@ -21,11 +21,11 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
-id: user.user.compact
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.full
 targetEntityType: user
 bundle: user
-mode: compact
+mode: full
 content: {  }
 hidden:
   field_about_user: true

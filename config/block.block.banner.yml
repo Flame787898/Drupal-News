@@ -12,7 +12,7 @@ dependencies:
 id: banner
 theme: bartik
 region: sidebar_second
-weight: -18
+weight: -21
 provider: null
 plugin: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
 settings:
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '/taxonomy/*'
+    pages: "/taxonomy/*\r\n/node/*"

@@ -1,0 +1,33 @@
+uuid: a0eaeb63-b693-4f1e-9b81-a649b3dec782
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_comments
+  module:
+    - comment
+    - user
+id: user.user.field_comments
+field_name: field_comments
+entity_type: user
+bundle: user
+label: comments
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 1
+field_type: comment

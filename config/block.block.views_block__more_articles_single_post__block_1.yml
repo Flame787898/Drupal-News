@@ -1,22 +1,22 @@
-uuid: c5ad5434-74b0-41ea-b962-e2839c2f3472
+uuid: d74e0ca3-6817-41ce-b659-8050843dffcb
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.article
+    - views.view.more_articles_single_post_
   module:
     - system
     - views
   theme:
     - bartik
-id: views_block__article_block_1
+id: views_block__more_articles_single_post__block_1
 theme: bartik
 region: sidebar_first
-weight: -23
+weight: -19
 provider: null
-plugin: 'views_block:article-block_1'
+plugin: 'views_block:more_articles_single_post_-block_1'
 settings:
-  id: 'views_block:article-block_1'
+  id: 'views_block:more_articles_single_post_-block_1'
   label: ''
   label_display: visible
   provider: views
@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
-    pages: "/taxonomy/*\r\n/node/*"
+    negate: false
+    pages: '/node/*'
