@@ -1,23 +1,23 @@
-uuid: aaa3d0c0-bf08-4e8a-8c16-5fe1fab6932d
+uuid: 54c8802f-2f0f-426e-ab3f-566c8241cfe4
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+    - 'block_content:basic:6109513b-2d11-46db-b14d-833aba9ffd6f'
   module:
     - block_content
     - system
   theme:
     - bartik
-id: bannerlong
+id: stayconnected
 theme: bartik
 region: content
-weight: -6
+weight: -10
 provider: null
-plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+plugin: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
 settings:
-  id: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
-  label: 'Banner long '
+  id: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
+  label: 'Stay Connected'
   label_display: visible
   provider: block_content
   status: true

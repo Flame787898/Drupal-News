@@ -1,22 +1,22 @@
-uuid: a29636f3-6359-4f88-90ec-f3f498127953
+uuid: bcde01c7-d30c-41dc-82cc-4e39f5e771f0
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.style_news_list_
+    - views.view.audio_news
   module:
     - system
     - views
   theme:
     - bartik
-id: views_block__style_news_list__block_1
+id: views_block__audio_news_block_1
 theme: bartik
 region: content
-weight: -4
+weight: -12
 provider: null
-plugin: 'views_block:style_news_list_-block_1'
+plugin: 'views_block:audio_news-block_1'
 settings:
-  id: 'views_block:style_news_list_-block_1'
+  id: 'views_block:audio_news-block_1'
   label: ''
   label_display: visible
   provider: views
