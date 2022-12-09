@@ -1,0 +1,25 @@
+uuid: e40865ab-cc38-4ddc-af2e-72a738f2daab
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about-us
+  module:
+    - system
+  theme:
+    - bartik
+id: aboutus
+theme: bartik
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:about-us'
+settings:
+  id: 'system_menu_block:about-us'
+  label: 'About Us'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

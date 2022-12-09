@@ -1,0 +1,25 @@
+uuid: db92a8fd-9369-4f52-a5e8-c9b450095e0b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0523a182-81ac-440d-9686-f56612093e4a'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: sociallinkfooter
+theme: bartik
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:0523a182-81ac-440d-9686-f56612093e4a'
+settings:
+  id: 'block_content:0523a182-81ac-440d-9686-f56612093e4a'
+  label: 'Social link footer '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
