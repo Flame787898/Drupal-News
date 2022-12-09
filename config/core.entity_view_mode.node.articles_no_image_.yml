@@ -1,0 +1,10 @@
+uuid: 689dcad5-668a-48f5-ab0f-2060db8d1736
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.articles_no_image_
+label: 'Articles no image '
+targetEntityType: node
+cache: true

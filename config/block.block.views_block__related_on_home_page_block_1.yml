@@ -1,0 +1,29 @@
+uuid: 475df3b3-c629-48f5-a2f6-31f50e801205
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.business_on_home_page
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__related_on_home_page_block_1
+theme: bartik
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:business_on_home_page-block_1'
+settings:
+  id: 'views_block:business_on_home_page-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/taxonomy/*'
