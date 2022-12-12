@@ -1,9 +1,10 @@
-uuid: 3efa8503-6b14-441d-9e3a-85d2b5437aa1
+uuid: 9fd946fd-3e08-47bb-abcc-584e9ef1439d
 langcode: en
 status: true
 dependencies:
   config:
     - comment.type.comment
+    - core.entity_view_mode.comment.full
     - field.field.comment.comment.comment_body
   module:
     - field_layout
@@ -19,10 +20,10 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: aBQUGsQ46M4048fIlFuTXwl2zV0j2cJX89CTUobh9hA
-id: comment.comment.default
+id: comment.comment.full
 targetEntityType: comment
 bundle: comment
-mode: default
+mode: full
 content:
   comment_body:
     type: text_default

@@ -1,4 +1,4 @@
-uuid: d0e78f3a-29fd-4f6c-9444-de505d0361fa
+uuid: 848c1fab-90d4-40aa-ac90-c1b0a9520ea5
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - bartik
-id: banner_2
+id: banner_3
 theme: bartik
 region: sidebar_second
-weight: -14
+weight: -16
 provider: null
 plugin: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
 settings:
@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: '/node/*'
