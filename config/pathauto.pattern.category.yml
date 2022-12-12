@@ -1,0 +1,22 @@
+uuid: 1103ad6a-1f27-4724-900b-f2d67110af9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: category
+label: category
+type: 'canonical_entities:taxonomy_term'
+pattern: '/newspaper_pulses_pro/category/[term:name]'
+selection_criteria:
+  dc065366-e922-4da2-888a-ef96abdb591b:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: dc065366-e922-4da2-888a-ef96abdb591b
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      categories: categories
+selection_logic: and
+weight: -5
+relationships: {  }

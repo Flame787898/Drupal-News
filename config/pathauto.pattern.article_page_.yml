@@ -1,0 +1,22 @@
+uuid: 4c51a3b4-eed8-40b7-895b-9909f146c133
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: article_page_
+label: 'article page '
+type: 'canonical_entities:node'
+pattern: '/newspaper_pulses_pro/[node:title]'
+selection_criteria:
+  c95db622-1b13-4c42-93b4-0dd508b23514:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c95db622-1b13-4c42-93b4-0dd508b23514
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }
