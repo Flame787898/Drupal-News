@@ -1,23 +1,23 @@
-uuid: aaa3d0c0-bf08-4e8a-8c16-5fe1fab6932d
+uuid: 335c37cb-8693-493b-9389-d5baf427cd6e
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+    - 'block_content:basic:eed3b403-8c00-4790-942e-ff272af8f74c'
   module:
     - block_content
     - system
   theme:
     - bartik
-id: bannerlong
+id: subscribetoournewsletter
 theme: bartik
 region: content
-weight: -6
+weight: -11
 provider: null
-plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+plugin: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
 settings:
-  id: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
-  label: 'Banner long '
+  id: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
+  label: 'Subscribe to our newsletter'
   label_display: visible
   provider: block_content
   status: true
