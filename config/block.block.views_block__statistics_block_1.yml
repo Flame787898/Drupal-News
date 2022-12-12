@@ -1,22 +1,22 @@
-uuid: 824359d8-a0b2-4772-9ef0-0dd11c9830ca
+uuid: e91796f1-e8da-48d4-a943-acb02de71c6d
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.category_tags
+    - views.view.statistics
   module:
     - system
     - views
   theme:
     - bartik
-id: views_block__category_tags_block_1
+id: views_block__statistics_block_1
 theme: bartik
 region: content
-weight: -19
+weight: -20
 provider: null
-plugin: 'views_block:category_tags-block_1'
+plugin: 'views_block:statistics-block_1'
 settings:
-  id: 'views_block:category_tags-block_1'
+  id: 'views_block:statistics-block_1'
   label: ''
   label_display: visible
   provider: views
@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/taxonomy/*'
+    pages: '/node/*'

@@ -12,7 +12,7 @@ dependencies:
 id: subscribetoournewsletter
 theme: bartik
 region: content
-weight: -17
+weight: -15
 provider: null
 plugin: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
 settings:
