@@ -1,4 +1,4 @@
-uuid: aaa3d0c0-bf08-4e8a-8c16-5fe1fab6932d
+uuid: b1539adb-b19e-4823-90d7-1454832327e4
 langcode: en
 status: true
 dependencies:
@@ -9,16 +9,16 @@ dependencies:
     - system
   theme:
     - bartik
-id: bannerlong
+id: bannerlong_2
 theme: bartik
 region: content
-weight: -7
+weight: -19
 provider: null
 plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
 settings:
   id: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
   label: 'Banner long '
-  label_display: visible
+  label_display: '0'
   provider: block_content
   status: true
   info: ''
@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: '/taxonomy/*'

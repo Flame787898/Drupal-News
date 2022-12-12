@@ -12,7 +12,7 @@ dependencies:
 id: views_block__latest_politics_news_block_1
 theme: bartik
 region: content
-weight: -6
+weight: -10
 provider: null
 plugin: 'views_block:latest_politics_news-block_1'
 settings:
