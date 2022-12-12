@@ -17,7 +17,7 @@ provider: null
 plugin: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
 settings:
   id: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
-  label: 'Stay Connected'
+  label: 'Stay Connected (home page)'
   label_display: visible
   provider: block_content
   status: true

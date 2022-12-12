@@ -15,7 +15,7 @@ dependencies:
     - taxonomy
     - user
 id: business_news_circle_image
-label: 'Business news circle image'
+label: 'Business news circle image (home page right sidebar)'
 module: views
 description: ''
 tag: ''
@@ -145,7 +145,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: circle_image
             image_loading:
               attribute: lazy

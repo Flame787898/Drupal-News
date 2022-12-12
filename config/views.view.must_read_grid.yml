@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 id: must_read_grid
-label: 'Must read grid'
+label: 'Must read grid (home page)'
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Must read grid'
+      title: ''
       fields:
         field_promo_image:
           id: field_promo_image
@@ -77,7 +77,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: ''
             image_loading:
               attribute: lazy

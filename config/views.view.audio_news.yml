@@ -12,7 +12,7 @@ dependencies:
     - node
     - user
 id: audio_news
-label: 'Audio news'
+label: 'Audio news (home page)'
 module: views
 description: ''
 tag: ''
@@ -256,7 +256,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: circle_image
             image_loading:
               attribute: lazy

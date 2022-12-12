@@ -17,7 +17,7 @@ provider: null
 plugin: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
 settings:
   id: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
-  label: 'Subscribe to our newsletter'
+  label: 'Subscribe to our newsletter (home page)'
   label_display: visible
   provider: block_content
   status: true

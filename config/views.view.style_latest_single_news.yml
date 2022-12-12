@@ -17,7 +17,7 @@ dependencies:
     - text
     - user
 id: style_latest_single_news
-label: 'Style latest single news'
+label: 'Style latest single news (home page)'
 module: views
 description: ''
 tag: ''
@@ -84,7 +84,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: ''
             image_loading:
               attribute: lazy

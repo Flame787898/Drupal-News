@@ -14,7 +14,7 @@ dependencies:
     - taxonomy
     - user
 id: culture_
-label: 'Culture '
+label: 'Culture (home page right sidebar)'
 module: views
 description: ''
 tag: ''

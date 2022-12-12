@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 id: latest_news
-label: 'Latest news'
+label: 'Latest news(category page right sidebar)'
 module: views
 description: ''
 tag: ''
@@ -207,7 +207,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: ''
             image_loading:
               attribute: lazy
