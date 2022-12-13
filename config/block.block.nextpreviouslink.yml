@@ -1,0 +1,30 @@
+uuid: 9f9bd3f0-5fd4-4609-97ac-822aac18be3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - nextpre
+    - system
+  theme:
+    - bartik
+id: nextpreviouslink
+theme: bartik
+region: content
+weight: -8
+provider: null
+plugin: next_previous_block
+settings:
+  id: next_previous_block
+  label: 'Next Previous link'
+  label_display: visible
+  provider: nextpre
+  content_type: article
+  previous_text: 'Previous article'
+  next_text: 'Next article'
+  previouslink_class: previous
+  nextlink_class: next
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/node/*'

@@ -1,4 +1,4 @@
-uuid: aaa3d0c0-bf08-4e8a-8c16-5fe1fab6932d
+uuid: 8f9def78-5430-45dd-8ff4-397b07611d94
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - bartik
-id: bannerlong
+id: bannerlong_3
 theme: bartik
 region: content
-weight: -11
+weight: 0
 provider: null
 plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
 settings:
@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
-    pages: "/taxonomy/*\r\n/node/*"
+    negate: false
+    pages: '/node/*'
