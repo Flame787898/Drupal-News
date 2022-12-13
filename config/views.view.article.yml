@@ -12,7 +12,7 @@ dependencies:
     - taxonomy
     - user
 id: article
-label: Magazines
+label: 'Magazines (home page left sidebar) '
 module: views
 description: ''
 tag: ''

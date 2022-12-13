@@ -84,7 +84,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: ''
             image_loading:
               attribute: lazy

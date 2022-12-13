@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 id: editor_picks
-label: 'Editor Picks'
+label: 'Editor Picks (home page right sidebar)'
 module: views
 description: ''
 tag: ''
@@ -141,7 +141,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_link: media
+            image_link: content
             image_style: circle_image
             image_loading:
               attribute: lazy

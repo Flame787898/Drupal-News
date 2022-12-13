@@ -1,0 +1,10 @@
+uuid: d514666a-cd9d-4472-9df1-42107d26a226
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.category_page
+label: 'Category page'
+targetEntityType: node
+cache: true
