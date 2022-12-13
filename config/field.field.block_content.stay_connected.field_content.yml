@@ -1,0 +1,35 @@
+uuid: 4196b090-7c64-48e5-aa77-659f492bcae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stay_connected
+    - field.storage.block_content.field_content
+  module:
+    - entity_reference_revisions
+id: block_content.stay_connected.field_content
+field_name: field_content
+entity_type: block_content
+bundle: stay_connected
+label: content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      image:
+        weight: 4
+        enabled: false
+      image_and_text:
+        weight: 5
+        enabled: false
+      text:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

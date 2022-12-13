@@ -1,30 +1,25 @@
-uuid: 54c8802f-2f0f-426e-ab3f-566c8241cfe4
+uuid: ae8e9e11-3b5f-4a5e-9b88-7b04eeb31396
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:6109513b-2d11-46db-b14d-833aba9ffd6f'
+    - 'block_content:stay_connected:14f097f8-e420-4007-9fbc-e5309e5e3083'
   module:
     - block_content
-    - system
   theme:
     - bartik
 id: stayconnected
 theme: bartik
 region: content
-weight: -16
+weight: -17
 provider: null
-plugin: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
+plugin: 'block_content:14f097f8-e420-4007-9fbc-e5309e5e3083'
 settings:
-  id: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
-  label: 'Stay Connected (home page)'
+  id: 'block_content:14f097f8-e420-4007-9fbc-e5309e5e3083'
+  label: 'Stay Connected'
   label_display: visible
   provider: block_content
   status: true
   info: ''
   view_mode: full
-visibility:
-  request_path:
-    id: request_path
-    negate: true
-    pages: "/taxonomy/*\r\n/node/*"
+visibility: {  }
