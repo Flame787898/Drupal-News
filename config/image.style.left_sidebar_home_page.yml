@@ -1,0 +1,15 @@
+uuid: 214af00d-0fff-429e-a4fd-090eb3463a9c
+langcode: en
+status: true
+dependencies: {  }
+name: left_sidebar_home_page
+label: 'left sidebar home page'
+effects:
+  4ecc4e3c-76d0-473a-a36c-e4879ea4ffb8:
+    uuid: 4ecc4e3c-76d0-473a-a36c-e4879ea4ffb8
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 200
+      height: 100
+      anchor: center-center

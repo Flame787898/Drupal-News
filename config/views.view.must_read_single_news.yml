@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - field.storage.node.field_promo_image
+    - image.style.must_read_single_news
     - node.type.article
     - taxonomy.vocabulary.categories
   content:
@@ -83,7 +84,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: ''
+            image_style: must_read_single_news
             image_loading:
               attribute: lazy
           group_column: target_id

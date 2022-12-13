@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - field.storage.node.field_promo_image
+    - image.style.left_sidebar_home_page
     - taxonomy.vocabulary.categories
   content:
     - 'taxonomy_term:categories:d7bdbd0e-4bee-4a2f-a4df-b3df9b4b8a79'
@@ -82,7 +83,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: ''
+            image_style: left_sidebar_home_page
             image_loading:
               attribute: lazy
           group_column: target_id

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_promo_image
+    - image.style.sidebar_promo_image
     - node.type.article
   module:
     - media
@@ -208,7 +209,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: ''
+            image_style: sidebar_promo_image
             image_loading:
               attribute: lazy
           group_column: target_id

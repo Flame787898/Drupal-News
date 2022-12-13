@@ -1,0 +1,15 @@
+uuid: 878d9761-165b-4bb9-b11b-772243f6d4eb
+langcode: en
+status: true
+dependencies: {  }
+name: home_page_main_news
+label: 'Home page main news'
+effects:
+  8e2758f9-3421-4c47-8518-6a9315700de9:
+    uuid: 8e2758f9-3421-4c47-8518-6a9315700de9
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 694
+      height: 464
+      anchor: center-center
