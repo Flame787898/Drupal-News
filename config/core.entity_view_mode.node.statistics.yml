@@ -1,0 +1,10 @@
+uuid: a2808137-4f0e-4a4a-9426-f1fb9734f94d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.statistics
+label: Statistics
+targetEntityType: node
+cache: true
