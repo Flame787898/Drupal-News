@@ -24,7 +24,6 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      html_block: html_block
       image: image
       image_and_text: image_and_text
       text: text
@@ -32,7 +31,7 @@ settings:
     target_bundles_drag_drop:
       html_block:
         weight: 5
-        enabled: true
+        enabled: false
       image:
         weight: 6
         enabled: true
