@@ -1,0 +1,48 @@
+uuid: 8e265157-9ec7-4e25-ab8d-4a8df4a72753
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stay_connected
+    - field.field.block_content.stay_connected.field_content
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.stay_connected.default
+targetEntityType: block_content
+bundle: stay_connected
+mode: default
+content:
+  field_content:
+    type: paragraphs
+    weight: 26
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

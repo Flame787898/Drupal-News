@@ -1,0 +1,45 @@
+uuid: da21ef43-ee03-4ff0-9170-a2061cc9fb47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_html
+    - paragraphs.paragraphs_type.html_block
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.image_and_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.html_block.field_html
+field_name: field_html
+entity_type: paragraph
+bundle: html_block
+label: Html
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      html_block: html_block
+      image: image
+      image_and_text: image_and_text
+      text: text
+    negate: 0
+    target_bundles_drag_drop:
+      html_block:
+        weight: 5
+        enabled: true
+      image:
+        weight: 6
+        enabled: true
+      image_and_text:
+        weight: 7
+        enabled: true
+      text:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions
