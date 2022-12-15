@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - nextpre
+    - node
     - system
   theme:
     - bartik
@@ -28,3 +29,10 @@ visibility:
     id: request_path
     negate: false
     pages: '/node/*'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

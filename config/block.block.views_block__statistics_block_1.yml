@@ -1,6 +1,6 @@
 uuid: e91796f1-e8da-48d4-a943-acb02de71c6d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.statistics
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__statistics_block_1
 theme: bartik
 region: content
-weight: -21
+weight: -7
 provider: null
 plugin: 'views_block:statistics-block_1'
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: bannerlong_3
 theme: bartik
 region: content
-weight: 0
+weight: -9
 provider: null
 plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
 settings:
