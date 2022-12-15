@@ -1,0 +1,29 @@
+uuid: d7b55f7b-7e0b-407c-98e7-76b6aa83dadc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.travel
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__travel_block_1_2
+theme: flame
+region: right_sidebar_home_second
+weight: 0
+provider: null
+plugin: 'views_block:travel-block_1'
+settings:
+  id: 'views_block:travel-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

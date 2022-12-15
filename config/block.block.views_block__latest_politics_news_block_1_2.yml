@@ -1,0 +1,29 @@
+uuid: b8de3fc0-a9d6-4d41-98dd-b8907bb006c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_politics_news
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__latest_politics_news_block_1_2
+theme: flame
+region: list_news_first
+weight: 0
+provider: null
+plugin: 'views_block:latest_politics_news-block_1'
+settings:
+  id: 'views_block:latest_politics_news-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

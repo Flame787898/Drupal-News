@@ -1,0 +1,29 @@
+uuid: 0b25c4ce-3df4-40a9-b775-07ffebc594e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.business_on_home_page
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: flame_views_block__related_on_home_page_block_1
+theme: flame
+region: related_news
+weight: -25
+provider: null
+plugin: 'views_block:business_on_home_page-block_1'
+settings:
+  id: 'views_block:business_on_home_page-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

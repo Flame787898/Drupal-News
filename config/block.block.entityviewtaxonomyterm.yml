@@ -1,0 +1,28 @@
+uuid: 04196780-4c4c-42ec-9082-6dc50bb1c063
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - flame
+id: entityviewtaxonomyterm
+theme: flame
+region: content
+weight: 0
+provider: null
+plugin: 'entity_view:taxonomy_term'
+settings:
+  id: 'entity_view:taxonomy_term'
+  label: 'Entity view (Taxonomy term)'
+  label_display: visible
+  provider: ctools
+  view_mode: default
+  context_mapping:
+    entity: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'

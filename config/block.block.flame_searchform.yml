@@ -1,0 +1,21 @@
+uuid: 8275834d-86e8-4ef5-9d11-d9798898bdb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - flame
+id: flame_searchform
+theme: flame
+region: header_right
+weight: -24
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }
