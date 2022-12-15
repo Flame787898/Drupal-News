@@ -11,7 +11,7 @@ dependencies:
 id: sociallink
 theme: bartik
 region: header
-weight: -6
+weight: -22
 provider: null
 plugin: 'block_content:9eea75e7-10c2-40dc-a65c-110a46d9ac80'
 settings:

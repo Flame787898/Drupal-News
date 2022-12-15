@@ -11,7 +11,7 @@ dependencies:
 id: weatherblock
 theme: bartik
 region: header
-weight: -8
+weight: -25
 provider: null
 plugin: 'block_content:0a5787f4-dcc1-4ec2-8114-60acf4f264e9'
 settings:
