@@ -1,0 +1,15 @@
+uuid: 6615af54-e4dc-43cf-b211-83bdc83e9610
+langcode: en
+status: true
+dependencies: {  }
+name: promo_image_news
+label: 'promo image news'
+effects:
+  4de3db15-53c8-4c8b-8204-a4134a2f6c92:
+    uuid: 4de3db15-53c8-4c8b-8204-a4134a2f6c92
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 296
+      height: 178
+      anchor: center-center

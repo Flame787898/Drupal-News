@@ -4,4 +4,12 @@ status: true
 dependencies: {  }
 name: circle_image
 label: circle_image
-effects: {  }
+effects:
+  60a78fbd-6b8f-41d4-adc4-b9007c9c1f53:
+    uuid: 60a78fbd-6b8f-41d4-adc4-b9007c9c1f53
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 77
+      height: 77
+      anchor: center-center

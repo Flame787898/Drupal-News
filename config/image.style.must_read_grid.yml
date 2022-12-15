@@ -1,0 +1,15 @@
+uuid: fd2c0a6d-9e1a-4bd2-9b18-2766cac2a124
+langcode: en
+status: true
+dependencies: {  }
+name: must_read_grid
+label: 'Must read grid'
+effects:
+  476e3628-4a24-47be-aa4c-8523286577c4:
+    uuid: 476e3628-4a24-47be-aa4c-8523286577c4
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 384
+      height: 173
+      anchor: center-center

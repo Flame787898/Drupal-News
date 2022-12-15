@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_comments
     - field.field.node.article.field_promo_image
     - field.field.node.article.field_tags
+    - image.style.promo_image_news
     - node.type.article
   module:
     - field_layout
@@ -32,10 +33,9 @@ bundle: article
 mode: category_page
 content:
   field_announcement:
-    type: text_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
@@ -52,7 +52,7 @@ content:
     label: hidden
     settings:
       image_link: content
-      image_style: ''
+      image_style: promo_image_news
       image_loading:
         attribute: lazy
     third_party_settings: {  }
