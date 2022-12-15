@@ -1,23 +1,23 @@
-uuid: 6c756fa5-1bb2-4f33-88c1-958878c53e50
+uuid: 7fa5d735-c469-4788-8b49-eeaa8f4845a5
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.about-us
   module:
     - system
   theme:
     - bartik
-id: mainnavigation
+id: aboutus_2
 theme: bartik
 region: secondary_menu
-weight: -7
+weight: -24
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:about-us'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Main navigation'
-  label_display: visible
+  id: 'system_menu_block:about-us'
+  label: 'About Us'
+  label_display: '0'
   provider: system
   level: 1
   depth: 0
