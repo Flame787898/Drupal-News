@@ -1,11 +1,12 @@
 @import "mixins";
 @import "variables";
+@import "fonts";
 .header{
   a{
     font-family: 'Source Sans Pro', sans-serif;
   }
   &__top-bar{
-    background: #000;
+    background: $black;
     height: 32px;
     display: flex;
     align-items:center;
@@ -34,7 +35,7 @@
         padding-top: 2px;
         a{
           font-size: 13px;
-          color: #fff;
+          color: $white;
           text-transform: capitalize;
           text-decoration: none;
           font-weight: 400;
@@ -52,13 +53,84 @@
       li{
         a{
           font-size: 13px;
-          color: #fff;
+          color: $white;
           text-decoration: none;
           transition: $transition;
           &:hover{
             color: $color_hover_link;
           }
         }
+      }
+    }
+  }
+  &__content{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px 0 30px;
+    max-width: 1600px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    #block-flame-date{
+      div{
+        div:first-child{
+          display: none;
+        }
+        div:last-child{
+          text-align: center;
+          @include phones{
+            display: none;
+          }
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 14px
+        }
+      }
+    }
+    &-left{
+      @include phones{
+        display: none;
+      }
+    }
+    &-center{
+      padding: 30px 0 30px 0;
+      @include phones{
+        padding: 10px 0 10px 0;
+      }
+      a{
+        font-family: 'Gelasio', serif;
+        font-size: 60px;
+        text-decoration: none;
+        color: $black;
+        text-align: center;
+        @include tablets{
+          font-size: 40px;
+        }
+        @include phones{
+          font-size: 24px;
+          font-weight: bold;
+          font-family: serif;
+        }
+      }
+    }
+    &-right{
+      display: flex;
+      gap: 22px;
+      #mobile-menu{
+        display: none;
+        @include phones{
+          display: block;
+        }
+      }
+      div{
+        @include phones{
+          display: none;
+        }
+        display: flex;
+        gap:20px
+      }
+      #block-flame-searchform{
+        display: none;
       }
     }
   }
