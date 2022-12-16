@@ -49,7 +49,9 @@
 
   <header class="header">
     <div class="header__top-bar">
-      {{  page.top_bar}}
+      <div class="header__wrap-content">
+        {{page.top_bar}}
+      </div>
     </div>
     <div class="header__content">
       <div class="header__content-left">
@@ -62,10 +64,10 @@
         {{ page.header_right }}
       </div>
     </div>
+    <nav class="navigation">
+      {{ page.primary_menu }}
+    </nav>
   </header>
-  <nav class="navigation">
-    {{ page.primary_menu }}
-  </nav>
   <main role="main">
     {% if page.home_main_news %}
      <section class="main">
