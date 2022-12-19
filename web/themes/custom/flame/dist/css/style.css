@@ -9,6 +9,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -162,7 +166,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 30px 0 30px;
-  max-width: 1600px;
+  max-width: 1640px;
 }
 .header__wrap-content div {
   display: flex;
@@ -206,7 +210,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 30px 0 30px;
-  max-width: 1600px;
+  max-width: 1640px;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
   align-items: center;
@@ -476,6 +480,189 @@ body {
 }
 .mobile-navigation nav ul li a.is-active {
   color: rgb(252, 185, 0);
+}
+
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+/* 
+    Used for media queries. 
+    Add these mixins in your normal scss flow.
+
+    Eg.
+    .container{
+        width:1024px;
+
+        @include tablets{
+            width:90%;
+        }
+    }
+*/
+/* =======================================================================
+## ++ Unit transform
+========================================================================== */
+/*  
+    Used for making containers have width in percentages. 
+    Usage: define elemnt width in px and the width of parent elemnt in px. 
+    eg. .block{width:cp(512px, 1024px)} this will result in .block{width:50%;}   
+*/
+/*  
+    Used for making px values convert to rem values
+    Usage: define font-size in px and it will convert to rems
+    eg. font-size: rem(14px);
+*/
+.main {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  gap: 35px;
+}
+.main .main__news-one {
+  width: 50%;
+}
+.main .main__news-list {
+  width: 25%;
+}
+.main .main__sidebar-home {
+  width: 20%;
+}
+
+#block-flame-views-block-news-on-home-page-block-1,
+#block-flame-views-block-related-on-home-page-block-1 {
+  display: flex;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-promo-image img,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-promo-image img {
+  width: 100%;
+  display: block;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-category a,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title {
+  margin: 6px 0 2px;
+  font-family: "Gelasio", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title .field-content a,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title .field-content a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title .field-content a:hover,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title .field-content a:hover {
+  color: #4c4084;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-created,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-created {
+  margin-bottom: 10px;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-created .field-content,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-created .field-content {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-announcement .field-content p,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-announcement .field-content p {
+  margin-top: 15px;
+  color: #555;
+  width: 700px;
+}
+
+#block-flame-views-block-related-on-home-page-block-1 .views-row {
+  margin-bottom: 30px;
+}
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-category .field-content {
+  position: relative;
+  top: -18px;
+  margin-bottom: -20px;
+}
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title a {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+#block-flame-views-block-editor-picks-block-1-2 .views-field-field-promo-image img,
+#block-flame-views-block-business-news-circle-image-block-1 .views-field-field-promo-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+#block-flame-views-block-editor-picks-block-1-2 h2,
+#block-flame-views-block-business-news-circle-image-block-1 h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  margin-bottom: 10px;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title {
+  width: 70%;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title a,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title a {
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title a:hover,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title a:hover {
+  color: #4c4084;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-created,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-created {
+  width: 50%;
+  position: relative;
+  top: -10px;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-created .field-content,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-created .field-content {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#block-flame-views-block-business-news-circle-image-block-1 {
+  margin-top: 40px;
+}
+#block-flame-views-block-business-news-circle-image-block-1 .views-field-created {
+  top: -20px !important;
+}
+
+#block-flame-banner-2 h2 {
+  display: none;
+}
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 main.open {
