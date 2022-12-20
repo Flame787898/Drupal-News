@@ -1,0 +1,29 @@
+uuid: 1ab1aa78-ac7c-4544-bbdb-e2147782551d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_on_home_page
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: flame_views_block__news_on_home_page_block_1
+theme: flame
+region: home_main_news
+weight: -26
+provider: null
+plugin: 'views_block:news_on_home_page-block_1'
+settings:
+  id: 'views_block:news_on_home_page-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

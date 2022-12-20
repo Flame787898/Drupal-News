@@ -1,0 +1,35 @@
+name: Flame
+type: theme
+description: 'My custom theme'
+core_version_requirement: ^8 || ^9
+libraries:
+  - flame/global-css
+  - flame/global-js
+base theme: stable9
+regions:
+  top_bar: "Top bar"
+  header_left: 'Header left'
+  header_brand: 'Header logo'
+  header_right: 'Header right'
+  primary_menu: "Main menu"
+  title_page: "Title page"
+  content: 'Content'
+  sidebar_right: "Right sidebar"
+  sidebar_left: "Left sidebar"
+  home_main_news: "Home main news"
+  related_news: "Related news on home page"
+  sidebar_main_home: "Main sidebar home page"
+  info_block_home: "Info block home page"
+  left_sidebar_home_first: "Left sidebar home first"
+  right_sidebar_home_first: "Right sidebar home first"
+  list_news_first: "list news first"
+  must_read_home: "Must read"
+  banner: "Banner "
+  left_sidebar_home_second: "Left sidebar home second"
+  right_sidebar_home_second: "Right sidebar home second"
+  list_news_second: "list news second"
+  footer_sidebar_first: 'Footer sidebar first'
+  footer_sidebar_second: 'Footer sidebar second'
+  footer_sidebar_third: 'Footer sidebar third'
+  footer_sidebar_four: 'Footer sidebar four'
+

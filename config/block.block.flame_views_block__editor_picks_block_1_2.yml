@@ -1,0 +1,29 @@
+uuid: 61dd1240-5ea9-4cc0-8877-b56c40b5dccc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.editor_picks
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: flame_views_block__editor_picks_block_1_2
+theme: flame
+region: sidebar_main_home
+weight: -25
+provider: null
+plugin: 'views_block:editor_picks-block_1'
+settings:
+  id: 'views_block:editor_picks-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: '2'
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

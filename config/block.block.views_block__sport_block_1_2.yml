@@ -1,0 +1,29 @@
+uuid: 40a9fb88-296c-469d-85b5-4c52285f8420
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sport
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__sport_block_1_2
+theme: flame
+region: right_sidebar_home_first
+weight: 0
+provider: null
+plugin: 'views_block:sport-block_1'
+settings:
+  id: 'views_block:sport-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

@@ -1,0 +1,30 @@
+uuid: 9cc06df6-6762-41ab-b6ae-31450cea9e82
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:eed3b403-8c00-4790-942e-ff272af8f74c'
+  module:
+    - block_content
+    - system
+  theme:
+    - flame
+id: subscribetoournewsletter_2
+theme: flame
+region: info_block_home
+weight: -26
+provider: null
+plugin: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
+settings:
+  id: 'block_content:eed3b403-8c00-4790-942e-ff272af8f74c'
+  label: 'Subscribe to our newsletter'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

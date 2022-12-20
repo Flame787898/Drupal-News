@@ -1,0 +1,25 @@
+uuid: 2068865d-2d0d-4bc0-8452-0f0b0347ec4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - flame
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: flame_branding
+theme: flame
+region: header_brand
+weight: -25
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Pulses pro'
+  label_display: visible
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
