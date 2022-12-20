@@ -1,0 +1,65 @@
+@import "mixins";
+@import "variables";
+.header{
+  a{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  &__top-bar{
+    background: #000;
+    height: 32px;
+    display: flex;
+    align-items:center;
+    @include phones{
+      display: none;
+    }
+  }
+  &__wrap-content{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px 0 30px;
+    max-width: 1600px;
+    div{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  #block-flame-aboutus-2{
+    ul{
+      display: flex;
+      gap: 15px;
+      li{
+        display: flex;
+        gap: 15px;
+        padding-top: 2px;
+        a{
+          font-size: 13px;
+          color: #fff;
+          text-transform: capitalize;
+          text-decoration: none;
+          font-weight: 400;
+          transition: $transition;
+          &:hover{
+            color: $color_hover_link;
+          }
+        }
+      }
+    }
+  }
+  #block-flame-account-menu{
+    ul{
+      display: flex;
+      li{
+        a{
+          font-size: 13px;
+          color: #fff;
+          text-decoration: none;
+          transition: $transition;
+          &:hover{
+            color: $color_hover_link;
+          }
+        }
+      }
+    }
+  }
+}
