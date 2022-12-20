@@ -1,8 +1,3 @@
-/* Vendor */
-@import "susy";
-@import "su";
-
-
 /* Setup */
 @import "reset";
 @import "mixins";
@@ -10,14 +5,7 @@
 @import "fonts";
 @import "globals";
 
-
 @import "header";
 @import "homepage";
 @import "sidebar";
 @import "footer";
-*{font-family: 'Source Sans Pro', sans-serif;}
-main{
-  &.open{
-    display: none;
-  }
-}

@@ -1,69 +1,81 @@
 @import "mixins";
 @import "variables";
 @import "fonts";
-.header{
-  a{
+
+.header {
+  a {
     font-family: 'Source Sans Pro', sans-serif;
   }
-  &__top-bar{
+
+  &__top-bar {
     background: $black;
     height: 32px;
     display: flex;
-    align-items:center;
-    @include phones{
+    align-items: center;
+    @include phones {
       display: none;
     }
   }
-  &__wrap-content{
+
+  &__wrap-content {
     width: 100%;
     margin: 0 auto;
     padding: 0 30px 0 30px;
     max-width: $big_content;
-    div{
+
+    div {
       display: flex;
       width: 100%;
       justify-content: space-between;
     }
   }
-  #block-flame-aboutus-2{
-    ul{
+
+  #block-flame-aboutus-2 {
+    ul {
       display: flex;
       gap: 15px;
-      li{
+
+      li {
         display: flex;
         gap: 15px;
         padding-top: 2px;
-        a{
+
+        a {
           font-size: 13px;
           color: $white;
           text-transform: capitalize;
           text-decoration: none;
           font-weight: 400;
           transition: $transition;
-          &:hover{
-            color: $color_hover_link;
+
+          &:hover {
+            color: $main_violet;
           }
         }
       }
     }
   }
-  #block-flame-account-menu{
-    ul{
+
+  #block-flame-account-menu {
+    ul {
       display: flex;
-      li{
-        a{
+
+      li {
+        a {
           font-size: 13px;
           color: $white;
           text-decoration: none;
           transition: $transition;
-          &:hover{
-            color: $color_hover_link;
+
+          &:hover {
+            color: $main_violet;
           }
         }
       }
     }
   }
-  &__content{
+
+  &__content {
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -72,14 +84,16 @@
     justify-content: space-between;
     border-bottom: 1px solid $border_color;
     align-items: center;
-    #block-flame-date{
-      div{
-        div:first-child{
+
+    #block-flame-date {
+      div {
+        div:first-child {
           display: none;
         }
-        div:last-child{
+
+        div:last-child {
           text-align: center;
-          @include phones{
+          @include phones {
             display: none;
           }
           font-family: 'Source Sans Pro', sans-serif;
@@ -87,112 +101,127 @@
         }
       }
     }
-    &-left{
-      @include phones{
+
+    &-left {
+      @include phones {
         display: none;
       }
     }
-    &-center{
+
+    &-center {
       padding: 30px 0 30px 0;
-      @include phones{
+      @include phones {
         padding: 10px 0 10px 0;
       }
-      a{
+
+      a {
         font-family: 'Gelasio', serif;
         font-size: 60px;
         text-decoration: none;
         color: $black;
         text-align: center;
-        @include tablets{
+        @include tablets {
           font-size: 40px;
         }
-        @include phones{
+        @include phones {
           font-size: 24px;
           font-weight: bold;
           font-family: serif;
         }
       }
     }
-    &-right{
+
+    &-right {
       display: flex;
       gap: 22px;
-      #mobile-menu{
+
+      #mobile-menu {
         display: none;
-        @include phones{
+        @include phones {
           display: block;
         }
       }
-      .tdm-social-wrapper{
-        @include phones{
+
+      .tdm-social-wrapper {
+        @include phones {
           display: none;
         }
         display: flex;
-        gap:20px
+        gap: 20px
       }
-      #block-flame-searchform{
+
+      #block-flame-searchform {
         opacity: 0;
         position: absolute;
-        z-index: 999;
-        top:130px;
+        z-index: -1;
+        top: 130px;
         width: 100%;
         max-width: 700px;
-        right: 160px;
+        right: 145px;
         background: #fff;
         box-shadow: 0px 0px 2px 0px rgb(0 0 0 / 11%);
         transition: $transition;
-        @include lowresmonitors{
+        @include lowresmonitors {
           right: 10px;
         }
-        @include phones{
+        @include phones {
           right: 10px;
           box-shadow: none;
           background: transparent;
         }
-        &.open{
+
+        &.open {
           opacity: 1;
+          z-index: 999;
         }
+
         padding: 30px;
-        &:before{
-          content:'';
+
+        &:before {
+          content: '';
           width: 0;
           height: 0;
           border-style: solid;
           border-width: 0 8px 8px 8px;
           position: absolute;
           z-index: 999;
-          top:-8px;
+          top: -8px;
           right: 20px;
           border-color: transparent transparent $border_color transparent;
-          @include phones{
+          @include phones {
             border: 0;
           }
         }
-        form{
+
+        form {
           display: flex;
           width: 100%;
           justify-content: space-between;
-          .form-no-label{
+
+          .form-no-label {
             width: 100%;
           }
-          .form-search{
+
+          .form-search {
             width: 100%;
             border: 0;
             border-bottom: 1px solid $border_color;
             height: 40px;
             outline: none !important;
-            @include phones{
+            @include phones {
               background: transparent;
             }
           }
-          .form-submit{
-            background-color: $color_hover_link;
+
+          .form-submit {
+            background-color: $main_violet;
             border: 0;
             height: 40px;
             color: #fff;
             padding: 0 25px 0 25px;
             font-family: 'Roboto', sans-serif;
             cursor: pointer;
-            @include phones{
+            @include phones {
               display: none;
             }
           }
@@ -202,24 +231,28 @@
     }
   }
 }
-#search-bar{
+
+#search-bar {
   cursor: pointer;
 }
-#block-flame-main-menu{
-  ul{
+
+#block-flame-main-menu {
+  ul {
     display: flex;
     justify-content: center;
-    gap:35px;
-    @include tablets{
-      gap:25px;
+    gap: 35px;
+    @include tablets {
+      gap: 25px;
     }
-    @include phones{
+    @include phones {
       display: none;
     }
-    border-bottom: 1px solid $border_color ;
+    border-bottom: 1px solid $border_color;
+
     li {
       line-height: 55px;
-      a{
+
+      a {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 16px;
         color: #000;
@@ -227,31 +260,38 @@
         text-transform: uppercase;
         font-weight: 700;
         transition: $transition;
-        @include tablets{
+        @include tablets {
           font-size: 14px;
         }
-        &:hover{
-          color: $color_hover_link;
+
+        &:hover {
+          color: $main_violet;
         }
       }
     }
   }
 }
 
-.bg-mobile{
-  &-menu,&-search{
+.bg-mobile {
+  &-menu, &-search {
     background: url("../images/51-1.jpg") center;
     visibility: hidden;
     background-size: cover;
     width: 100%;
     height: 100vh;
     position: fixed;
-    top:0;
+    top: 0;
     left: -2099px;
     z-index: 1;
     transition: $transition;
-    &.open{  visibility: visible;left: 0; display: block;}
-    &:before{
+
+    &.open {
+      visibility: visible;
+      left: 0;
+      display: block;
+    }
+
+    &:before {
       content: '';
       width: 100%;
       height: 100%;
@@ -261,53 +301,63 @@
       opacity: .98;
       background: #313b45;
       z-index: 1;
-      background: linear-gradient(to bottom, rgba(76,64,132,0.9) 0%, rgba(28,24,51,0.9) 100%);
+      background: linear-gradient(to bottom, rgba(76, 64, 132, 0.9) 0%, rgba(28, 24, 51, 0.9) 100%);
     }
   }
 }
-#close-search{
+
+#close-search {
   position: absolute;
   z-index: 99;
   right: 50px;
-  top:50px;
+  top: 50px;
   font-size: 30px;
   color: $color_active_mobile_link;
   cursor: pointer;
   display: none;
-  &.open{
+
+  &.open {
     display: block;
   }
 }
-.mobile-navigation{
+
+.mobile-navigation {
   position: relative;
   display: none;
   z-index: 99;
-  top:50px;
+  top: 50px;
   transition: $transition;
-  &.open{display:block;}
-  #close-menu{
+
+  &.open {
+    display: block;
+  }
+
+  #close-menu {
     position: absolute;
     z-index: 99;
     right: 50px;
-    top:-70px;
+    top: -70px;
     font-size: 30px;
     color: $color_active_mobile_link;
     cursor: pointer;
   }
-  nav{
-    ul{
+
+  nav {
+    ul {
       display: flex;
       flex-direction: column;
       margin-left: 25px;
-      gap:25px;
+      gap: 25px;
+
       li {
-        a{
+        a {
           color: #fff;
           font-size: 18px;
           font-weight: bold;
           text-decoration: none;
           font-family: 'Source Sans Pro', sans-serif;
-          &.is-active{
+
+          &.is-active {
             color: $color_active_mobile_link;
           }
         }
