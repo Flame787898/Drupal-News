@@ -1,38 +1,45 @@
 @import "mixins";
 @import "variables";
 @import "fonts";
-.main{
+
+.main {
   display: flex;
   width: 100%;
   max-width: $small_content;
   margin: 0 auto;
-  padding:  40px 20px 0 20px;
-  gap:35px;
-  .main__news-one{
+  padding: 40px 20px 0 20px;
+  gap: 35px;
+
+  .main__news-one {
     width: 50%;
   }
-  .main__news-list{
+
+  .main__news-list {
     width: 25%;
   }
-  .main__sidebar-home{
+
+  .main__sidebar-home {
     width: 20%;
   }
 }
+
 #block-flame-views-block-news-on-home-page-block-1,
-#block-flame-views-block-related-on-home-page-block-1{
+#block-flame-views-block-related-on-home-page-block-1 {
   display: flex;
-  .views-field-field-promo-image{
-    img{
-      width: 100% ;
+
+  .views-field-field-promo-image {
+    img {
+      width: 100%;
       display: block;
 
     }
   }
-  .views-field-field-category{
-    a{
+
+  .views-field-field-category {
+    a {
       display: inline-block;
       padding: 3px 4px 2px;
-      background-color: $color_hover_link;
+      background-color: $main_violet;
       font-weight: 400;
       color: #fff;
       text-decoration: none;
@@ -41,35 +48,41 @@
       letter-spacing: 1px;
     }
   }
-  .views-field-title{
+
+  .views-field-title {
     margin: 6px 0 2px;
     font-family: "Gelasio", serif;
-    font-size: 32px ;
-    line-height: 1.1 ;
-    font-weight: 700 ;
-    .field-content{
-      a{
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 700;
+
+    .field-content {
+      a {
         color: #000;
         text-decoration: none;
         transition: $transition;
-        &:hover{
-          color:$color_hover_link;
+
+        &:hover {
+          color: $main_violet;
         }
       }
     }
   }
-  .views-field-created{
+
+  .views-field-created {
     margin-bottom: 10px;
-    .field-content{
-      font-size: 13px ;
-      line-height: 1 ;
-      font-style: italic ;
-      font-weight: 400 ;
+
+    .field-content {
+      font-size: 13px;
+      line-height: 1;
+      font-style: italic;
+      font-weight: 400;
     }
   }
-  .views-field-field-announcement{
-    .field-content{
-      p{
+
+  .views-field-field-announcement {
+    .field-content {
+      p {
         margin-top: 15px;
         color: #555;
         width: 700px;
@@ -78,20 +91,21 @@
   }
 }
 
-#block-flame-views-block-related-on-home-page-block-1{
-  .views-row{
+#block-flame-views-block-related-on-home-page-block-1 {
+  .views-row {
     margin-bottom: 30px;
   }
 
-  .views-field-field-category{
-    .field-content{
+  .views-field-field-category {
+    .field-content {
       position: relative;
-      top:-18px;
+      top: -18px;
       margin-bottom: -20px;
     }
   }
-  .views-field-title{
-    a{
+
+  .views-field-title {
+    a {
       display: inline-block;
       font-size: 17px;
       line-height: 19px;
@@ -101,58 +115,68 @@
 }
 
 #block-flame-views-block-editor-picks-block-1-2,
-#block-flame-views-block-business-news-circle-image-block-1{
-  .views-field-field-promo-image{
-    img{
+#block-flame-views-block-business-news-circle-image-block-1 {
+  .views-field-field-promo-image {
+    img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
     }
   }
-  h2{
-    font-size: 24px ;
-    font-weight: 900 ;
-    color: $color_hover_link;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 900;
+    color: $main_violet;
     margin-bottom: 10px;
   }
-  .views-row{
+
+  .views-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .views-field-title{
-      width:70%;
-      a{
+
+    .views-field-title {
+      width: 70%;
+
+      a {
         color: $black;
         font-weight: bold;
         font-size: 15px;
         text-decoration: none;
         transition: $transition;
-        &:hover{
-          color: $color_hover_link;
+
+        &:hover {
+          color: $main_violet;
         }
       }
     }
-    .views-field-created{
+
+    .views-field-created {
       width: 50%;
       position: relative;
-      top:-10px;
-        .field-content{
-          font-size: 13px ;
-          line-height: 1 ;
-          font-style: italic ;
-          font-weight: 400;
+      top: -10px;
+
+      .field-content {
+        font-size: 13px;
+        line-height: 1;
+        font-style: italic;
+        font-weight: 400;
       }
     }
   }
 }
-#block-flame-views-block-business-news-circle-image-block-1{
+
+#block-flame-views-block-business-news-circle-image-block-1 {
   margin-top: 40px;
-  .views-field-created{
-    top:-20px !important;
+
+  .views-field-created {
+    top: -20px !important;
   }
 }
-#block-flame-banner-2{
-  h2{
+
+#block-flame-banner-2 {
+  h2 {
     display: none;
   }
 }
