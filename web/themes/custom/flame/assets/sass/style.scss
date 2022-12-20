@@ -15,4 +15,9 @@
 @import "homepage";
 @import "sidebar";
 @import "footer";
-
+*{font-family: 'Source Sans Pro', sans-serif;}
+main{
+  &.open{
+    display: none;
+  }
+}

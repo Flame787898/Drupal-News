@@ -49,7 +49,9 @@
 
   <header class="header">
     <div class="header__top-bar">
-      {{  page.top_bar}}
+      <div class="header__wrap-content">
+        {{page.top_bar}}
+      </div>
     </div>
     <div class="header__content">
       <div class="header__content-left">
@@ -60,12 +62,21 @@
       </div>
       <div class="header__content-right">
         {{ page.header_right }}
+          <div class="bg-mobile-search"></div>
+          <i class="fa-solid fa-xmark" id="close-search"></i>
+          <i class="fa-sharp fa-solid fa-magnifying-glass" id="search-bar"></i>
+          <i class="fa-sharp fa-solid fa-bars" id="mobile-menu"></i>
       </div>
     </div>
+    <nav class="navigation">
+      {{ page.primary_menu }}
+      <div class="bg-mobile-menu"></div>
+      <div class="mobile-navigation">
+        <i class="fa-solid fa-xmark" id="close-menu"></i>
+        {{ page.primary_menu }}
+      </div>
+    </nav>
   </header>
-  <nav class="navigation">
-    {{ page.primary_menu }}
-  </nav>
   <main role="main">
     {% if page.home_main_news %}
      <section class="main">

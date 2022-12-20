@@ -1,6 +1,18 @@
 /* Vendor */
 /* Setup */
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -105,4 +117,554 @@ body {
 
 .clr {
   clear: both;
+}
+
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+/* 
+    Used for media queries. 
+    Add these mixins in your normal scss flow.
+
+    Eg.
+    .container{
+        width:1024px;
+
+        @include tablets{
+            width:90%;
+        }
+    }
+*/
+/* =======================================================================
+## ++ Unit transform
+========================================================================== */
+/*  
+    Used for making containers have width in percentages. 
+    Usage: define elemnt width in px and the width of parent elemnt in px. 
+    eg. .block{width:cp(512px, 1024px)} this will result in .block{width:50%;}   
+*/
+/*  
+    Used for making px values convert to rem values
+    Usage: define font-size in px and it will convert to rems
+    eg. font-size: rem(14px);
+*/
+.header a {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.header__top-bar {
+  background: #000;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 720px) {
+  .header__top-bar {
+    display: none;
+  }
+}
+.header__wrap-content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  max-width: 1640px;
+}
+.header__wrap-content div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.header #block-flame-aboutus-2 ul {
+  display: flex;
+  gap: 15px;
+}
+.header #block-flame-aboutus-2 ul li {
+  display: flex;
+  gap: 15px;
+  padding-top: 2px;
+}
+.header #block-flame-aboutus-2 ul li a {
+  font-size: 13px;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.5s ease;
+}
+.header #block-flame-aboutus-2 ul li a:hover {
+  color: #4c4084;
+}
+.header #block-flame-account-menu ul {
+  display: flex;
+}
+.header #block-flame-account-menu ul li a {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.header #block-flame-account-menu ul li a:hover {
+  color: #4c4084;
+}
+.header__content {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  max-width: 1640px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+.header__content #block-flame-date div div:first-child {
+  display: none;
+}
+.header__content #block-flame-date div div:last-child {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+}
+@media screen and (max-width: 720px) {
+  .header__content #block-flame-date div div:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__content-left {
+    display: none;
+  }
+}
+.header__content-center {
+  padding: 30px 0 30px 0;
+}
+@media screen and (max-width: 720px) {
+  .header__content-center {
+    padding: 10px 0 10px 0;
+  }
+}
+.header__content-center a {
+  font-family: "Gelasio", serif;
+  font-size: 60px;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+@media screen and (max-width: 1100px) {
+  .header__content-center a {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__content-center a {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: serif;
+  }
+}
+.header__content-right {
+  display: flex;
+  gap: 22px;
+}
+.header__content-right #mobile-menu {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #mobile-menu {
+    display: block;
+  }
+}
+.header__content-right .tdm-social-wrapper {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right .tdm-social-wrapper {
+    display: none;
+  }
+}
+.header__content-right #block-flame-searchform {
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  top: 130px;
+  width: 100%;
+  max-width: 700px;
+  right: 160px;
+  background: #fff;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.11);
+  transition: all 0.5s ease;
+  padding: 30px;
+}
+@media screen and (max-width: 1350px) {
+  .header__content-right #block-flame-searchform {
+    right: 10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #block-flame-searchform {
+    right: 10px;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+.header__content-right #block-flame-searchform.open {
+  opacity: 1;
+}
+.header__content-right #block-flame-searchform:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  position: absolute;
+  z-index: 999;
+  top: -8px;
+  right: 20px;
+  border-color: transparent transparent #ddd transparent;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #block-flame-searchform:before {
+    border: 0;
+  }
+}
+.header__content-right #block-flame-searchform form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.header__content-right #block-flame-searchform form .form-no-label {
+  width: 100%;
+}
+.header__content-right #block-flame-searchform form .form-search {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  height: 40px;
+  outline: none !important;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #block-flame-searchform form .form-search {
+    background: transparent;
+  }
+}
+.header__content-right #block-flame-searchform form .form-submit {
+  background-color: #4c4084;
+  border: 0;
+  height: 40px;
+  color: #fff;
+  padding: 0 25px 0 25px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #block-flame-searchform form .form-submit {
+    display: none;
+  }
+}
+
+#search-bar {
+  cursor: pointer;
+}
+
+#block-flame-main-menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  border-bottom: 1px solid #ddd;
+}
+@media screen and (max-width: 1100px) {
+  #block-flame-main-menu ul {
+    gap: 25px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #block-flame-main-menu ul {
+    display: none;
+  }
+}
+#block-flame-main-menu ul li {
+  line-height: 55px;
+}
+#block-flame-main-menu ul li a {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+@media screen and (max-width: 1100px) {
+  #block-flame-main-menu ul li a {
+    font-size: 14px;
+  }
+}
+#block-flame-main-menu ul li a:hover {
+  color: #4c4084;
+}
+
+.bg-mobile-menu, .bg-mobile-search {
+  background: url("../images/51-1.jpg") center;
+  visibility: hidden;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -2099px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.bg-mobile-menu.open, .bg-mobile-search.open {
+  visibility: visible;
+  left: 0;
+  display: block;
+}
+.bg-mobile-menu:before, .bg-mobile-search:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.98;
+  background: #313b45;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(76, 64, 132, 0.9) 0%, rgba(28, 24, 51, 0.9) 100%);
+}
+
+#close-search {
+  position: absolute;
+  z-index: 99;
+  right: 50px;
+  top: 50px;
+  font-size: 30px;
+  color: rgb(252, 185, 0);
+  cursor: pointer;
+  display: none;
+}
+#close-search.open {
+  display: block;
+}
+
+.mobile-navigation {
+  position: relative;
+  display: none;
+  z-index: 99;
+  top: 50px;
+  transition: all 0.5s ease;
+}
+.mobile-navigation.open {
+  display: block;
+}
+.mobile-navigation #close-menu {
+  position: absolute;
+  z-index: 99;
+  right: 50px;
+  top: -70px;
+  font-size: 30px;
+  color: rgb(252, 185, 0);
+  cursor: pointer;
+}
+.mobile-navigation nav ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  gap: 25px;
+}
+.mobile-navigation nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.mobile-navigation nav ul li a.is-active {
+  color: rgb(252, 185, 0);
+}
+
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+/* 
+    Used for media queries. 
+    Add these mixins in your normal scss flow.
+
+    Eg.
+    .container{
+        width:1024px;
+
+        @include tablets{
+            width:90%;
+        }
+    }
+*/
+/* =======================================================================
+## ++ Unit transform
+========================================================================== */
+/*  
+    Used for making containers have width in percentages. 
+    Usage: define elemnt width in px and the width of parent elemnt in px. 
+    eg. .block{width:cp(512px, 1024px)} this will result in .block{width:50%;}   
+*/
+/*  
+    Used for making px values convert to rem values
+    Usage: define font-size in px and it will convert to rems
+    eg. font-size: rem(14px);
+*/
+.main {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  gap: 35px;
+}
+.main .main__news-one {
+  width: 50%;
+}
+.main .main__news-list {
+  width: 25%;
+}
+.main .main__sidebar-home {
+  width: 20%;
+}
+
+#block-flame-views-block-news-on-home-page-block-1,
+#block-flame-views-block-related-on-home-page-block-1 {
+  display: flex;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-promo-image img,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-promo-image img {
+  width: 100%;
+  display: block;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-category a,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title {
+  margin: 6px 0 2px;
+  font-family: "Gelasio", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title .field-content a,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title .field-content a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-title .field-content a:hover,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title .field-content a:hover {
+  color: #4c4084;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-created,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-created {
+  margin-bottom: 10px;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-created .field-content,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-created .field-content {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+#block-flame-views-block-news-on-home-page-block-1 .views-field-field-announcement .field-content p,
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-announcement .field-content p {
+  margin-top: 15px;
+  color: #555;
+  width: 700px;
+}
+
+#block-flame-views-block-related-on-home-page-block-1 .views-row {
+  margin-bottom: 30px;
+}
+#block-flame-views-block-related-on-home-page-block-1 .views-field-field-category .field-content {
+  position: relative;
+  top: -18px;
+  margin-bottom: -20px;
+}
+#block-flame-views-block-related-on-home-page-block-1 .views-field-title a {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+#block-flame-views-block-editor-picks-block-1-2 .views-field-field-promo-image img,
+#block-flame-views-block-business-news-circle-image-block-1 .views-field-field-promo-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+#block-flame-views-block-editor-picks-block-1-2 h2,
+#block-flame-views-block-business-news-circle-image-block-1 h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  margin-bottom: 10px;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title {
+  width: 70%;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title a,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title a {
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-title a:hover,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-title a:hover {
+  color: #4c4084;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-created,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-created {
+  width: 50%;
+  position: relative;
+  top: -10px;
+}
+#block-flame-views-block-editor-picks-block-1-2 .views-row .views-field-created .field-content,
+#block-flame-views-block-business-news-circle-image-block-1 .views-row .views-field-created .field-content {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#block-flame-views-block-business-news-circle-image-block-1 {
+  margin-top: 40px;
+}
+#block-flame-views-block-business-news-circle-image-block-1 .views-field-created {
+  top: -20px !important;
+}
+
+#block-flame-banner-2 h2 {
+  display: none;
+}
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main.open {
+  display: none;
 }
