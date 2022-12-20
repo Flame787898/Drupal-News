@@ -2,6 +2,11 @@
 /* Setup */
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -193,4 +198,83 @@ body {
 }
 .header #block-flame-account-menu ul li a:hover {
   color: #52529d;
+}
+.header__content {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  max-width: 1600px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+.header__content #block-flame-date div div:first-child {
+  display: none;
+}
+.header__content #block-flame-date div div:last-child {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+}
+@media screen and (max-width: 720px) {
+  .header__content #block-flame-date div div:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__content-left {
+    display: none;
+  }
+}
+.header__content-center {
+  padding: 30px 0 30px 0;
+}
+@media screen and (max-width: 720px) {
+  .header__content-center {
+    padding: 10px 0 10px 0;
+  }
+}
+.header__content-center a {
+  font-family: "Gelasio", serif;
+  font-size: 60px;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+@media screen and (max-width: 1100px) {
+  .header__content-center a {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .header__content-center a {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: serif;
+  }
+}
+.header__content-right {
+  display: flex;
+  gap: 22px;
+}
+.header__content-right #mobile-menu {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right #mobile-menu {
+    display: block;
+  }
+}
+.header__content-right div {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 720px) {
+  .header__content-right div {
+    display: none;
+  }
+}
+.header__content-right #block-flame-searchform {
+  display: none;
 }

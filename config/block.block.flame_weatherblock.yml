@@ -17,7 +17,7 @@ plugin: 'block_content:0a5787f4-dcc1-4ec2-8114-60acf4f264e9'
 settings:
   id: 'block_content:0a5787f4-dcc1-4ec2-8114-60acf4f264e9'
   label: 'weather block'
-  label_display: visible
+  label_display: '0'
   provider: block_content
   status: true
   info: ''
