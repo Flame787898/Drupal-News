@@ -625,3 +625,270 @@ main.open {
 #block-flame-banner-2 h2 {
   display: none;
 }
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner > div {
+  padding: 30px 0 30px 0;
+  width: 100%;
+  max-width: 1068px;
+  border: 1px solid #ddd;
+}
+.banner > div > div {
+  display: flex;
+  justify-content: center;
+}
+.banner > div > div h2 {
+  display: none;
+}
+
+.news {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+}
+.news__left-sidebar > div > div, .news__list > div > div {
+  padding: 15px 25px 25px 25px;
+  border: 1px solid #ddd;
+}
+.news__left-sidebar > div > div h2, .news__list > div > div h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  margin-bottom: 10px;
+}
+.news__left-sidebar > div > div .views-row, .news__list > div > div .views-row {
+  margin-bottom: 35px;
+}
+.news__left-sidebar > div > div .views-row .views-field-created, .news__list > div > div .views-row .views-field-created {
+  margin-top: 5px;
+}
+.news__left-sidebar > div > div .views-row .views-field-created span, .news__list > div > div .views-row .views-field-created span {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.news__left-sidebar > div > div .views-row .views-field-title, .news__list > div > div .views-row .views-field-title {
+  margin-top: 10px;
+}
+.news__left-sidebar > div > div .views-row .views-field-title a, .news__list > div > div .views-row .views-field-title a {
+  font-family: "Gelasio", sans-serif;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.5s ease;
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+.news__left-sidebar > div > div .views-row .views-field-title a:hover, .news__list > div > div .views-row .views-field-title a:hover {
+  color: #4c4084;
+}
+.news__left-sidebar > div > div .views-row .views-field-field-category, .news__list > div > div .views-row .views-field-field-category {
+  position: relative;
+  top: -20px;
+  margin-bottom: -20px;
+}
+.news__left-sidebar > div > div .views-row .views-field-field-category a, .news__list > div > div .views-row .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.news__list {
+  position: relative;
+}
+.news__list > div .views-element-container:nth-child(1) {
+  padding: 0;
+  border: 0;
+}
+.news__list > div .views-element-container:nth-child(1) h2 {
+  margin: 15px 0 30px 0;
+  position: relative;
+  z-index: 99;
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  left: 10px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-field-title .field-content a {
+  font-size: 32px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-field-field-announcement {
+  margin-top: 10px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-field-field-announcement p {
+  font-size: 14px;
+  color: #555;
+}
+.news__list > div .views-element-container:nth-child(1) header h2 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 90px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -30px;
+  z-index: 9;
+  left: -7px;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #f3f3f3;
+  line-height: 1;
+}
+.news__list > div .views-element-container:nth-child(2) {
+  padding: 0;
+  border: 0;
+}
+.news__list > div .views-element-container:nth-child(2) h2:first-child {
+  display: none;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-field-announcement {
+  float: left;
+  width: 50%;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-field-announcement p {
+  color: #555555;
+  font-size: 15px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-created {
+  float: left;
+  margin-top: 3px;
+  margin-left: 25px;
+  color: #000;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-title {
+  border-top: 1px solid #ddd;
+  float: left;
+  clear: right;
+  margin-left: 25px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  font-family: "Gelasio", serif;
+  width: 52%;
+  line-height: 1.1;
+  font-weight: 700;
+  position: relative;
+  top: -10px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-title a {
+  color: #000;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: block;
+  margin-top: 15px;
+  font-size: 21px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-title a:hover {
+  color: #4c4084;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-field-category {
+  position: absolute;
+  left: 0;
+  top: 160px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-row {
+  position: relative;
+  height: 180px;
+  margin-bottom: 30px;
+}
+.news__list > div .views-element-container:nth-child(2) > div > div .views-row .views-field-field-promo-image {
+  float: left;
+}
+.news__right-sidebar > div div:nth-child(2) h2 {
+  display: none;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1),
+.news__right-sidebar > div .views-element-container:nth-child(3) {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) footer a,
+.news__right-sidebar > div .views-element-container:nth-child(3) footer a {
+  display: block;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) h2,
+.news__right-sidebar > div .views-element-container:nth-child(3) h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  margin-bottom: 10px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 45px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-field-promo-image,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-field-promo-image {
+  position: absolute;
+  right: 0;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-created,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-created {
+  width: 60%;
+  margin-top: 10px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-created span,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-created span {
+  font-size: 13px;
+  font-style: italic;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-title {
+  width: 65%;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title .field-content a,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-title .field-content a {
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title .field-content a:hover,
+.news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-title .field-content a:hover {
+  color: #4c4084;
+}
