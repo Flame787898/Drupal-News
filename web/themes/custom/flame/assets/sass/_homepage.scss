@@ -181,6 +181,262 @@
   }
 }
 
+.info {
+  width: 100%;
+  max-width: $big_content;
+  margin: 0 auto;
+
+  & > div {
+    display: flex;
+    gap: 30px
+  }
+
+  #block-views-block-audio-news-block-1-2,
+  #block-subscribetoournewsletter-2 {
+    position: relative;
+    background: $gray;
+    padding: 20px;
+    width: 33%;
+    float: left;
+
+    h2 {
+      color: $main_violet;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .form-text {
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    #mc-embedded-subscribe-form {
+      margin-top: 20px;
+
+      .tdn-email-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0;
+
+      .views-field-created {
+        margin-top: 5px;
+
+        span {
+          font-size: 13px;
+          font-style: italic;
+        }
+      }
+
+      .views-field-field-audio {
+        position: relative;
+        left: -18px;
+      }
+
+      .views-field-field-promo-image {
+        position: absolute;
+        right: 20px;
+
+        img {
+          width: 95px;
+          height: 95px;
+          border-radius: 50%;
+        }
+      }
+
+      .views-field-created {
+        width: 70%;
+      }
+
+      .views-field-title {
+        width: 70%;
+
+        a {
+          font-family: 'Gelasio', sans-serif;
+          font-size: 15px;
+          line-height: 1.1;
+          font-weight: 700;
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .tdn-input-wrap {
+      width: 100%;
+
+      input {
+        border: 1px solid $border_color;
+        text-indent: 5px;
+        height: 40px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#block-subscribetoournewsletter-2 {
+  .tdn-btn-wrap {
+    button {
+      border: 0;
+      background: $main_violet;
+      height: 40px;
+      color: #fff;
+      padding: 0 20px 0 20px;
+    }
+  }
+}
+
+#block-stayconnected {
+  background: $gray;
+  width: 33%;
+  padding: 20px;
+
+  h2 {
+    color: $main_violet;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px
+  }
+
+  .wrap-row {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+
+    .block {
+      width: 32%;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: $transition;
+      cursor: pointer;
+      position: relative;
+      &__count {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      a{
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        display: block;
+      }
+      i {
+        font-size: 22px;
+      }
+
+      &:nth-child(1) {
+        background: #516eab;
+        color: #fff;
+
+        &:hover {
+          background: #000;
+        }
+      }
+
+      &:nth-child(2) {
+        background: #29c5f6;
+        color: #fff;
+
+        &:hover {
+          background: #000;
+        }
+      }
+
+      &:nth-child(3) {
+        background: #e14e42;
+        color: #fff;
+
+        &:hover {
+          background: #000;
+        }
+
+      }
+    }
+  }
+
+}
+
+.news {
+  width: 100%;
+  max-width: $small_content;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  display: flex;
+  align-items: start;
+  gap: 30px;
+
+  &__left-sidebar {
+    border: 1px solid $border_color;
+    padding: 20px;
+    height: auto;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #4c4084;
+      margin-bottom: 10px
+    }
+
+    .views-row {
+      padding: 10px 0 15px 0;
+      border-bottom: 1px solid $border_color;
+
+      .views-field-title {
+        a {
+          color: $black;
+          text-decoration: none;
+          font-family: 'Gelasio', sans-serif;
+          font-size: 15px;
+          line-height: 1.1;
+          font-weight: 700;
+          transition: $transition;
+
+          &:hover {
+            color: $main_violet;
+          }
+        }
+      }
+
+      .views-field-created {
+        span {
+          font-size: 13px;
+          line-height: 1;
+          font-style: italic;
+          font-weight: 400;
+        }
+      }
+    }
+
+    footer {
+      a {
+        display: block;
+        background: #000;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        color: $white;
+        text-decoration: none;
+        font-size: 13px;
+        border-radius: 3px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
 .news {
   width: 100%;
   max-width: $small_content;
