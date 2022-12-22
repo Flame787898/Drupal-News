@@ -924,3 +924,120 @@ main.open {
 .news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-title .field-content a:hover {
   color: #4c4084;
 }
+
+.news {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  display: flex;
+  align-items: start;
+  gap: 30px;
+}
+.news__list {
+  position: relative;
+}
+.news__list > div .views-element-container:nth-child(1) h2 {
+  margin: 40px 0 30px 0;
+  position: relative;
+  z-index: 99;
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  left: 15px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row {
+  position: relative;
+  height: 180px;
+  margin-bottom: 30px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-field-promo-image {
+  float: left;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-field-announcement {
+  float: left;
+  width: 50%;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-field-announcement p {
+  color: #555555;
+  font-size: 15px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-uid {
+  float: left;
+  margin-left: 25px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-uid a {
+  color: #000;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-uid a:after {
+  content: "-";
+  position: relative;
+  left: 3px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-created {
+  float: left;
+  margin-top: 3px;
+  margin-left: 5px;
+  color: #000;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-field-category {
+  position: absolute;
+  bottom: 2px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-title {
+  float: left;
+  clear: right;
+  margin-left: 25px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  font-family: "Gelasio", serif;
+  width: 55%;
+  height: 40px;
+  font-size: 21px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-title a {
+  color: #000;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.news__list > div .views-element-container:nth-child(1) .views-row .views-field-title a:hover {
+  color: #4c4084;
+}
+.news__list header {
+  font-family: "Roboto", sans-serif;
+  font-size: 90px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -5px;
+  z-index: 9;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #f3f3f3;
+  line-height: 1;
+}
