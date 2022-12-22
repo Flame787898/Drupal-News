@@ -851,3 +851,76 @@ main.open {
   border-radius: 3px;
   margin-top: 20px;
 }
+
+.news {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+  display: flex;
+  align-items: start;
+  gap: 30px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1),
+.news__right-sidebar > div .views-element-container:nth-child(2) {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) footer a,
+.news__right-sidebar > div .views-element-container:nth-child(2) footer a {
+  display: block;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) h2,
+.news__right-sidebar > div .views-element-container:nth-child(2) h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #4c4084;
+  margin-bottom: 10px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 45px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-field-promo-image,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-field-promo-image {
+  position: absolute;
+  right: 0;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-created,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-created {
+  width: 60%;
+  margin-top: 10px;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-created span,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-created span {
+  font-size: 13px;
+  font-style: italic;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-title {
+  width: 65%;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title .field-content a,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-title .field-content a {
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title .field-content a:hover,
+.news__right-sidebar > div .views-element-container:nth-child(2) .views-row .views-field-title .field-content a:hover {
+  color: #4c4084;
+}
