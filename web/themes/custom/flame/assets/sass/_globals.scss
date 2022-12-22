@@ -14,6 +14,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+p, h1, h2, h3, h4, h5, span, div {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+a{
+  font-family: "Gelasio", serif;
+}
 main {
   &.open {
     display: none;

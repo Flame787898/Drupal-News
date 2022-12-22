@@ -7,6 +7,17 @@
     font-family: 'Source Sans Pro', sans-serif;
   }
 
+  &__content-right {
+    i {
+      transition: $transition;
+      color: $black;
+
+      &:hover {
+        color: $main_violet;
+      }
+    }
+  }
+
   &__top-bar {
     background: $black;
     height: 32px;
@@ -15,22 +26,7 @@
     @include phones {
       display: none;
     }
-  }
 
-  &__wrap-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 30px 0 30px;
-    max-width: $big_content;
-
-    div {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-    }
-  }
-
-  #block-flame-aboutus-2 {
     ul {
       display: flex;
       gap: 15px;
@@ -56,51 +52,30 @@
     }
   }
 
-  #block-flame-account-menu {
-    ul {
+  &__wrap-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: $padding_left_right;
+    max-width: $big_content;
+
+    div {
       display: flex;
-
-      li {
-        a {
-          font-size: 13px;
-          color: $white;
-          text-decoration: none;
-          transition: $transition;
-
-          &:hover {
-            color: $main_violet;
-          }
-        }
-      }
+      width: 100%;
+      justify-content: space-between;
     }
   }
+
+
 
   &__content {
     display: flex;
     width: 100%;
     margin: 0 auto;
-    padding: 0 30px 0 30px;
+    padding: $padding_left_right;
     max-width: $big_content;
     justify-content: space-between;
     border-bottom: 1px solid $border_color;
     align-items: center;
-
-    #block-flame-date {
-      div {
-        div:first-child {
-          display: none;
-        }
-
-        div:last-child {
-          text-align: center;
-          @include phones {
-            display: none;
-          }
-          font-family: 'Source Sans Pro', sans-serif;
-          font-size: 14px
-        }
-      }
-    }
 
     &-left {
       @include phones {
@@ -109,6 +84,15 @@
     }
 
     &-center {
+      .date {
+        &__wrap-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 13px;
+        }
+      }
+
       padding: 30px 0 30px 0;
       @include phones {
         padding: 10px 0 10px 0;
@@ -150,14 +134,14 @@
         gap: 20px
       }
 
-      #block-flame-searchform {
+      .search-block-form {
         opacity: 0;
         position: absolute;
         z-index: -1;
         top: 130px;
         width: 100%;
         max-width: 700px;
-        right: 145px;
+        right: 130px;
         background: #fff;
         box-shadow: 0px 0px 2px 0px rgb(0 0 0 / 11%);
         transition: $transition;
@@ -236,7 +220,7 @@
   cursor: pointer;
 }
 
-#block-flame-main-menu {
+.navigation nav {
   ul {
     display: flex;
     justify-content: center;

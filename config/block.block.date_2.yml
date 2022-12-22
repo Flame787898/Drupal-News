@@ -1,0 +1,25 @@
+uuid: 12764aaf-bf5e-4c55-bc0d-58e011e0007f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:date:7b625771-0d22-4039-8bfa-0ee0d5f8b829'
+  module:
+    - block_content
+  theme:
+    - flame
+id: date_2
+theme: flame
+region: header_brand
+weight: 0
+provider: null
+plugin: 'block_content:7b625771-0d22-4039-8bfa-0ee0d5f8b829'
+settings:
+  id: 'block_content:7b625771-0d22-4039-8bfa-0ee0d5f8b829'
+  label: Date
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,11 +1,12 @@
-uuid: 5d161a89-0e0b-4352-b1be-96c2f8a260c7
+uuid: d24f2347-ecd0-4d0c-aa68-bf915e0baf5a
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:stay_connected:dd9a1591-1c25-43d0-a80d-4a89d6ca06bb'
+    - 'block_content:basic:6109513b-2d11-46db-b14d-833aba9ffd6f'
   module:
     - block_content
+    - system
   theme:
     - flame
 id: stayconnected
@@ -13,13 +14,17 @@ theme: flame
 region: info_block_home
 weight: 0
 provider: null
-plugin: 'block_content:dd9a1591-1c25-43d0-a80d-4a89d6ca06bb'
+plugin: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
 settings:
-  id: 'block_content:dd9a1591-1c25-43d0-a80d-4a89d6ca06bb'
+  id: 'block_content:6109513b-2d11-46db-b14d-833aba9ffd6f'
   label: 'Stay Connected'
   label_display: visible
   provider: block_content
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/taxonomy/*\r\n/node/*"

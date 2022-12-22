@@ -4,29 +4,20 @@ status: true
 dependencies:
   config:
     - block_content.type.date
-    - field.field.block_content.date.body
     - field.field.block_content.date.field_date
   module:
     - datetime
-    - text
 id: block_content.date.default
 targetEntityType: block_content
 bundle: date
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_date:
-    type: datetime_default
+    type: datetime_custom
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      date_format: 'l jS \o\f F Y'
     third_party_settings: {  }
     weight: 1
     region: content
