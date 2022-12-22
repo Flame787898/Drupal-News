@@ -1,0 +1,25 @@
+uuid: 95d30d90-300d-46c4-a5e2-261462c90f68
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:26d112da-88dd-4e65-a7f5-c71923bb23b6'
+  module:
+    - block_content
+  theme:
+    - flame
+id: copyright_2
+theme: flame
+region: footer_sidebar_first
+weight: -15
+provider: null
+plugin: 'block_content:26d112da-88dd-4e65-a7f5-c71923bb23b6'
+settings:
+  id: 'block_content:26d112da-88dd-4e65-a7f5-c71923bb23b6'
+  label: Copyright
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

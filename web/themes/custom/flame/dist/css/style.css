@@ -11,6 +11,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
@@ -891,4 +895,169 @@ main.open {
 .news__right-sidebar > div .views-element-container:nth-child(1) .views-row .views-field-title .field-content a:hover,
 .news__right-sidebar > div .views-element-container:nth-child(3) .views-row .views-field-title .field-content a:hover {
   color: #4c4084;
+}
+
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+/* =======================================================================
+## ++ Unit transform
+========================================================================== */
+/*
+    Used for making containers have width in percentages.
+    Usage: define elemnt width in px and the width of parent elemnt in px.
+    eg. .block{width:cp(512px, 1024px)} this will result in .block{width:50%;}
+*/
+/*
+    Used for making px values convert to rem values
+    Usage: define font-size in px and it will convert to rems
+    eg. font-size: rem(14px);
+*/
+footer[role=contentinfo] {
+  position: relative;
+  color: #fff;
+  background: url("../images/1.png");
+  background-size: cover;
+}
+footer[role=contentinfo] .wrap-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 20px 60px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+footer[role=contentinfo] .wrap-content .tdm-social-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+footer[role=contentinfo] .wrap-content .tdm-social-wrapper a i {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+footer[role=contentinfo] .wrap-content .tdm-social-wrapper a i:hover {
+  color: rgb(252, 185, 0);
+}
+footer[role=contentinfo] .wrap-content .col {
+  width: 100%;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(1) > div > div a[rel=home] {
+  display: block;
+  color: #fff;
+  font-family: "Gelasio", sans-serif;
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(1) > div > div h2 {
+  display: none;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(1) > div > div p {
+  color: #ffffff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(2) > div {
+  margin-left: 220px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(2) > div nav h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: rgb(252, 185, 0);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(2) > div nav ul li {
+  margin-bottom: 10px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(2) > div nav ul li a {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.5s ease;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(2) > div nav ul li a:hover {
+  color: rgb(252, 185, 0);
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div {
+  margin-left: 100px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: rgb(252, 185, 0);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div > div > div .views-row {
+  display: flex;
+  padding-right: 50px;
+  justify-content: space-between;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div > div > div .views-row .views-field-name {
+  margin-bottom: 10px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div > div > div .views-row .views-field-name a {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div > div > div .views-row .views-field-name a:hover {
+  color: rgb(252, 185, 0);
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(3) > div > div > div > div .views-row .views-field-name-1 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div {
+  display: flex;
+  padding-left: 50px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: rgb(252, 185, 0);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 40px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row .views-field-created {
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 10px;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row .views-field-title {
+  font-family: "Gelasio", sans-serif;
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 500;
+  width: 70%;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row .views-field-title a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row .views-field-title a:hover {
+  color: rgb(252, 185, 0);
+}
+footer[role=contentinfo] .wrap-content .col:nth-child(4) > div > div .views-row .views-field-field-promo-image {
+  position: absolute;
+  right: 0;
 }

@@ -1,0 +1,24 @@
+uuid: 491927d5-7e63-438f-aaef-a6511a3d1920
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.editor_picks
+  module:
+    - views
+  theme:
+    - flame
+id: views_block__editor_picks_block_1_3
+theme: flame
+region: footer_sidebar_four
+weight: 0
+provider: null
+plugin: 'views_block:editor_picks-block_1'
+settings:
+  id: 'views_block:editor_picks-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: '2'
+visibility: {  }

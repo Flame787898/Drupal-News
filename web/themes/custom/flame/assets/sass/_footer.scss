@@ -1,0 +1,205 @@
+@import "mixins";
+@import "variables";
+@import "fonts";
+
+footer[role='contentinfo'] {
+  position: relative;
+  color: $white;
+  background: url("../images/1.png");
+  background-size: cover;
+
+  .wrap-content {
+    width: 100%;
+    max-width: $small_content;
+    margin: 0 auto;
+    padding: 60px 20px 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    .tdm-social-wrapper {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+
+      a {
+        i {
+          color: #fff;
+          transition: $transition;
+
+          &:hover {
+            color: $color_active_mobile_link;
+          }
+        }
+      }
+    }
+
+    .col {
+      width: 100%;
+
+    }
+
+    .col:nth-child(1) {
+      & > div > div {
+        a[rel='home'] {
+          display: block;
+          color: $white;
+          font-family: 'Gelasio', sans-serif;
+          font-size: 34px;
+          text-decoration: none;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          display: none;
+        }
+
+        p {
+          color: #ffffff;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .col:nth-child(2) {
+      & > div {
+        margin-left: 220px;
+
+        nav {
+          h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: $color_active_mobile_link;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+
+          ul {
+            li {
+              margin-bottom: 10px;
+
+              a {
+                font-family: 'Source Sans Pro', sans-serif;
+                color: #fff;
+                text-decoration: none;
+                font-size: 12px;
+                transition: $transition;
+
+                &:hover {
+                  color: $color_active_mobile_link;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .col:nth-child(3) {
+
+      & > div > div {
+        margin-left: 100px;
+
+        h2 {
+          font-family: 'Source Sans Pro', sans-serif;
+          color: $color_active_mobile_link;
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        & > div > div {
+          .views-row {
+            display: flex;
+            padding-right: 50px;
+            justify-content: space-between;
+
+            .views-field-name {
+              margin-bottom: 10px;
+
+              a {
+                font-family: 'Source Sans Pro', sans-serif;
+                color: #fff;
+                text-decoration: none;
+                font-size: 12px;
+                text-transform: uppercase;
+                transition: $transition;
+
+                &:hover {
+                  color: $color_active_mobile_link;
+                }
+              }
+
+            }
+
+            .views-field-name-1 {
+              font-family: 'Source Sans Pro', sans-serif;
+              color: #fff;
+              text-decoration: none;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .col:nth-child(4) {
+
+      & > div {
+        display: flex;
+        padding-left: 50px;
+
+        & > div {
+          h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: $color_active_mobile_link;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+
+          .views-row {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            margin-bottom: 40px;
+
+            .views-field-created {
+              font-size: 13px;
+              font-style: italic;
+              margin-top: 10px;
+            }
+
+            .views-field-title {
+              font-family: 'Gelasio', sans-serif;
+              font-size: 15px;
+              line-height: 1.1;
+              font-weight: 500;
+              width: 70%;
+
+              a {
+                color: $white;
+                text-decoration: none;
+                transition: $transition;
+
+                &:hover {
+                  color: $color_active_mobile_link;
+                }
+              }
+
+            }
+
+            .views-field-field-promo-image {
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+uuid: fff92357-04c7-4805-b9af-f2ce2892b997
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - flame
+id: sitebranding_2
+theme: flame
+region: footer_sidebar_first
+weight: -16
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
