@@ -1041,3 +1041,133 @@ main.open {
   color: #f3f3f3;
   line-height: 1;
 }
+
+.must-read {
+  width: 100%;
+  max-width: 1640px;
+  margin: 60px auto;
+  padding: 0 20px 0 20px;
+}
+.must-read:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  max-width: 1600px;
+  width: 100%;
+  height: 200px;
+  background: #4c4084;
+}
+.must-read > div {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px 0 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.must-read > div .views-element-container:nth-child(1) {
+  overflow: hidden;
+}
+.must-read > div .views-element-container:nth-child(1) header {
+  margin-top: 40px;
+}
+.must-read > div .views-element-container:nth-child(1) header h2 {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.must-read > div .views-element-container:nth-child(1) header p {
+  color: #fff;
+  font-family: "Gelasio", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-created {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-title {
+  width: 80%;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-title span a {
+  font-family: Gelasio, serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 32px;
+  display: inline-block;
+  line-height: 1.1;
+  margin-top: 5px;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-title span a:hover {
+  color: #4c4084;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-field-category {
+  position: relative;
+  top: -20px;
+  margin-bottom: -20px;
+}
+.must-read > div .views-element-container:nth-child(1) .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div {
+  display: grid;
+  grid-template-columns: 380px 380px;
+  gap: 40px;
+  margin-top: 235px;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row {
+  position: relative;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row .views-field-field-category {
+  position: relative;
+  top: -20px;
+  margin-bottom: -20px;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row .views-field-field-category a {
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: #4c4084;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row .views-field-created {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row .views-field-title span a {
+  font-family: Gelasio, serif;
+  font-weight: 700;
+  color: #000;
+  display: inline-block;
+  line-height: 19px;
+  margin-top: 5px;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.must-read > div .views-element-container:nth-child(2) > div > div .views-row .views-field-title span a:hover {
+  color: #4c4084;
+}
