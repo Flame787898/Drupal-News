@@ -1,0 +1,25 @@
+uuid: 4f120ccf-0164-4444-b7b6-b1fe512d9a34
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0523a182-81ac-440d-9686-f56612093e4a'
+  module:
+    - block_content
+  theme:
+    - flame
+id: sociallinkfooter_2
+theme: flame
+region: footer_sidebar_first
+weight: -14
+provider: null
+plugin: 'block_content:0523a182-81ac-440d-9686-f56612093e4a'
+settings:
+  id: 'block_content:0523a182-81ac-440d-9686-f56612093e4a'
+  label: 'Social link footer '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

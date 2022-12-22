@@ -2,10 +2,6 @@ uuid: e07c40b8-ae19-4a52-8d6e-ec632f340a81
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:date:b5d9475c-f089-4796-abeb-f115ef0dbc84'
-  module:
-    - block_content
   theme:
     - flame
 id: flame_date

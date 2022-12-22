@@ -1,0 +1,25 @@
+uuid: 85a2307c-f7a6-42b6-8fdb-22f2254fcd70
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about-us
+  module:
+    - system
+  theme:
+    - flame
+id: aboutus_3
+theme: flame
+region: footer_sidebar_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:about-us'
+settings:
+  id: 'system_menu_block:about-us'
+  label: 'About Us'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
