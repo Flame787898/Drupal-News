@@ -351,9 +351,16 @@
       }
     }
 
+    /*btn*/
     footer {
       a {
         @include black-btn;
+        font-family: 'Source Sans Pro', sans-serif;
+
+        i {
+          font-size: 10px;
+          padding-left: 5px;
+        }
       }
     }
   }
@@ -362,186 +369,173 @@
     width: 30%;
     max-width: 340px;
 
-    & > div {
-      .views-element-container:nth-child(1),
-      .views-element-container:nth-child(2) {
-        border: 1px solid $border_color;
-        padding: 20px;
-        margin-bottom: 20px;
+    .views-element-container:nth-child(2) {
+      h2 {
+        display: none;
+      }
 
-        footer {
-          a {
-            @include black-btn;
-          }
-        }
-
-        h2 {
-          @include color-title;
-        }
-
-        .views-row {
-          display: flex;
-          flex-wrap: wrap;
-          position: relative;
-          margin-bottom: 45px;
-
-          .views-field-field-promo-image {
-            position: absolute;
-            right: 0;
-          }
-
-          .views-field-created {
-            width: 60%;
-            margin-top: 10px;
-
-            span {
-              @include created-author;
-            }
-          }
-
-          .views-field-title {
-            width: 65%;
-
-            .field-content {
-
-              a {
-                @include hover-link;
-                @include small-title;
-              }
-            }
-          }
-        }
-
+      h2.title {
+        display: block;
       }
     }
+
+    .views-element-container {
+      border: 1px solid $border_color;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      footer {
+        max-width: 150px;
+
+        a {
+          @include black-btn;
+          font-family: 'Source Sans Pro', sans-serif;
+
+          i {
+            font-size: 10px;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      h2 {
+        @include color-title;
+      }
+
+      .views-row {
+        display: grid;;
+        margin-bottom: 30px;
+        grid-template-columns: 220px 80px;
+        grid-template-rows: 20px 40px;
+
+        .views-field-field-promo-image {
+          grid-column-start: 2;
+          grid-row-start: 1;
+        }
+
+        .views-field-created {
+          grid-column-start: 1;
+          grid-row-start: 3;
+
+          span {
+            @include created-author;
+          }
+        }
+
+        .views-field-title {
+          padding-right: 20px;
+          grid-column-start: 1;
+          grid-row-start: 1;
+
+          .field-content {
+
+            a {
+              @include hover-link;
+              @include small-title;
+            }
+          }
+        }
+      }
+
+    }
+
   }
 
   &__list {
     position: relative;
-    width: 50%;
+    width: 55%;
 
-    & > div {
-      .views-element-container:nth-child(1) {
-        h2 {
-          margin: 40px 0 30px 0;
-          position: relative;
-          z-index: 99;
-          font-size: 24px;
-          font-weight: 900;
-          color: $main_violet;
-          left: 15px;
+    .views-element-container {
+      h2 {
+        @include color-title;
+        margin: 40px 0 30px 0;
+        z-index: 99;
+        position: relative;
+        left: 15px;
+      }
+
+      .views-row {
+        position: relative;
+        margin-bottom: 30px;
+        display: grid;
+        grid-template-columns: 300px 450px;
+        grid-template-rows: repeat(6, 30px);
+        grid-auto-rows: minmax(50px, auto);
+
+        .views-field-field-category {
+          grid-row-start: 6;
+          margin-top: 10px;
+
+          a {
+            @include small-category;
+          }
         }
 
-        .views-row {
-          position: relative;
-          height: 180px;
-          margin-bottom: 30px;
+        .views-field-title {
+          width: 90%;
+          margin-left: 20px;
+          border-top: 1px solid $border_color;
+          grid-column-start: 2;
+          grid-row-start: 1;
+          padding: 10px 0 10px;
+          @include list-news-title;
 
-          .views-field-field-promo-image {
-            float: left;
+          a {
+            @include hover-link;
           }
+        }
 
-          .views-field-field-announcement {
-            float: left;
-            width: 50%;
-            margin-left: 25px;
-            margin-top: 15px;
+        .views-field-field-promo-image {
+          grid-column-start: 1;
+          grid-row-start: 1;
+        }
 
-            p {
-              color: #555555;
-              font-size: 15px;
-              font-family: 'Source Sans Pro', sans-serif;
-            }
+        .views-field-field-announcement {
+          grid-column-start: 2;
+          grid-row-start: 4;
+          margin-left: 20px;
+          width: 90%;
+
+          p {
+            color: #555555;
+            font-size: 15px;
+            font-family: 'Source Sans Pro', sans-serif;
           }
+        }
 
-          .views-field-uid {
-            float: left;
-            margin-left: 25px;
+        .views-field-uid {
+          grid-column-start: 2;
+          grid-row-start: 3;
+          margin-left: 20px;
+          margin-top: 3px;
 
-            a {
-              color: $black;
-              font-size: 13px;
-              text-decoration: none;
-              line-height: 1;
-              font-style: italic;
-              font-weight: 400;
-
-              &:after {
-                content: '-';
-                position: relative;
-                left: 3px;
-              }
-            }
-          }
-
-          .views-field-created {
-            float: left;
-            margin-top: 3px;
-            margin-left: 5px;
+          a {
             color: $black;
-            font-size: 13px;
             text-decoration: none;
-            line-height: 1;
-            font-style: italic;
-            font-weight: 400;
-          }
+            @include created-author;
 
-          .views-field-field-category {
-            position: absolute;
-            bottom: 2px;
-
-            a {
-              display: inline-block;
-              padding: 3px 4px 2px;
-              background-color: #4c4084;
-              font-weight: 400;
-              color: #fff;
-              text-decoration: none;
-              font-size: 10px;
-              text-transform: uppercase;
-              letter-spacing: 1px;
+            &:after {
+              content: '-';
+              position: relative;
+              left: 3px;
             }
           }
-
-          .views-field-title {
-            float: left;
-            clear: right;
-            margin-left: 25px;
-            margin-right: 50px;
-            margin-bottom: 10px;
-            font-family: "Gelasio", serif;
-            width: 55%;
-            height: 40px;
-            font-size: 21px;
-            line-height: 1.1;
-            font-weight: 700;
-
-            a {
-              color: $black;
-              transition: $transition;
-              text-decoration: none;
-
-              &:hover {
-                color: $main_violet;
-              }
-            }
-          }
-
         }
+
+        .views-field-created {
+          margin-left: 68px;
+          margin-top: 6px;
+          @include created-author;
+          grid-column-start: 2;
+          grid-row-start: 3;
+        }
+
+
       }
     }
 
     header {
-      font-family: 'Roboto', sans-serif;
-      font-size: 90px;
-      text-transform: uppercase;
-      position: absolute;
-      top: -5px;
-      z-index: 9;
-      white-space: nowrap;
-      font-weight: bold;
-      color: #f3f3f3;
-      line-height: 1;
+      @include big-gray-title;
     }
   }
 }
@@ -565,11 +559,8 @@
     background: $main_violet;
   }
 
-  & > div {
-    width: 100%;
-    max-width: $small_content;
-    padding: 0 20px 0 20px;
-    margin: 0 auto;
+  &__wrap-content {
+    @include small-content;
     display: flex;
     justify-content: space-between;
 
@@ -596,55 +587,35 @@
 
       .views-field-created {
         margin-top: 10px;
-        font-size: 13px;
-        line-height: 1;
-        font-style: italic;
-        font-weight: 400;
+        @include created-author;
       }
 
       .views-field-title {
-        width: 80%;
+        margin-top: 10px;
+        width: 99%;
 
         span {
           a {
-            font-family: Gelasio, serif;
-            font-weight: 700;
-            color: $black;
-            font-size: 32px;
-            display: inline-block;
-            line-height: 1.1;
-            margin-top: 5px;
-            transition: $transition;
-            text-decoration: none;
+            @include big-title;
+            @include hover-link;
 
-            &:hover {
-              color: $main_violet;
-            }
           }
         }
       }
 
       .views-field-field-category {
         position: relative;
-        top: -20px;
-        margin-bottom: -20px;
+        top: -21px;
+        margin-bottom: -21px;
 
         a {
-          display: inline-block;
-          padding: 3px 4px 2px;
-          background-color: #4c4084;
-          font-weight: 400;
-          color: #fff;
-          text-decoration: none;
-          font-size: 10px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          @include small-category;
         }
       }
     }
 
     .views-element-container:nth-child(2) {
-      & > div > div {
+      .wrapper > div {
         display: grid;
         grid-template-columns: 380px 380px;
         gap: 40px;
@@ -655,28 +626,17 @@
 
           .views-field-field-category {
             position: relative;
-            top: -20px;
-            margin-bottom: -20px;
+            top: -21px;
+            margin-bottom: -21px;
 
             a {
-              display: inline-block;
-              padding: 3px 4px 2px;
-              background-color: #4c4084;
-              font-weight: 400;
-              color: #fff;
-              text-decoration: none;
-              font-size: 10px;
-              text-transform: uppercase;
-              letter-spacing: 1px;
+              @include small-category;
             }
           }
 
           .views-field-created {
             margin-top: 10px;
-            font-size: 13px;
-            line-height: 1;
-            font-style: italic;
-            font-weight: 400;
+            @include created-author;
           }
 
           .views-field-title {
@@ -708,22 +668,102 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px auto;
+  padding: 30px 0 30px 0;
+  width: 100%;
+  max-width: 1068px;
+  border: 1px solid $border_color;
 
-  & > div {
-    padding: 30px 0 30px 0;
-    width: 100%;
-    max-width: 1068px;
-    border: 1px solid $border_color;
+  h2 {
+    display: none;
+  }
 
-    & > div {
-      display: flex;
-      justify-content: center;
+}
 
+.second__news {
+  &__list {
+    .views-element-container {
       h2 {
-        display: none;
+        margin: 0 0 30px 0;
+        left: 12px;
+        top: 10px
+      }
+    }
+
+    .views-element-container:nth-child(1) {
+      .views-row {
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows: 528px 35px 90px 30px;
+
+        .views-field-field-announcement {
+          margin: 0;
+          grid-column-start: 1;
+          grid-row-start: 5;
+        }
+
+        .views-field-created {
+          grid-column-start: 1;
+          grid-row-start: 4;
+          margin: 0;
+        }
+
+        .views-field-field-category {
+          grid-row-start: 2;
+        }
+
+        .views-field-title {
+          width: 100%;
+          margin: 0;
+          border-top: 0;
+          grid-column-start: 1;
+          grid-row-start: 3;
+          @include big-title;
+        }
+      }
+
+    }
+
+    .views-element-container:nth-child(2) {
+      .views-field-created {
+        margin: 7px 0 0 20px;
+      }
+    }
+
+    .wrapper {
+      header h2 {
+        @include big-gray-title;
+        top: -30px;
+        left: -5px;
+      }
+    }
+
+  }
+
+  &__left-sidebar {
+    .views-element-container {
+      .views-row {
+        border-bottom: 0;
+
+        .views-field-field-category {
+          position: relative;
+          top: -21px;
+          margin-bottom: -10px;
+
+          a {
+            @include small-category
+          }
+        }
       }
     }
   }
-
+  &__right-sidebar{
+      .sidebar-news{
+       margin-top: 30px;
+        .views-field-title{
+          padding: 0 !important;
+        }
+      }
+  }
 }
 

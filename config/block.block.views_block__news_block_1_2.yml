@@ -12,7 +12,7 @@ dependencies:
 id: views_block__news_block_1_2
 theme: flame
 region: right_sidebar_home_second
-weight: 0
+weight: -15
 provider: null
 plugin: 'views_block:news-block_1'
 settings:

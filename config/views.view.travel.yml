@@ -364,8 +364,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<a href="/taxonomy/term/9" class="btn more__read">More from travel</a>'
-            format: basic_html
+            value: '<a href="/taxonomy/term/9" class="btn more__read">More from travel <i class="fa-solid fa-bars"></i></a>'
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:

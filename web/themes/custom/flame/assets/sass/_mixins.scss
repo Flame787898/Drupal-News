@@ -23,13 +23,14 @@
 }
 
 @mixin small-category {
+  font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
   padding: 3px 4px 2px;
   background-color: $main_violet;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -44,6 +45,13 @@
 @mixin big-title {
   font-family: "Gelasio", serif;
   font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@mixin list-news-title {
+  font-family: "Gelasio", serif;
+  font-size: 21px;
   line-height: 1.1;
   font-weight: 700;
 }
@@ -69,12 +77,14 @@
   width: 100%;
   max-width: $small_content;
   margin: 0 auto;
+  padding: $padding_left_right;
 }
 
 @mixin big-content {
   width: 100%;
   max-width: $big_content;
   margin: 0 auto;
+  padding: $padding_left_right;
 }
 
 @mixin black-btn {
@@ -88,6 +98,23 @@
   font-size: 13px;
   border-radius: 3px;
   margin-top: 20px;
+  transition: $transition;
+  &:hover {
+    background: $main_violet;
+  }
+}
+
+@mixin big-gray-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 90px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -5px;
+  z-index: 9;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #f3f3f3;
+  line-height: 1;
 }
 
 @mixin created-author {

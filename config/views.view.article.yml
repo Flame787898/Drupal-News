@@ -284,8 +284,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<a href="/" class="all__news">View All News</a>'
-            format: basic_html
+            value: '<a href="/" class="all__news">View All News <i class="fa-solid fa-bars"></i></a>'
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
