@@ -208,7 +208,7 @@ main.open {
 .header__content-center {
   padding: 30px 0 30px 0;
 }
-.header__content-center .date__wrap-content {
+.header__content-center .block__Date {
   display: flex;
   align-items: center;
   justify-content: center;

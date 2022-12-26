@@ -25,16 +25,19 @@
  * @see template_preprocess_block()
  */
 #}
-<div class="date">
+{%
+
+  set classes = [
+  configuration.label ? 'block__' ~ configuration.label,
+]
+%}
+<div {{ attributes.addClass(classes)}} >
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
-  <div class="date__wrap-content">
-    {% block content %}
-      {{ content.field_date }}
-    {% endblock %}
-  </div>
-
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </div>
