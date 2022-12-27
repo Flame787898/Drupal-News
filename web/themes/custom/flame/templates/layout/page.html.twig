@@ -47,10 +47,10 @@
 #}
 <div class="layout-container">
 
-  <header class="header">
+  <header class="header" id="header">
     <div class="header__top-bar">
       <div class="header__wrap-content">
-        {{page.top_bar}}
+        {{ page.top_bar }}
       </div>
     </div>
     <div class="header__content">
@@ -62,10 +62,10 @@
       </div>
       <div class="header__content-right">
         {{ page.header_right }}
-          <div class="bg-mobile-search"></div>
-          <i class="fa-solid fa-xmark" id="close-search"></i>
-          <i class="fa-sharp fa-solid fa-magnifying-glass" id="search-bar"></i>
-          <i class="fa-sharp fa-solid fa-bars" id="mobile-menu"></i>
+        <div class="bg-mobile-search"></div>
+        <i class="fa-solid fa-xmark" id="close-search"></i>
+        <i class="fa-sharp fa-solid fa-magnifying-glass" id="search-bar"></i>
+        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu"></i>
       </div>
     </div>
     <nav class="navigation">
@@ -79,25 +79,25 @@
   </header>
   <main role="main">
     {% if page.home_main_news %}
-     <section class="main">
+      <section class="main">
 
-       <div class="main__news-one">
-         {{ page.home_main_news }}
-       </div>
+        <div class="main__news-one">
+          {{ page.home_main_news }}
+        </div>
 
-       {% if  page.related_news  %}
-       <div class="main__news-list">
-         {{ page.related_news }}
-       </div>
-       {% endif %}
+        {% if  page.related_news %}
+          <div class="main__news-list">
+            {{ page.related_news }}
+          </div>
+        {% endif %}
 
-       {% if  page.sidebar_main_home   %}
-         <aside class="main__sidebar-home">
-           {{ page.sidebar_main_home }}
-         </aside>
-       {% endif %}
+        {% if  page.sidebar_main_home %}
+          <aside class="main__sidebar-home">
+            {{ page.sidebar_main_home }}
+          </aside>
+        {% endif %}
 
-     </section>
+      </section>
     {% endif %}
 
     {% if page.info_block_home %}
@@ -106,32 +106,32 @@
       </section>
     {% endif %}
 
-    {% if page.list_news_first  %}
-    <section class="news">
+    {% if page.list_news_first %}
+      <section class="news">
 
-      {% if page.left_sidebar_home_first %}
-        <aside class="news__left-sidebar">
-          {{ page.left_sidebar_home_first }}
-        </aside>
-      {% endif %}
+        {% if page.left_sidebar_home_first %}
+          <aside class="news__left-sidebar">
+            {{ page.left_sidebar_home_first }}
+          </aside>
+        {% endif %}
 
         <div class="news__list">
           {{ page.list_news_first }}
         </div>
 
-      {% if page.right_sidebar_home_first %}
-        <aside class="news__right-sidebar">
-          {{ page.right_sidebar_home_first }}
-        </aside>
-      {% endif %}
+        {% if page.right_sidebar_home_first %}
+          <aside class="news__right-sidebar">
+            {{ page.right_sidebar_home_first }}
+          </aside>
+        {% endif %}
 
-    </section>
+      </section>
     {% endif %}
 
     {% if page.must_read_home %}
-    <section class="must-read">
-      {{ page.must_read_home }}
-    </section>
+      <section class="must-read">
+        {{ page.must_read_home }}
+      </section>
     {% endif %}
 
     {% if page.banner %}
@@ -141,37 +141,41 @@
     {% endif %}
 
     {% if page.list_news_second %}
-    <section class="news">
-      {% if page.left_sidebar_home_second %}
-        <aside class="news__left-sidebar">
-          {{ page.left_sidebar_home_second }}
-        </aside>
-      {% endif %}
+      <section class="news second__news">
+        {% if page.left_sidebar_home_second %}
+          <aside class="news__left-sidebar second__news__left-sidebar">
+            {{ page.left_sidebar_home_second }}
+          </aside>
+        {% endif %}
 
-      <div class="news__list">
-        {{ page.list_news_second }}
-      </div>
+        <div class="news__list second__news__list">
+          {{ page.list_news_second }}
+        </div>
 
-      {% if page.right_sidebar_home_second %}
-        <aside class="news__right-sidebar">
-          {{ page.right_sidebar_home_second }}
-        </aside>
-      {% endif %}
+        {% if page.right_sidebar_home_second %}
+          <aside class="news__right-sidebar second__news__right-sidebar">
+            {{ page.right_sidebar_home_second }}
+          </aside>
+        {% endif %}
 
-    </section>
+      </section>
     {% endif %}
-    <section class="main-content">
-      {{ page.content }}
-    </section>
+
+    {% if not is_front %}
+      <section class="main-content">
+        {{ page.content }}
+      </section>
+    {% endif %}
   </main>
 
-    <footer role="contentinfo">
-      <div class="wrap-content">
-        <div class="col">{{page.footer_sidebar_first}}</div>
-        <div class="col">{{page.footer_sidebar_second}}</div>
-        <div class="col">{{page.footer_sidebar_third}}</div>
-        <div class="col">{{page.footer_sidebar_four}}</div>
-      </div>
-    </footer>
+  <footer role="contentinfo">
+    <a href="#header" class="up-btn"><i class="fa-solid fa-chevron-up"></i></a>
+    <div class="wrap-content">
+      <div class="col">{{ page.footer_sidebar_first }}</div>
+      <div class="col">{{ page.footer_sidebar_second }}</div>
+      <div class="col">{{ page.footer_sidebar_third }}</div>
+      <div class="col">{{ page.footer_sidebar_four }}</div>
+    </div>
+  </footer>
 
 </div>

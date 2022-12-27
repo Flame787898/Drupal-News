@@ -3,6 +3,7 @@
 @import "fonts";
 
 footer[role='contentinfo'] {
+  margin-top: 30px;
   position: relative;
   color: $white;
   background: url("../images/1.png");
@@ -40,7 +41,7 @@ footer[role='contentinfo'] {
     }
 
     .col:nth-child(1) {
-      & > div > div {
+
         a[rel='home'] {
           display: block;
           color: $white;
@@ -62,12 +63,12 @@ footer[role='contentinfo'] {
           font-size: 14px;
           line-height: 1.4;
         }
-      }
+
     }
 
     .col:nth-child(2) {
       & > div {
-        margin-left: 220px;
+        margin-left: 160px;
 
         nav {
           h2 {
@@ -88,7 +89,7 @@ footer[role='contentinfo'] {
                 text-decoration: none;
                 font-size: 12px;
                 transition: $transition;
-
+                text-transform: uppercase;
                 &:hover {
                   color: $color_active_mobile_link;
                 }
@@ -101,8 +102,7 @@ footer[role='contentinfo'] {
 
     .col:nth-child(3) {
 
-      & > div > div {
-        margin-left: 100px;
+        margin-left: 130px;
 
         h2 {
           font-family: 'Source Sans Pro', sans-serif;
@@ -112,10 +112,10 @@ footer[role='contentinfo'] {
           margin-bottom: 20px;
         }
 
-        & > div > div {
+
           .views-row {
             display: flex;
-            padding-right: 50px;
+            padding-right: 120px;
             justify-content: space-between;
 
             .views-field-name {
@@ -143,8 +143,8 @@ footer[role='contentinfo'] {
               font-size: 12px;
             }
           }
-        }
-      }
+
+
     }
 
     .col:nth-child(4) {
@@ -201,5 +201,20 @@ footer[role='contentinfo'] {
         }
       }
     }
+  }
+}
+
+.up-btn {
+  position: fixed;
+  bottom: -55px;
+  right: 0;
+  background: $main_violet;
+  width: 35px;
+  height: 35px;
+  line-height: 40px;
+  text-align: center;
+  color: $white;
+  &.open{
+   bottom: 5px;
   }
 }

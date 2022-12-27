@@ -1,3 +1,5 @@
+@import "variables";
+
 /* =======================================================================
 ## ++ Media Queries
 ========================================================================== */
@@ -17,6 +19,118 @@
 @mixin phones {
   @media screen and (max-width: 720px) {
     @content;
+  }
+}
+
+@mixin small-category {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: inline-block;
+  padding: 3px 4px 2px;
+  background-color: $main_violet;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin color-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: $main_violet;
+  margin-bottom: 10px;
+}
+
+@mixin big-title {
+  font-family: "Gelasio", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@mixin list-news-title {
+  font-family: "Gelasio", serif;
+  font-size: 21px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@mixin middle-title {
+  font-family: "Gelasio", serif;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 19px;
+  margin-top: 5px;
+}
+
+@mixin small-title {
+  font-family: 'Gelasio', sans-serif;
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+@mixin small-content {
+  width: 100%;
+  max-width: $small_content;
+  margin: 0 auto;
+  padding: $padding_left_right;
+}
+
+@mixin big-content {
+  width: 100%;
+  max-width: $big_content;
+  margin: 0 auto;
+  padding: $padding_left_right;
+}
+
+@mixin black-btn {
+  display: block;
+  background: $black;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  color: $white;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 3px;
+  margin-top: 20px;
+  transition: $transition;
+  &:hover {
+    background: $main_violet;
+  }
+}
+
+@mixin big-gray-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 90px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -5px;
+  z-index: 9;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #f3f3f3;
+  line-height: 1;
+}
+
+@mixin created-author {
+  font-size: 13px;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin hover-link {
+  color: #000;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $main_violet;
   }
 }
 

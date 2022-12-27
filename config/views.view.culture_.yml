@@ -363,8 +363,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<a href="https://redmine.devbranch.work/"><img alt="banner" data-entity-type="file" data-entity-uuid="2c493191-dc3e-4940-8100-f1e06ef9d231" src="/sites/default/files/inline-images/banner.jpg" width="300" height="250" loading="lazy"></a>'
-            format: basic_html
+            value: "<a href=\"https://redmine.devbranch.work/\"><img alt=\"banner\" data-entity-type=\"file\" data-entity-uuid=\"2c493191-dc3e-4940-8100-f1e06ef9d231\" src=\"/sites/default/files/inline-images/banner.jpg\" width=\"300\" height=\"250\" loading=\"lazy\"></a>\r\n<h2 class=\"title\">Culture</h2>"
+            format: full_html
           tokenize: false
       footer:
         area:
@@ -377,8 +377,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<a href="/taxonomy/term/6" class="btn read__more">More from culture</a>'
-            format: basic_html
+            value: '<a href="/taxonomy/term/6" class="btn read__more">More from culture <i class="fa-solid fa-bars"></i></a>'
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:

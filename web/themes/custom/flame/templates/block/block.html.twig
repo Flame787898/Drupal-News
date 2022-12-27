@@ -25,34 +25,19 @@
  * @see template_preprocess_block()
  */
 #}
-<div class="stay-block" {{ attributes }}>
+{%
+
+  set classes = [
+  configuration.label ? 'block__' ~ configuration.label,
+]
+%}
+<div {{ attributes.addClass(classes)}} >
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}> {{ label }}</h2>
+    <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-   {{ content }}
-    <div class="wrap-row">
-      <div class="block">
-        <a class="block__link" href="https://fontawesome.com/"></a>
-        <i class="fa-brands fa-twitter"></i>
-        <span class="block__count">16,985</span>
-        <span class="block__text">Fans</span>
-      </div>
-      <div class="block">
-        <a class="block__link" href="https://fontawesome.com/"></a>
-        <i class="fa-brands fa-facebook-f"></i>
-        <span class="block__count">2,458</span>
-        <span class="block__text">Followers</span>
-      </div>
-      <div class="block">
-        <a class="block__link" href="https://fontawesome.com/"></a>
-        <i class="fa-brands fa-youtube"></i>
-        <span class="block__count">61,453</span>
-        <span class="block__text">Subscribers</span>
-      </div>
-    </div>
-
+    {{ content }}
   {% endblock %}
 </div>

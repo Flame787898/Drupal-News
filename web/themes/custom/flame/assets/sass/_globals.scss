@@ -12,6 +12,15 @@ body {
 * {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
+  scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, h5, span, div {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  font-family: "Gelasio", serif;
 }
 
 main {
