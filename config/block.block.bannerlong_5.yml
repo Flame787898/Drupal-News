@@ -1,0 +1,30 @@
+uuid: fbd92121-810f-4b8d-8825-39298b96218c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+  module:
+    - block_content
+    - system
+  theme:
+    - flame
+id: bannerlong_5
+theme: flame
+region: title_page
+weight: -20
+provider: null
+plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+settings:
+  id: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
+  label: 'banner-long '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'

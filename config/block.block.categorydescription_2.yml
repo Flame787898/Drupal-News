@@ -1,0 +1,30 @@
+uuid: f4439b2e-6387-47d1-81c3-cf13f56bc660
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+  module:
+    - block_content
+    - system
+  theme:
+    - flame
+id: categorydescription_2
+theme: flame
+region: title_page
+weight: -18
+provider: null
+plugin: 'block_content:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+settings:
+  id: 'block_content:93c30757-46c5-4f9c-ad8c-f949d4ba4704'
+  label: category-description
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'

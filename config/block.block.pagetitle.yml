@@ -1,0 +1,24 @@
+uuid: 474064b4-c863-4a28-9db3-46e227969476
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - flame
+id: pagetitle
+theme: flame
+region: title_page
+weight: -19
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: category
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'

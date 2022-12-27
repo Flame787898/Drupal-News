@@ -34,7 +34,7 @@ mode: category_page
 content:
   field_announcement:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2

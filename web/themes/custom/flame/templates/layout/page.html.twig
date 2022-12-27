@@ -162,9 +162,33 @@
     {% endif %}
 
     {% if not is_front %}
+
+      {% if page.title_page %}
+        <div class="wrap-title-page">
+          {{ page.title_page }}
+        </div>
+      {% endif %}
+
       <section class="main-content">
-        {{ page.content }}
+
+        {% if page.sidebar_left %}
+          <aside class="news__right-sidebar ">
+            {{ page.sidebar_left }}
+          </aside>
+        {% endif %}
+
+        <div class="wrap-content">
+          {{ page.content }}
+        </div>
+
+        {% if page.sidebar_right %}
+          <aside class="news__right-sidebar ">
+            {{ page.sidebar_right }}
+          </aside>
+        {% endif %}
       </section>
+
+
     {% endif %}
   </main>
 
