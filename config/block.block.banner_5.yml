@@ -1,0 +1,30 @@
+uuid: 73846914-3684-4451-97d3-2eefd53c1ccc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:479d2a10-d65d-4b14-85e2-add4037d63dc'
+  module:
+    - block_content
+    - system
+  theme:
+    - flame
+id: banner_5
+theme: flame
+region: sidebar_right
+weight: -19
+provider: null
+plugin: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
+settings:
+  id: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
+  label: Banner
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'

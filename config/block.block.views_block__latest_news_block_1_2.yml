@@ -1,0 +1,30 @@
+uuid: a5af39c1-7a54-4707-a11f-c2870e4d26fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_news
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__latest_news_block_1_2
+theme: flame
+region: sidebar_right
+weight: -20
+provider: null
+plugin: 'views_block:latest_news-block_1'
+settings:
+  id: 'views_block:latest_news-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/taxonomy/*'
