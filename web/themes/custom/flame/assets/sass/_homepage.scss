@@ -1,27 +1,31 @@
 @import "mixins";
 @import "variables";
 @import "fonts";
-
+/*================================ BEGIN MAIN SECTION =========================================*/
 .main {
-  display: flex;
+  display: grid;
   @include small-content;
   padding: 40px 20px 0 20px;
-  gap: 35px;
+  grid-template-columns:50% 24% 21%;
+  gap: 30px;
+  @include tablets {
+    gap: 15px;
+  }
+  @include phones {
+    grid-template-columns: 1fr;
+  }
 
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  /*================================ BEGIN NEWS BLOCK  =========================================*/
   &__news-one,
   &__news-list {
-    width: 50%;
 
     .views-element-container {
-      display: flex;
-
-      .views-field-field-promo-image {
-        img {
-          width: 100%;
-          display: block;
-        }
-      }
-
       .views-field-field-category {
         a {
           @include small-category;
@@ -31,6 +35,9 @@
       .views-field-title {
         margin: 6px 0 2px;
         @include big-title;
+        @include tablets {
+          @include list-news-title;
+        }
 
         .field-content {
           a {
@@ -53,7 +60,6 @@
           p {
             margin-top: 15px;
             color: #555;
-            width: 700px;
           }
         }
       }
@@ -61,63 +67,122 @@
   }
 
   &__news-list {
-    width: 25%;
+    img {
+      max-width: 333px;
+      max-height: 150px;
+      @include phones {
+        max-width: 100%;
+        max-height: 333px;
+      }
+      @include smallphones {
+        max-height: 180px;
+      }
+    }
 
     .views-element-container {
       .views-row {
         margin-bottom: 30px;
+        position: relative;
       }
 
       .views-field-field-category {
         .field-content {
           position: relative;
-          top: -18px;
+          top: -21px;
           margin-bottom: -20px;
         }
       }
 
       .views-field-title {
         a {
-          @include middle-title
+          @include middle-title;
+          @include tablets {
+            font-size: 14px;
+            line-height: 16px;
+          }
         }
       }
     }
   }
 
-  &__sidebar-home {
-    width: 20%;
+  /*================================ END NEWS BLOCK  =========================================*/
 
+  /*================================ BEGIN SIDEBAR MAIN =========================================*/
+  &__sidebar-home {
+    /*================================ PROMO IMAGE  =========================================*/
     .views-element-container {
       .views-field-field-promo-image {
+        position: absolute;
+        right: 0;
+
         img {
           width: 60px;
           height: 60px;
           border-radius: 50%;
+          @include phones {
+            width: 130px;
+            height: 130px;
+          }
+          @include smallphones {
+            width: 60px;
+            height: 60px;
+          }
         }
       }
 
+      /*================================ TITLE SIDEBAR =========================================*/
       h2 {
         @include color-title;
+        @include tablets {
+          font-size: 18px;
+        }
       }
 
+      /*================================ WRAP ROW  =========================================*/
       .views-row {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 20px;
+        position: relative;
 
+        @include phones {
+          margin-bottom: 140px;
+        }
+
+        @include smallphones {
+          margin-bottom: 50px;
+        }
+
+        /*================================ TITLE NEWS  =========================================*/
         .views-field-title {
           width: 70%;
 
           a {
             @include hover-link;
             @include small-title;
+            @include tablets {
+              font-size: 13px;
+              line-height: 15px;
+            }
+            @include phones {
+              font-size: 15px;
+              line-height: 15px;
+            }
           }
         }
 
+        /*================================ DATE CREATE =========================================*/
         .views-field-created {
           width: 50%;
           position: relative;
+          @include tablets {
+            display: none;
+          }
+          @include phones {
+            display: block;
+
+          }
 
           .field-content {
             @include created-author;
@@ -127,30 +192,50 @@
 
     }
   }
+
+  /*================================ END SIDEBAR MAIN =========================================*/
 }
 
-.banner-small {
+/*================================ END MAIN SECTION =========================================*/
+
+/*================================ BANNER BLOCK  =========================================*/
+.block__Banner {
   margin-bottom: 35px;
+  @include phones {
+    margin-bottom: 50px;
+  }
 }
 
-
+/*================================ BEGIN INFO BLOCK  =========================================*/
 .info {
 
   @include big-content;
   margin-top: 20px;
 
   &__wrap-content {
+    img {
+      object-fit: cover
+    }
+
     display: flex;
     gap: 30px;
-    padding: $padding_left_right;
+    @include tablets {
+      gap: 10px
+    }
+    @include phones {
+      flex-direction: column;
+    }
 
     .views-element-container,
     .subscribe {
+      overflow: hidden;
       position: relative;
       background: $gray;
       padding: 20px;
       width: 33%;
-      float: left;
+      @include phones {
+        width: 100%;
+      }
 
       .tdn-btn-wrap {
         button {
@@ -235,86 +320,109 @@
       }
     }
   }
-}
 
+  /*================================ BEGIN STAY CONNECTED  =========================================*/
+  .stay-block {
+    background: $gray;
+    width: 33%;
+    padding: 20px;
 
-.stay-block {
-  background: $gray;
-  width: 33%;
-  padding: 20px;
+    @include phones {
+      width: 100%;
+    }
 
-  h2 {
-    color: $main_violet;
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 10px
-  }
+    h2 {
+      color: $main_violet;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px
+    }
 
-  .wrap-row {
-    display: flex;
-    gap: 25px;
-    justify-content: space-between;
-
-    .block {
-      width: 32%;
-      height: 100px;
+    .wrap-row {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: $transition;
-      cursor: pointer;
-      position: relative;
-
-      &__count {
-        font-weight: bold;
-        font-size: 18px;
+      gap: 25px;
+      @include tablets {
+        gap: 5px;
       }
+      justify-content: space-between;
 
-      a {
-        position: absolute;
+      .block {
+        width: 32%;
         height: 100px;
-        width: 100%;
-        display: block;
-      }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: $transition;
+        cursor: pointer;
+        position: relative;
 
-      i {
-        font-size: 22px;
-      }
-
-      &:nth-child(1) {
-        background: #516eab;
-        color: #fff;
-
-        &:hover {
-          background: #000;
-        }
-      }
-
-      &:nth-child(2) {
-        background: #29c5f6;
-        color: #fff;
-
-        &:hover {
-          background: #000;
-        }
-      }
-
-      &:nth-child(3) {
-        background: #e14e42;
-        color: #fff;
-
-        &:hover {
-          background: #000;
+        &__text {
+          @include tablets {
+            font-size: 14px;
+          }
         }
 
+        &__count {
+          font-weight: bold;
+          font-size: 18px;
+          @include tablets {
+            font-size: 14px;
+          }
+        }
+
+        a {
+          position: absolute;
+          height: 100px;
+          width: 100%;
+          display: block;
+        }
+
+        i {
+          font-size: 22px;
+          @include tablets {
+            font-size: 18px;
+          }
+        }
+
+        &:nth-child(1) {
+          background: #516eab;
+          color: #fff;
+
+          &:hover {
+            background: #000;
+          }
+        }
+
+        &:nth-child(2) {
+          background: #29c5f6;
+          color: #fff;
+
+          &:hover {
+            background: #000;
+          }
+        }
+
+        &:nth-child(3) {
+          background: #e14e42;
+          color: #fff;
+
+          &:hover {
+            background: #000;
+          }
+
+        }
       }
     }
-  }
 
+    /*================================ END STAY CONNECTED  =========================================*/
+  }
 }
 
+/*================================ END INFO BLOCK  =========================================*/
+
+/*================================ BEGIN  LATEST NEWS BLOCK  =========================================*/
 .news {
   @include small-content;
   padding: 40px 20px 0 20px;
@@ -322,13 +430,23 @@
   align-items: start;
   justify-content: space-between;
   gap: 30px;
-
+  @include tablets {
+    gap: 15px;
+  }
+  @include phones {
+    flex-direction: column;
+  }
+  /*================================ LEFT SIDEBAR  =========================================*/
   &__left-sidebar {
     border: 1px solid $border_color;
     padding: 20px;
     height: auto;
     width: 20%;
     max-width: 250px;
+    @include phones {
+      width: 100%;
+      max-width: 100%;
+    }
 
     h2 {
       @include color-title;
@@ -365,9 +483,29 @@
     }
   }
 
+  /*================================ RIGHT SIDEBAR =========================================*/
   &__right-sidebar {
+    header {
+      img {
+        width: 100%;
+        object-fit: cover;
+        max-width: 300px;
+        display: block;
+        margin: 15px auto;
+      }
+    }
+
+
     width: 30%;
     max-width: 340px;
+    @include tablets {
+      max-width: 290px;
+    }
+    @include phones {
+      width: 100%;
+      max-width: 100%;
+    }
+    position: relative;
 
     .views-element-container:nth-child(2) {
       h2 {
@@ -403,19 +541,28 @@
       }
 
       .views-row {
-        display: grid;;
-        margin-bottom: 30px;
-        grid-template-columns: 220px 80px;
-        grid-template-rows: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
 
         .views-field-field-promo-image {
-          grid-column-start: 2;
-          grid-row-start: 1;
+          position: absolute;
+          right: 20px;
+
+          img {
+            @include tablets {
+              width: 55px;
+              height: 55px;
+            }
+          }
         }
 
         .views-field-created {
-          grid-column-start: 1;
-          grid-row-start: 3;
+          width: 100%;
+          @include tablets {
+            display: none;
+          }
 
           span {
             @include created-author;
@@ -423,15 +570,18 @@
         }
 
         .views-field-title {
-          padding-right: 20px;
-          grid-column-start: 1;
-          grid-row-start: 1;
+          width: 70%;
+          padding-right: 5px;
 
           .field-content {
 
             a {
               @include hover-link;
               @include small-title;
+              @include tablets {
+                font-size: 14px;
+                line-height: 16px;
+              }
             }
           }
         }
@@ -441,9 +591,20 @@
 
   }
 
+  /*================================ LIST NEWS  =========================================*/
   &__list {
     position: relative;
     width: 55%;
+    @include phones {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+
+    }
 
     .views-element-container {
       h2 {
@@ -458,7 +619,7 @@
         position: relative;
         margin-bottom: 30px;
         display: grid;
-        grid-template-columns: 300px 450px;
+        grid-template-columns: 40% 60%;
         grid-template-rows: repeat(6, 30px);
         grid-auto-rows: minmax(50px, auto);
 
@@ -479,6 +640,21 @@
           grid-row-start: 1;
           padding: 10px 0 10px;
           @include list-news-title;
+          @include lowresmonitors {
+            font-size: 16px;
+          }
+          @include tablets {
+            font-size: 14px;
+
+          }
+          @include phones {
+            width: 100%;
+            font-size: 18px;
+          }
+
+          @include smallphones {
+            font-size: 14px;
+          }
 
           a {
             @include hover-link;
@@ -495,6 +671,9 @@
           grid-row-start: 4;
           margin-left: 20px;
           width: 90%;
+          @include phones {
+            display: none;
+          }
 
           p {
             color: #555555;
@@ -536,15 +715,29 @@
 
     header {
       @include big-gray-title;
+      @include phones {
+        font-size: 60px;
+        top: 18px;
+      }
     }
   }
 }
 
+/*================================ END LATEST NEWS BLOCK  =========================================*/
+
+/*================================ BEGIN MUST READ  =========================================*/
 .must-read {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   width: 100%;
   max-width: $big_content;
   margin: 60px auto;
   padding: 0 20px 0 20px;
+
 
   &:before {
     content: '';
@@ -563,7 +756,15 @@
     @include small-content;
     display: flex;
     justify-content: space-between;
+    gap: 15px;
+    @include tablets {
+      gap: 10px;
+    }
+    @include phones {
+      flex-direction: column;
+    }
 
+    /*================================ BIG NEWS MUST READ  =========================================*/
     .views-element-container:nth-child(1) {
       overflow: hidden;
 
@@ -575,6 +776,9 @@
           font-size: 64px;
           font-weight: 900;
           margin-bottom: 10px;
+          @include tablets {
+            font-size: 40px;
+          }
         }
 
         p {
@@ -598,7 +802,12 @@
           a {
             @include big-title;
             @include hover-link;
-
+            @include tablets {
+              font-size: 21px;
+            }
+            @include smallphones {
+              font-size: 16px;
+            }
           }
         }
       }
@@ -614,15 +823,27 @@
       }
     }
 
+    /*================================ GRID MUST READ  =========================================*/
     .views-element-container:nth-child(2) {
-      .wrapper > div {
+      .row-wrap {
         display: grid;
-        grid-template-columns: 380px 380px;
-        gap: 40px;
-        margin-top: 235px;
+        grid-template-columns:50% 50%;
+        margin-top: 205px;
+        @include phones {
+          margin-top: 10px;
+          gap: 15px;
+          padding-right: 15px;
+        }
 
         .views-row {
           position: relative;
+          padding: 20px;
+          @include tablets {
+            padding: 10px;
+          }
+          @include phones {
+            padding: 0;
+          }
 
           .views-field-field-category {
             position: relative;
@@ -651,6 +872,10 @@
                 margin-top: 5px;
                 transition: $transition;
                 text-decoration: none;
+                @include smallphones {
+                  font-size: 14px;
+                  line-height: 16px;
+                }
 
                 &:hover {
                   color: $main_violet;
@@ -664,23 +889,52 @@
   }
 }
 
+/*================================ END  MUST READ =========================================*/
+
+/*================================ BEGIN BANNER =========================================*/
 .banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  padding: 30px 0 30px 0;
-  width: 100%;
-  max-width: 1068px;
-  border: 1px solid $border_color;
+  padding: $padding_left_right;
 
-  h2 {
-    display: none;
+  .block__banner-long {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 30px 0 30px 0;
+    width: 100%;
+    max-width: 1068px;
+    border: 1px solid $border_color;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
-
 }
 
+/*================================ END BANNER =========================================*/
+
+/*================================ BEGIN SECOND LATEST NEWS BLOCK  =========================================*/
 .second__news {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .left-sidebar {
+    &__wrap-content {
+      img {
+        max-height: 100px;
+        @include phones {
+          max-height: 200px;
+        }
+        @include smallphones {
+          max-height: 100px;
+        }
+      }
+    }
+  }
+
   &__list {
     .views-element-container {
       h2 {
@@ -690,26 +944,26 @@
       }
     }
 
+    /*================================ SINGLE NEWS =========================================*/
     .views-element-container:nth-child(1) {
       .views-row {
-        display: grid;
-        grid-template-columns:100%;
-        grid-template-rows: 528px 35px 90px 30px;
+        display: flex;
+        flex-direction: column;
 
-        .views-field-field-announcement {
-          margin: 0;
-          grid-column-start: 1;
-          grid-row-start: 5;
+        .views-field-field-category {
+          position: relative;
+          top: -31px;
+          margin-bottom: -31px;
         }
 
         .views-field-created {
-          grid-column-start: 1;
-          grid-row-start: 4;
-          margin: 0;
+          margin-left: 0;
+          margin-top: 0;
+          margin-bottom: 15px;
         }
 
-        .views-field-field-category {
-          grid-row-start: 2;
+        .views-field-field-announcement {
+          margin-left: 0;
         }
 
         .views-field-title {
@@ -719,10 +973,18 @@
           grid-column-start: 1;
           grid-row-start: 3;
           @include big-title;
+          @include tablets {
+            font-size: 21px;
+          }
+          @include smallphones {
+            font-size: 18px;
+          }
         }
       }
 
     }
+
+    /*================================ END SINGLE NEWS =========================================*/
 
     .views-element-container:nth-child(2) {
       .views-field-created {
@@ -735,6 +997,10 @@
         @include big-gray-title;
         top: -30px;
         left: -5px;
+        @include phones {
+          font-size: 60px;
+          left: 0;
+        }
       }
     }
 
@@ -757,13 +1023,16 @@
       }
     }
   }
-  &__right-sidebar{
-      .sidebar-news{
-       margin-top: 30px;
-        .views-field-title{
-          padding: 0 !important;
-        }
+
+  &__right-sidebar {
+    .sidebar-news {
+      margin-top: 30px;
+
+      .views-field-title {
+        padding: 0 !important;
       }
+    }
   }
 }
 
+/*================================ END SECOND LATEST NEWS BLOCK  =========================================*/

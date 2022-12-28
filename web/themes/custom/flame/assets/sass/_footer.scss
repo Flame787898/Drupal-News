@@ -3,6 +3,7 @@
 @import "fonts";
 
 footer[role='contentinfo'] {
+
   margin-top: 30px;
   position: relative;
   color: $white;
@@ -17,6 +18,11 @@ footer[role='contentinfo'] {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    @include phones {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     .tdm-social-wrapper {
       display: flex;
@@ -42,33 +48,33 @@ footer[role='contentinfo'] {
 
     .col:nth-child(1) {
 
-        a[rel='home'] {
-          display: block;
-          color: $white;
-          font-family: 'Gelasio', sans-serif;
-          font-size: 34px;
-          text-decoration: none;
-          font-weight: 500;
-          text-transform: uppercase;
-          margin-bottom: 20px;
-        }
+      a[rel='home'] {
+        display: block;
+        color: $white;
+        font-family: 'Gelasio', sans-serif;
+        font-size: 34px;
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
 
-        h2 {
-          display: none;
-        }
+      h2 {
+        display: none;
+      }
 
-        p {
-          color: #ffffff;
-          font-family: 'Source Sans Pro', sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-        }
+      p {
+        color: #ffffff;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+      }
 
     }
 
     .col:nth-child(2) {
       & > div {
-        margin-left: 160px;
+        margin-left: 50%;
 
         nav {
           h2 {
@@ -90,6 +96,7 @@ footer[role='contentinfo'] {
                 font-size: 12px;
                 transition: $transition;
                 text-transform: uppercase;
+
                 &:hover {
                   color: $color_active_mobile_link;
                 }
@@ -102,47 +109,47 @@ footer[role='contentinfo'] {
 
     .col:nth-child(3) {
 
-        margin-left: 130px;
+      margin-left: 10%;
 
-        h2 {
-          font-family: 'Source Sans Pro', sans-serif;
-          color: $color_active_mobile_link;
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
+      h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: $color_active_mobile_link;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
 
-          .views-row {
-            display: flex;
-            padding-right: 120px;
-            justify-content: space-between;
+      .views-row {
+        display: flex;
+        padding-right: 35%;
+        justify-content: space-between;
 
-            .views-field-name {
-              margin-bottom: 10px;
+        .views-field-name {
+          margin-bottom: 10px;
 
-              a {
-                font-family: 'Source Sans Pro', sans-serif;
-                color: #fff;
-                text-decoration: none;
-                font-size: 12px;
-                text-transform: uppercase;
-                transition: $transition;
+          a {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: $transition;
 
-                &:hover {
-                  color: $color_active_mobile_link;
-                }
-              }
-
-            }
-
-            .views-field-name-1 {
-              font-family: 'Source Sans Pro', sans-serif;
-              color: #fff;
-              text-decoration: none;
-              font-size: 12px;
+            &:hover {
+              color: $color_active_mobile_link;
             }
           }
+
+        }
+
+        .views-field-name-1 {
+          font-family: 'Source Sans Pro', sans-serif;
+          color: #fff;
+          text-decoration: none;
+          font-size: 12px;
+        }
+      }
 
 
     }
@@ -150,8 +157,6 @@ footer[role='contentinfo'] {
     .col:nth-child(4) {
 
       & > div {
-        display: flex;
-        padding-left: 50px;
 
         & > div {
           h2 {
@@ -196,6 +201,12 @@ footer[role='contentinfo'] {
             .views-field-field-promo-image {
               position: absolute;
               right: 0;
+
+              img {
+                width: 65px;
+                object-fit: cover;
+                height: 65px;
+              }
             }
           }
         }
@@ -214,7 +225,8 @@ footer[role='contentinfo'] {
   line-height: 40px;
   text-align: center;
   color: $white;
-  &.open{
-   bottom: 5px;
+
+  &.open {
+    bottom: 5px;
   }
 }
