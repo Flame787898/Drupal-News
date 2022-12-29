@@ -6,6 +6,10 @@
   a {
     font-family: 'Source Sans Pro', sans-serif;
   }
+  @include phones{
+    position: fixed;
+    top:0;
+  }
 
   &__content-right {
     i {
@@ -344,5 +348,53 @@
         }
       }
     }
+  }
+}
+
+.sticky {
+  background: #fff;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  top: -60px;
+  transition: $transition;
+
+  .navigation nav ul {
+    transition: $transition;
+    justify-content: flex-start;
+    padding-left: 355px;
+  }
+
+  .header__top-bar {
+    display: none;
+
+  }
+
+  .header__content {
+    height: 0;
+    border: 0;
+  }
+
+  .block__Pulses {
+    position: absolute;
+    bottom: 13px;
+
+    a {
+      font-size: 28px;
+    }
+  }
+
+  .block__Date {
+    display: none;
+  }
+
+  .header__content-right {
+    display: none;
+  }
+
+  .header__content-left {
+    display: none;
   }
 }
