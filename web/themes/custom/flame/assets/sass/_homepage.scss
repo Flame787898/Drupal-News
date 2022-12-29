@@ -545,13 +545,31 @@
         justify-content: space-between;
         margin-bottom: 50px;
         flex-wrap: wrap;
+        @include phones {
+          margin-bottom: 100px;
+        }
+        @include smallphones {
+          margin-bottom: 50px;
+        }
 
         .views-field-field-promo-image {
           position: absolute;
           right: 20px;
 
           img {
+            width: 77px;
+            object-fit: cover;
+            height: 77px;
             @include tablets {
+              width: 55px;
+              height: 55px;
+            }
+            @include phones {
+              width: 120px;
+              object-fit: cover;
+              height: 120px;
+            }
+            @include smallphones {
               width: 55px;
               height: 55px;
             }
@@ -562,6 +580,10 @@
           width: 100%;
           @include tablets {
             display: none;
+          }
+          @include phones {
+            display: block;
+            margin-top: 5px;
           }
 
           span {
@@ -603,7 +625,6 @@
     img {
       width: 100%;
       object-fit: cover;
-
     }
 
     .views-element-container {

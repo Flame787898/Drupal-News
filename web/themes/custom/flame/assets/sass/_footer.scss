@@ -47,6 +47,15 @@ footer[role='contentinfo'] {
     }
 
     .col:nth-child(1) {
+      @include phones {
+        text-align: center;
+      }
+
+      .tds-social1 {
+        @include phones {
+          justify-content: center;
+        }
+      }
 
       a[rel='home'] {
         display: block;
@@ -57,6 +66,9 @@ footer[role='contentinfo'] {
         font-weight: 500;
         text-transform: uppercase;
         margin-bottom: 20px;
+        @include tablets {
+          font-size: 24px;
+        }
       }
 
       h2 {
@@ -68,38 +80,51 @@ footer[role='contentinfo'] {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 14px;
         line-height: 1.4;
+        @include tablets {
+          font-size: 12px;
+        }
       }
 
     }
 
     .col:nth-child(2) {
-      & > div {
-        margin-left: 50%;
+      margin-left: 10%;
+      @include phones {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 20px 0 10px 0;
+      }
 
-        nav {
-          h2 {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: $color_active_mobile_link;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+      nav {
+        h2 {
+          font-family: 'Source Sans Pro', sans-serif;
+          color: $color_active_mobile_link;
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          @include tablets {
+            font-size: 18px;
           }
+          @include phones {
+            font-size: 21px;
+          }
+        }
 
-          ul {
-            li {
-              margin-bottom: 10px;
+        ul {
+          li {
+            margin-bottom: 10px;
 
-              a {
-                font-family: 'Source Sans Pro', sans-serif;
-                color: #fff;
-                text-decoration: none;
-                font-size: 12px;
-                transition: $transition;
-                text-transform: uppercase;
+            a {
+              font-family: 'Source Sans Pro', sans-serif;
+              color: #fff;
+              text-decoration: none;
+              font-size: 11px;
+              transition: $transition;
+              text-transform: uppercase;
 
-                &:hover {
-                  color: $color_active_mobile_link;
-                }
+              &:hover {
+                color: $color_active_mobile_link;
               }
             }
           }
@@ -108,8 +133,13 @@ footer[role='contentinfo'] {
     }
 
     .col:nth-child(3) {
+      margin-left: 0%;
 
-      margin-left: 10%;
+      @include phones {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
 
       h2 {
         font-family: 'Source Sans Pro', sans-serif;
@@ -117,6 +147,12 @@ footer[role='contentinfo'] {
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
+        @include tablets {
+          font-size: 18px;
+        }
+        @include phones {
+          font-size: 21px;
+        }
       }
 
 
@@ -124,6 +160,9 @@ footer[role='contentinfo'] {
         display: flex;
         padding-right: 35%;
         justify-content: space-between;
+        @include phones {
+          padding-right: 0;
+        }
 
         .views-field-name {
           margin-bottom: 10px;
@@ -132,7 +171,7 @@ footer[role='contentinfo'] {
             font-family: 'Source Sans Pro', sans-serif;
             color: #fff;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             transition: $transition;
 
@@ -147,7 +186,7 @@ footer[role='contentinfo'] {
           font-family: 'Source Sans Pro', sans-serif;
           color: #fff;
           text-decoration: none;
-          font-size: 12px;
+          font-size: 11px;
         }
       }
 
@@ -155,58 +194,87 @@ footer[role='contentinfo'] {
     }
 
     .col:nth-child(4) {
+      @include phones {
 
-      & > div {
+      }
 
-        & > div {
-          h2 {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: $color_active_mobile_link;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+      h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: $color_active_mobile_link;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        @include tablets {
+          font-size: 18px;
+        }
+        @include phones {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 21px;
+        }
+      }
+
+      .views-row {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-bottom: 40px;
+        @include phones {
+          margin-bottom: 100px;
+        }
+
+        @include smallphones {
+          margin-bottom: 50px;
+        }
+
+        .views-field-created {
+          font-size: 13px;
+          font-style: italic;
+          margin-top: 10px;
+          width: 100%;
+        }
+
+        .views-field-title {
+
+          font-family: 'Gelasio', sans-serif;
+          font-size: 15px;
+          line-height: 1.1;
+          font-weight: 500;
+          width: 70%;
+          @include tablets {
+            font-size: 13px;
+          }
+          @include phones {
+            font-size: 15px;
           }
 
-          .views-row {
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-            margin-bottom: 40px;
+          a {
+            color: $white;
+            text-decoration: none;
+            transition: $transition;
 
-            .views-field-created {
-              font-size: 13px;
-              font-style: italic;
-              margin-top: 10px;
+            &:hover {
+              color: $color_active_mobile_link;
             }
+          }
 
-            .views-field-title {
-              font-family: 'Gelasio', sans-serif;
-              font-size: 15px;
-              line-height: 1.1;
-              font-weight: 500;
-              width: 70%;
+        }
 
-              a {
-                color: $white;
-                text-decoration: none;
-                transition: $transition;
+        .views-field-field-promo-image {
+          position: absolute;
+          right: 0;
 
-                &:hover {
-                  color: $color_active_mobile_link;
-                }
-              }
-
+          img {
+            width: 65px;
+            object-fit: cover;
+            height: 65px;
+            @include phones {
+              width: 120px;
+              height: 120px;
             }
-
-            .views-field-field-promo-image {
-              position: absolute;
-              right: 0;
-
-              img {
-                width: 65px;
-                object-fit: cover;
-                height: 65px;
-              }
+            @include smallphones {
+              width: 65px;
+              height: 65px;
             }
           }
         }
