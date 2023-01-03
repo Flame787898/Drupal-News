@@ -4,12 +4,4 @@ status: true
 dependencies: {  }
 name: sidebar_promo_image
 label: 'sidebar promo image'
-effects:
-  47265315-9255-424e-b7af-51cabee7817d:
-    uuid: 47265315-9255-424e-b7af-51cabee7817d
-    id: image_scale_and_crop
-    weight: 2
-    data:
-      width: 77
-      height: 77
-      anchor: center-center
+effects: {  }

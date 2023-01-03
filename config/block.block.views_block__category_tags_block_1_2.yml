@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/taxonomy/*'
+    pages: "/newspaper_pulses_pro/category/sport\r\n/newspaper_pulses_pro/category/arts\r\n/newspaper_pulses_pro/category/culture\r\n/newspaper_pulses_pro/category/politics\r\n/newspaper_pulses_pro/category/style\r\n/newspaper_pulses_pro/category/travel"

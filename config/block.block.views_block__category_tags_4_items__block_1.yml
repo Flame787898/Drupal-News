@@ -1,0 +1,29 @@
+uuid: 1af2238f-9844-4385-9f3a-e77c38b1dbef
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.category_tags_4_items_
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__category_tags_4_items__block_1
+theme: flame
+region: title_page
+weight: 0
+provider: null
+plugin: 'views_block:category_tags_4_items_-block_1'
+settings:
+  id: 'views_block:category_tags_4_items_-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/newspaper_pulses_pro/category/news\r\n/newspaper_pulses_pro/category/business\r\n/newspaper_pulses_pro/category/magazine"
