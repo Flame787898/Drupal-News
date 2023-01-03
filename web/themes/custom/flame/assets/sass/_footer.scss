@@ -286,14 +286,14 @@ footer[role='contentinfo'] {
 .up-btn {
   position: fixed;
   bottom: -55px;
-  right: 0;
+  right: 5px;
   background: $main_violet;
   width: 35px;
   height: 35px;
   line-height: 40px;
   text-align: center;
   color: $white;
-
+  transition: $transition;
   &.open {
     bottom: 5px;
   }
