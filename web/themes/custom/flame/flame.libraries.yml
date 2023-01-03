@@ -5,6 +5,12 @@ global-css:
 
 global-js:
   js:
-    assets/js/main.js: {}
+    assets/js/menu.js: {}
+    assets/js/search.js: {}
+    assets/js/stickyHeader.js: {}
+    assets/js/firstStickySidebar.js: {}
+    assets/js/secondStickySidebar.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
+    - core/once

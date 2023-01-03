@@ -146,6 +146,12 @@ main.open {
 .header a {
   font-family: "Source Sans Pro", sans-serif;
 }
+@media screen and (max-width: 720px) {
+  .header {
+    position: fixed;
+    top: 0;
+  }
+}
 .header__content-right i {
   transition: all 0.5s ease;
   color: #000;
@@ -464,6 +470,45 @@ main.open {
 }
 .mobile-navigation nav ul li a.is-active {
   color: rgb(252, 185, 0);
+}
+
+.sticky {
+  background: #fff;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  top: -60px;
+  transition: all 0.5s ease;
+}
+.sticky .navigation nav ul {
+  transition: all 0.5s ease;
+  justify-content: flex-start;
+  padding-left: 355px;
+}
+.sticky .header__top-bar {
+  display: none;
+}
+.sticky .header__content {
+  height: 0;
+  border: 0;
+}
+.sticky .block__Pulses {
+  position: absolute;
+  bottom: 13px;
+}
+.sticky .block__Pulses a {
+  font-size: 28px;
+}
+.sticky .block__Date {
+  display: none;
+}
+.sticky .header__content-right {
+  display: none;
+}
+.sticky .header__content-left {
+  display: none;
 }
 
 /* =======================================================================
