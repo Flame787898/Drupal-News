@@ -18,7 +18,7 @@ Drupal.behaviors.firstStickySidebarsBehavior = {
                     rightFirstSidebar.style.position = 'fixed'
                     leftFirstSidebar.style.top = '45px'
                     rightFirstSidebar.style.top = '45px'
-                    rightFirstSidebar.style.right = '260px'
+                    rightFirstSidebar.style.right = '252px'
                     newsList.style.marginLeft = "280px"
                     newsSection.style.marginBottom = "220px"
                 } else if (scrollY < beginSticky) {
