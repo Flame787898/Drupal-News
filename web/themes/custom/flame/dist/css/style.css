@@ -146,7 +146,7 @@ main.open {
 .header a {
   font-family: "Source Sans Pro", sans-serif;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 940px) {
   .header {
     position: fixed;
     top: 0;
