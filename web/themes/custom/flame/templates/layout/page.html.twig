@@ -46,7 +46,6 @@
  */
 #}
 <div class="layout-container">
-
   <header class="header" id="header">
     <div class="header__top-bar">
       <div class="header__wrap-content">
@@ -90,56 +89,45 @@
             {{ page.related_news }}
           </div>
         {% endif %}
-
         {% if  page.sidebar_main_home %}
           <aside class="main__sidebar-home">
             {{ page.sidebar_main_home }}
           </aside>
         {% endif %}
-
       </section>
     {% endif %}
-
     {% if page.info_block_home %}
       <section class="info">
         {{ page.info_block_home }}
       </section>
     {% endif %}
-
     {% if page.list_news_first %}
       <section class="news">
-
         {% if page.left_sidebar_home_first %}
           <aside class="news__left-sidebar">
             {{ page.left_sidebar_home_first }}
           </aside>
         {% endif %}
-
         <div class="news__list">
           {{ page.list_news_first }}
         </div>
-
         {% if page.right_sidebar_home_first %}
           <aside class="news__right-sidebar">
             {{ page.right_sidebar_home_first }}
           </aside>
         {% endif %}
-
       </section>
     {% endif %}
-
     {% if page.must_read_home %}
       <section class="must-read">
         {{ page.must_read_home }}
       </section>
     {% endif %}
-
     {% if page.banner %}
       <section class="banner">
         {{ page.banner }}
       </section>
     {% endif %}
-
     {% if page.list_news_second %}
       <section class="news second__news">
         {% if page.left_sidebar_home_second %}
@@ -147,51 +135,39 @@
             {{ page.left_sidebar_home_second }}
           </aside>
         {% endif %}
-
         <div class="news__list second__news__list">
           {{ page.list_news_second }}
         </div>
-
         {% if page.right_sidebar_home_second %}
           <aside class="news__right-sidebar second__news__right-sidebar">
             {{ page.right_sidebar_home_second }}
           </aside>
         {% endif %}
-
       </section>
     {% endif %}
-
     {% if not is_front %}
-
       {% if page.title_page %}
         <div class="wrap-title-page">
           {{ page.title_page }}
         </div>
       {% endif %}
-
       <section class="main-content">
-
         {% if page.sidebar_left %}
           <aside class="news__right-sidebar ">
             {{ page.sidebar_left }}
           </aside>
         {% endif %}
-
         <div class="wrap-content">
           {{ page.content }}
         </div>
-
         {% if page.sidebar_right %}
           <aside class="news__right-sidebar ">
             {{ page.sidebar_right }}
           </aside>
         {% endif %}
       </section>
-
-
     {% endif %}
   </main>
-
   <footer role="contentinfo">
     <a href="#header" class="up-btn"><i class="fa-solid fa-chevron-up"></i></a>
     <div class="wrap-content">
@@ -201,5 +177,4 @@
       <div class="col">{{ page.footer_sidebar_four }}</div>
     </div>
   </footer>
-
 </div>
