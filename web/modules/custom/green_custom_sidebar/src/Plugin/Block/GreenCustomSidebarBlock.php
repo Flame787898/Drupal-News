@@ -2,6 +2,8 @@
 
 namespace Drupal\green_custom_sidebar\Plugin\Block;
 
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -13,14 +15,11 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Custom sidebar"),
  * )
  */
-class GreenCustomSidebarBlock extends BlockBase
-{
-
+class GreenCustomSidebarBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  public function build()
-  {
+  public function build() {
 
     return $this->renderRegion('content_left_sidebar');
 
@@ -28,9 +27,11 @@ class GreenCustomSidebarBlock extends BlockBase
 
   /**
    * @param string $region
+   * @return array
+   * @throws InvalidPluginDefinitionException
+   * @throws PluginNotFoundException
    */
-  private function renderRegion($region)
-  {
+  private function renderRegion($region) {
     $build = [];
     foreach ($this->getBlocksInRegion($region) as $block) {
       $build[] = \Drupal::entityTypeManager()
@@ -44,9 +45,10 @@ class GreenCustomSidebarBlock extends BlockBase
    * @param string $region
    *
    * @return array
+   * @throws InvalidPluginDefinitionException
+   * @throws PluginNotFoundException
    */
-  private function getBlocksInRegion($region)
-  {
+  private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()
       ->getStorage('block')
       ->loadByProperties([
@@ -55,5 +57,4 @@ class GreenCustomSidebarBlock extends BlockBase
         'region' => $region,
       ]);
   }
-
 }
