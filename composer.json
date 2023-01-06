@@ -21,6 +21,7 @@
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/ctools": "^4.0",
+        "drupal/devel": "^5.1",
         "drupal/field_group": "^3.4",
         "drupal/nextpre": "^9.0",
         "drupal/paragraphs": "^1.15",
@@ -96,5 +97,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "kint-php/kint": "^5.0"
     }
 }
