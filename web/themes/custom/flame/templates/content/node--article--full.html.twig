@@ -69,35 +69,46 @@
 #}
 
 
-<article{{ attributes }}>
-  {{ content.field_category }}
+<article{{ attributes.addClass('post-page') }}>
+  <div class="post-category">
+    {{ content.field_category }}
+  </div>
   {{ title_prefix }}
-  <h2{{ title_attributes }}>
+  <h2{{ title_attributes.addClass('post-title') }}>
     <a href="{{ url }}" rel="bookmark">{{ label }}</a>
   </h2>
   {{ title_suffix }}
   {% if display_submitted %}
-    <div{{ author_attributes }}>
-      {% trans %}By {{ author_name }} {{ date|date("F j, o") }}{% endtrans %}
+    <div{{ author_attributes.addClass('post-meta') }}>
+      {% trans %}By <b>{{ author_name }}</b> {{ date|date("F j, o") }}{% endtrans %}
       {{ metadata }}
       {{ include('@flame/custom/shared-btn.html.twig') }}
     </div>
   {% endif %}
+  {% if content.field_audio %}
+    <div class="post-audio">
+      {{ content.field_audio }}
+    </div>
+  {% endif %}
   <div{{ content_attributes }}>
     {% if content.field_promo_image %}
-      {{ content.field_promo_image }}
-    {% endif %}
-    {% if content.field_audio %}
-      {{ content.field_audio }}
-    {% endif %}
-    {% if green_custom_sidebar %}
-      <div class="green-sidebar">
-        <h1>Green Sidebar</h1>
-        {{ green_custom_sidebar }}
+      <div class="post-promo-img">
+        {{ content.field_promo_image }}
       </div>
     {% endif %}
-    {{ content.field_article_content }}
-    {{ include('@flame/custom/shared-btn.html.twig') }}
+
+    <div class="post-body-flex">
+      {% if green_custom_sidebar %}
+        <div class="green-sidebar">
+          {{ green_custom_sidebar }}
+        </div>
+      {% endif %}
+      <div class="post-body-content">
+        {{ content.field_article_content }}
+        {{ include('@flame/custom/shared-btn.html.twig') }}
+      </div>
+    </div>
+
     {{ content.field_comments }}
   </div>
 </article>

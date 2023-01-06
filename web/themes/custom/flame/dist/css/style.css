@@ -2345,3 +2345,143 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .up-btn.open {
   bottom: 5px;
 }
+
+.main-content {
+  overflow-x: hidden;
+}
+.main-content .wrap-content {
+  width: 75%;
+}
+.main-content .news__right-sidebar {
+  width: 25%;
+}
+
+.post-page .post-category {
+  margin-bottom: 10px;
+}
+.post-page .post-category > div {
+  display: flex;
+  gap: 5px;
+}
+.post-page .post-category > div > div a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #000;
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  padding: 5px 10px;
+}
+.post-page .post-title {
+  font-size: 41px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+.post-page .post-title a {
+  color: #000;
+  text-decoration: none;
+}
+.post-page .post-meta {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(68, 68, 68);
+}
+.post-page .post-meta b {
+  font-weight: 600;
+}
+.post-page .post-meta .social-shared-links {
+  margin-left: auto;
+}
+.post-page .post-audio {
+  margin-bottom: 10px;
+}
+.post-page .post-audio audio {
+  width: 100%;
+  background: transparent;
+}
+.post-page .post-promo-img img {
+  display: block;
+  width: 100%;
+  height: 150vh;
+  object-fit: cover;
+}
+.post-page .post-body-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.post-page .post-body-flex .green-sidebar {
+  width: 25%;
+  overflow: hidden;
+}
+.post-page .post-body-flex .post-body-content {
+  width: 75%;
+  overflow-x: hidden;
+}
+
+.social-shared-links {
+  display: flex;
+  gap: 5px;
+}
+.social-shared-links .social-links-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.social-shared-links .social-links-list .social-links-list__item {
+  border-radius: 5px;
+}
+.social-shared-links .social-links-list .social-links-list__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+}
+.social-shared-links .social-links-list .social-links-list__item--fb {
+  background-color: rgb(81, 110, 171);
+}
+.social-shared-links .social-links-list .social-links-list__item--tw {
+  background-color: rgb(41, 197, 246);
+}
+.social-shared-links .social-links-list .social-links-list__item--pn {
+  background-color: rgb(202, 33, 42);
+}
+.social-shared-links .social-links-list .social-links-list__item--whatsapp {
+  background-color: rgb(123, 191, 106);
+}
+.social-shared-links .share {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.social-shared-links .share i, .social-shared-links .share span {
+  padding: 0 10px;
+}
+.social-shared-links .share i {
+  display: inline-block;
+  position: relative;
+}
+.social-shared-links .share i:after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  content: "";
+}
