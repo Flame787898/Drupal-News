@@ -67,8 +67,11 @@
  *
  */
 #}
+
+
 <article{{ attributes }}>
-    {{ title_prefix }}
+  {{ content.field_category }}
+  {{ title_prefix }}
   <h2{{ title_attributes }}>
     <a href="{{ url }}" rel="bookmark">{{ label }}</a>
   </h2>
@@ -77,6 +80,7 @@
     <div{{ author_attributes }}>
       {% trans %}By {{ author_name }} {{ date|date("F j, o") }}{% endtrans %}
       {{ metadata }}
+      {{ include('@flame/custom/shared-btn.html.twig') }}
     </div>
   {% endif %}
   <div{{ content_attributes }}>
@@ -92,7 +96,8 @@
         {{ green_custom_sidebar }}
       </div>
     {% endif %}
-    {{ content.field_article_content  }}
+    {{ content.field_article_content }}
+    {{ include('@flame/custom/shared-btn.html.twig') }}
     {{ content.field_comments }}
   </div>
 </article>
