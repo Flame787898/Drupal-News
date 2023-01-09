@@ -617,6 +617,7 @@
   &__list {
     position: relative;
     width: 55%;
+    max-width: 750px;
     @include phones {
       width: 100%;
       max-width: 100%;
@@ -635,7 +636,7 @@
         position: relative;
         left: 15px;
       }
-
+      
       .views-row {
         position: relative;
         margin-bottom: 30px;
