@@ -2418,7 +2418,7 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .post-page .post-body-flex {
   display: flex;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 15px;
 }
 .post-page .post-body-flex .green-sidebar {
   width: 30%;
@@ -2547,4 +2547,56 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
   width: 100px;
   height: 100px;
   object-fit: cover;
+}
+
+.author_view {
+  border: 1px solid rgb(234, 234, 234);
+  padding: 19px;
+  margin-bottom: 20px;
+}
+.author_view .views-field-user-picture {
+  margin-bottom: 10px;
+}
+.author_view .views-field-user-picture a {
+  display: block;
+}
+.author_view .views-field-user-picture a img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.author_view .views-field-name {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.author_view .views-field-name span a {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+.author_view .views-field-name span a:hover {
+  color: rgb(76, 64, 132);
+}
+.author_view .views-field-field-about-user {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.author_view .views-field-field-social-link- ul {
+  display: flex;
+  gap: 5px;
+  justify-content: space-around;
+  font-weight: 700;
+}
+.author_view .views-field-field-social-link- ul li:hover {
+  color: rgb(76, 64, 132);
+  cursor: pointer;
 }
