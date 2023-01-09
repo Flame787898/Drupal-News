@@ -2456,6 +2456,17 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
   margin-bottom: 26px;
 }
 
+.post-comments-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 20px;
+}
+.post-comments-area .green-comments-sidebar {
+  width: 30%;
+}
+
 .social-shared-links {
   display: flex;
   gap: 5px;
@@ -2629,9 +2640,7 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 }
 
 .user-comments {
-  padding-top: 20px;
   width: 70%;
-  margin-left: auto;
 }
 .user-comments > h2 {
   display: none;
@@ -2687,4 +2696,8 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 }
 .user-comments .form-submit:hover {
   background-color: #9b51e0;
+}
+
+.content-footer-sidebar .layout {
+  margin-left: auto;
 }

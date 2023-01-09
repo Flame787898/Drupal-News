@@ -12,7 +12,9 @@ function flame_preprocess_node(array &$variables)
       /** @var \Drupal\Core\Block\BlockManagerInterface $block_manager */
       $block_manager = \Drupal::service('plugin.manager.block');
       $block = $block_manager->createInstance('green_custom_sidebar_block');
+      $block2 = $block_manager->createInstance('green_comments_sidebar_block');
       $variables['green_custom_sidebar'] = $block->build();
+      $variables['green_comments_sidebar'] = $block2->build();
     }
   }
 }

@@ -15,6 +15,7 @@ regions:
   title_page: "Title page"
   content_left_sidebar: "Left sidebar inside the content block"
   content: 'Content'
+  comments_sidebar: 'Left sidebar inside the comment block'
   content_footer_sidebar: 'Content block footer sidebar'
   sidebar_right: "Right sidebar"
   sidebar_left: "Left sidebar"

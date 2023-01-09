@@ -144,7 +144,8 @@
     strong {
       font-weight: 700;
     }
-    em{
+
+    em {
       text-decoration: underline;
     }
   }
@@ -159,6 +160,19 @@
     }
   }
 
+
 }
 
 //End .post-body-content.
+
+.post-comments-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 20px;
+
+  .green-comments-sidebar {
+    width: 30%;
+  }
+}
