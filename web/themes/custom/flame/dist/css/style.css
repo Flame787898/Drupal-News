@@ -2396,6 +2396,10 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .post-page .post-meta b {
   font-weight: 600;
 }
+.post-page .post-meta b a {
+  color: black;
+  text-decoration: none;
+}
 .post-page .post-meta .social-shared-links {
   margin-left: auto;
 }
@@ -2427,6 +2431,29 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .post-page .post-body-flex .post-body-content {
   width: 70%;
   overflow-x: hidden;
+}
+
+.post-body-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(34, 34, 34);
+}
+.post-body-content p {
+  margin-bottom: 26px;
+  font-weight: 400;
+}
+.post-body-content p strong {
+  font-weight: 700;
+}
+.post-body-content p em {
+  text-decoration: underline;
+}
+.post-body-content .paragraph--type--image-and-text.paragraph--view-mode--default img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: cover;
+  margin-bottom: 26px;
 }
 
 .social-shared-links {
@@ -2599,4 +2626,65 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .author_view .views-field-field-social-link- ul li:hover {
   color: rgb(76, 64, 132);
   cursor: pointer;
+}
+
+.user-comments {
+  padding-top: 20px;
+  width: 70%;
+  margin-left: auto;
+}
+.user-comments > h2 {
+  display: none;
+}
+.user-comments .form-item-subject-0-value {
+  display: none;
+}
+.user-comments #edit-comment-body-0-format {
+  display: none;
+}
+.user-comments label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2;
+  color: rgb(17, 17, 17);
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+.user-comments .layout__region--content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-comments .layout__region--content #edit-comment-body-wrapper {
+  width: 100%;
+}
+.user-comments .layout__region--content .wrapper:not(#edit-comment-body-wrapper) {
+  width: 30%;
+  min-width: 150px;
+}
+.user-comments .layout__region--content .wrapper:not(#edit-comment-body-wrapper) input {
+  display: block;
+  width: 100%;
+  border: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+}
+.user-comments .layout__region--content .wrapper:not(#edit-comment-body-wrapper) .description {
+  display: none;
+}
+.user-comments .form-submit {
+  transition: all 0.5s ease;
+  margin: 20px 0;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #000;
+}
+.user-comments .form-submit:hover {
+  background-color: #9b51e0;
 }

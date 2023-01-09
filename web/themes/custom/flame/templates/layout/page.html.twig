@@ -159,6 +159,11 @@
         {% endif %}
         <div class="wrap-content">
           {{ page.content }}
+          {% if page.content_footer_sidebar %}
+            <div class="content-footer-sidebar">
+              {{ page.content_footer_sidebar }}
+            </div>
+          {% endif %}
         </div>
         {% if page.sidebar_right %}
           <aside class="news__right-sidebar ">
