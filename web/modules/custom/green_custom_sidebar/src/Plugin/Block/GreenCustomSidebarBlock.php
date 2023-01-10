@@ -26,6 +26,7 @@ class GreenCustomSidebarBlock extends BlockBase {
   }
 
   /**
+   * Rendered region
    * @param string $region
    * @return array
    * @throws InvalidPluginDefinitionException
@@ -42,8 +43,8 @@ class GreenCustomSidebarBlock extends BlockBase {
   }
 
   /**
+   * Get blocks in region
    * @param string $region
-   *
    * @return array
    * @throws InvalidPluginDefinitionException
    * @throws PluginNotFoundException

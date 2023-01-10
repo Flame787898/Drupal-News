@@ -25,20 +25,17 @@
  * @see template_preprocess_block()
  */
 #}
-{%
-
-  set classes = [
-  configuration.label ? 'block__' ~ configuration.label,
-  'author_view'
-]
-%}
-<div {{ attributes.addClass(classes)}} >
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+{% set classes = [
+    configuration.label ? 'block__' ~ configuration.label,
+    'author_view'
+] %}
+<div {{ attributes.addClass(classes) }} >
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+        {{ content }}
+    {% endblock %}
 </div>
