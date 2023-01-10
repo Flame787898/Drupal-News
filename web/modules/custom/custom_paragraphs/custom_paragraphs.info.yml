@@ -1,0 +1,7 @@
+name: CUSTOM - paragraphs
+type: module
+description: 'Custom paragraphs module.'
+package: Custom
+core_version_requirement: ^8 || ^9
+dependencies:
+  - paragraphs:paragraphs

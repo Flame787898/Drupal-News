@@ -99,6 +99,18 @@ main.open {
   display: none;
 }
 
+.paragraph-image-and-text--image-position-right img {
+  float: right;
+}
+.paragraph-image-and-text--image-position-left img {
+  float: left;
+}
+.paragraph-image-and-text--image-position-center img {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
 /* =======================================================================
 ## ++ Cleafix
 ========================================================================== */
@@ -1758,6 +1770,18 @@ a {
 
 main.open {
   display: none;
+}
+
+.paragraph-image-and-text--image-position-right img {
+  float: right;
+}
+.paragraph-image-and-text--image-position-left img {
+  float: left;
+}
+.paragraph-image-and-text--image-position-center img {
+  float: none;
+  margin: 0 auto;
+  display: block;
 }
 
 /* =======================================================================
