@@ -1,0 +1,20 @@
+uuid: b0bd4058-1388-4846-88b5-cb32c93c2c42
+langcode: en
+status: true
+dependencies:
+  module:
+    - exchange_rates
+  theme:
+    - flame
+id: exchangerates
+theme: flame
+region: right_sidebar_home_first
+weight: -21
+provider: null
+plugin: exchange_rates_block
+settings:
+  id: exchange_rates_block
+  label: 'Exchange rates'
+  label_display: visible
+  provider: exchange_rates
+visibility: {  }
