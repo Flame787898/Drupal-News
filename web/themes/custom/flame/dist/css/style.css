@@ -1,3 +1,5 @@
+/* Setup */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
@@ -96,6 +98,12 @@ a {
 
 main.open {
   display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .hidden-mobile {
+    display: none;
+  }
 }
 
 .paragraph-image-and-text--image-position-right img {
@@ -1769,6 +1777,12 @@ a {
 
 main.open {
   display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .hidden-mobile {
+    display: none;
+  }
 }
 
 .paragraph-image-and-text--image-position-right img {
