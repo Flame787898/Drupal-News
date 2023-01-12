@@ -30,7 +30,14 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
     return $paragraphs_type->id() == "image_and_text";
   }
 
-
+  /**
+   * @param array $build
+   * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+   * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+   * @param $view_mode
+   *
+   * @return void
+   */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     $bem_block = 'paragraph-' . $paragraph->bundle();
     $image_position = $paragraph->getBehaviorSetting($this->getPluginId(), 'image_position', 'left');
@@ -44,7 +51,13 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
 
   }
 
-
+  /**
+   * @param \Drupal\paragraphs\ParagraphInterface $paragraph
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return array
+   */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
 
     $form ['hide_mobile'] = [
