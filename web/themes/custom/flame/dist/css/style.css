@@ -150,6 +150,9 @@ main.open {
   .header {
     position: fixed;
     top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
   }
 }
 .header__content-right i {
@@ -1230,6 +1233,7 @@ main.open {
 .news__list {
   position: relative;
   width: 55%;
+  max-width: 750px;
 }
 @media screen and (max-width: 940px) {
   .news__list {
@@ -1880,7 +1884,7 @@ main.open {
   }
 }
 .main-content .article {
-  max-width: 845px;
+  max-width: 778px;
   display: flex;
   justify-content: space-between;
   gap: 35px;
@@ -2334,13 +2338,14 @@ footer[role=contentinfo] .wrap-content .col:nth-child(4) .views-row .views-field
 .up-btn {
   position: fixed;
   bottom: -55px;
-  right: 0;
+  right: 5px;
   background: #4c4084;
   width: 35px;
   height: 35px;
   line-height: 40px;
   text-align: center;
   color: #fff;
+  transition: all 0.5s ease;
 }
 .up-btn.open {
   bottom: 5px;

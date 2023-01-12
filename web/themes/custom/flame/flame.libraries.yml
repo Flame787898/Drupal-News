@@ -10,6 +10,8 @@ global-js:
     assets/js/stickyHeader.js: {}
     assets/js/firstStickySidebar.js: {}
     assets/js/secondStickySidebar.js: {}
+    assets/js/button.js: {}
+    assets/js/newsSidebar.js: {}
   dependencies:
     - core/jquery
     - core/drupal
