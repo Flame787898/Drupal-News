@@ -11,7 +11,7 @@ dependencies:
 id: sociallinkfooter_2
 theme: flame
 region: footer_sidebar_first
-weight: -14
+weight: -20
 provider: null
 plugin: 'block_content:0523a182-81ac-440d-9686-f56612093e4a'
 settings:

@@ -5,9 +5,13 @@ dependencies:
   config:
     - comment.type.comment
     - field.field.comment.comment.comment_body
+    - field.field.comment.comment.field_email_
+    - field.field.comment.comment.field_website_
+    - field.field.comment.comment.field_your_name
   module:
     - field_layout
     - layout_discovery
+    - link
     - text
 third_party_settings:
   field_layout:
@@ -30,6 +34,30 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_email_:
+    type: email_default
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_website_:
+    type: link_default
+    weight: 14
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_your_name:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   subject:

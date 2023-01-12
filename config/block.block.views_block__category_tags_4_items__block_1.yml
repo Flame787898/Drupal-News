@@ -12,7 +12,7 @@ dependencies:
 id: views_block__category_tags_4_items__block_1
 theme: flame
 region: title_page
-weight: 0
+weight: -19
 provider: null
 plugin: 'views_block:category_tags_4_items_-block_1'
 settings:

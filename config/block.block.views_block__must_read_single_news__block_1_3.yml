@@ -1,0 +1,29 @@
+uuid: 4cc86eff-6953-46e7-ab5a-5e3bd0014ec8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.must_read_single_news_
+  module:
+    - system
+    - views
+  theme:
+    - flame
+id: views_block__must_read_single_news__block_1_3
+theme: flame
+region: content_left_sidebar
+weight: -24
+provider: null
+plugin: 'views_block:must_read_single_news_-block_1'
+settings:
+  id: 'views_block:must_read_single_news_-block_1'
+  label: 'Must read'
+  label_display: visible
+  provider: views
+  views_label: 'Must read'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/node/*'

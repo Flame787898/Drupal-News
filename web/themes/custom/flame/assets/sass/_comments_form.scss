@@ -1,0 +1,84 @@
+.user-comments {
+  width: 70%;
+
+  & > h2 {
+    display: none;
+  }
+
+  .form-item-subject-0-value {
+    display: none;
+  }
+
+  #edit-comment-body-0-format {
+    display: none;
+  }
+
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2;
+    color: rgb(17, 17, 17);
+    margin-top: 10px;
+    margin-bottom: 7px;
+  }
+
+  //End label.form-required.
+
+  .layout__region--content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    #edit-comment-body-wrapper {
+      width: 100%;
+    }
+
+    //End #edit-comment-body-wrapper.
+
+
+    .wrapper:not(#edit-comment-body-wrapper) {
+      width: 30%;
+      min-width: 150px;
+
+      input {
+        display: block;
+        width: 100%;
+        border: none;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .6);
+        padding: 10px;
+      }
+
+      .description {
+        display: none;
+      }
+    }
+
+    // End .wrapper:not(#edit-comment-body-wrapper).
+
+  }
+
+  //End .layout__region--content.
+
+  .form-submit {
+    transition: $transition;
+    margin: 20px 0;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: $white;
+    background-color: $black;
+  &:hover{
+    background-color: #9b51e0;
+  }
+
+  }
+
+  //End .form-submit.
+
+}
+
+// End .user-comments.

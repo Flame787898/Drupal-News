@@ -1,6 +1,6 @@
 export const server = (done)=>{
   app.plugins.browsersync.init({
-    proxy: 'http://drupal.localhost:8000/',
+    proxy: 'http://flame.docksal.site',
     notify:false
   })
 }
