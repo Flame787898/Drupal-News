@@ -5,7 +5,6 @@ namespace Drupal\custom_paragraphs\Plugin\paragraphs\Behavior;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\paragraphs\Annotation\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -14,29 +13,26 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * @ParagraphsBehavior(
  *   id = "custom_paragraphs_image_and_text",
- *   label = "Image and text settings",
- *   description = "Seatings for image and text paragraphs type",
+ *   label = @Translation("Image and text settings"),
+ *   description = @Translation("eatings for image and text paragraphs type."),
  *   weight = 0
  * )
  */
 class ImageAndTextBehavior extends ParagraphsBehaviorBase {
 
   /**
-   * @param \Drupal\paragraphs\Entity\ParagraphsType $paragraphs_type
    *
-   * @return bool
+   * {@inheritDoc}
+   *
    */
   public static function isApplicable(ParagraphsType $paragraphs_type): bool {
     return $paragraphs_type->id() == "image_and_text";
   }
 
   /**
-   * @param array $build
-   * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
-   * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
-   * @param $view_mode
    *
-   * @return void
+   * {@inheritDoc}
+   *
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     $bem_block = 'paragraph-' . $paragraph->bundle();
@@ -47,16 +43,12 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
       $build['#attributes']['class'][] = Html::getClass('hidden-mobile');
     }
     $build['#attributes']['class'][] = Html::getClass(' ');
-
-
   }
 
   /**
-   * @param \Drupal\paragraphs\ParagraphInterface $paragraph
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
-   * @return array
+   * {@inheritDoc}
+   *
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
 
