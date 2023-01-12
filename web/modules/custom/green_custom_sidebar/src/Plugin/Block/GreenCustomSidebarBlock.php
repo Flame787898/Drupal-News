@@ -2,8 +2,6 @@
 
 namespace Drupal\green_custom_sidebar\Plugin\Block;
 
-use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -27,10 +25,11 @@ class GreenCustomSidebarBlock extends BlockBase {
 
   /**
    * Rendered region
+   *
    * @param string $region
+   *
    * @return array
-   * @throws InvalidPluginDefinitionException
-   * @throws PluginNotFoundException
+   *  return view
    */
   private function renderRegion($region) {
     $build = [];
@@ -44,10 +43,11 @@ class GreenCustomSidebarBlock extends BlockBase {
 
   /**
    * Get blocks in region
+   *
    * @param string $region
+   *
    * @return array
-   * @throws InvalidPluginDefinitionException
-   * @throws PluginNotFoundException
+   *  return block region
    */
   private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()

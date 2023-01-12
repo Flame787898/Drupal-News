@@ -40,7 +40,6 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
     if ($hide_paragraph == 1) {
       $build['#attributes']['class'][] = Html::getClass('hidden-mobile');
     }
-    $build['#attributes']['class'][] = Html::getClass(' ');
   }
 
   /**
@@ -48,7 +47,7 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
 
-    $form ['hide_mobile'] = [
+    $form['hide_mobile'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Hide mobile'),
       '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'hide_mobile', 0),
