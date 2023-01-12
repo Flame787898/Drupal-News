@@ -24,12 +24,12 @@ class GreenCustomSidebarBlock extends BlockBase {
   }
 
   /**
-   * Rendered region
+   * Rendered region.
    *
    * @param string $region
    *
    * @return array
-   *  return view
+   *  return view.
    */
   private function renderRegion($region) {
     $build = [];
@@ -42,12 +42,12 @@ class GreenCustomSidebarBlock extends BlockBase {
   }
 
   /**
-   * Get blocks in region
+   * Get blocks in region.
    *
    * @param string $region
    *
    * @return array
-   *  return block region
+   *  return block region.
    */
   private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()

@@ -23,7 +23,7 @@ class GreenCommentsSidebarBlock extends BlockBase {
   }
 
   /**
-   * Function is rendered region
+   * Function is rendered region.
    *
    * @param string $region
    *
@@ -40,7 +40,7 @@ class GreenCommentsSidebarBlock extends BlockBase {
   }
 
   /**
-   *  Function get block in regin
+   *  Function get block in regin.
    *
    * @param string $region
    *
