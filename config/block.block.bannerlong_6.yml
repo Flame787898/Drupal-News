@@ -1,4 +1,4 @@
-uuid: fbd92121-810f-4b8d-8825-39298b96218c
+uuid: 8e3935c0-e63a-43bc-bc64-2d9200ff6f6b
 langcode: en
 status: true
 dependencies:
@@ -6,25 +6,28 @@ dependencies:
     - 'block_content:basic:7d6a3a9f-762a-4531-8047-623ae9a76daf'
   module:
     - block_content
-    - system
+    - node
   theme:
     - flame
-id: bannerlong_5
+id: bannerlong_6
 theme: flame
-region: title_page
-weight: -23
+region: content_footer_sidebar
+weight: -22
 provider: null
 plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
 settings:
   id: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
-  label: 'banner-long '
+  label: 'Banner long '
   label_display: '0'
   provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
-  request_path:
-    id: request_path
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    pages: '/taxonomy/*'
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

@@ -9,7 +9,7 @@ dependencies:
 id: sitebranding_2
 theme: flame
 region: footer_sidebar_first
-weight: -16
+weight: -22
 provider: null
 plugin: system_branding_block
 settings:

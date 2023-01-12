@@ -1,4 +1,4 @@
-uuid: 73846914-3684-4451-97d3-2eefd53c1ccc
+uuid: 75ac33fa-82a6-4628-8e1c-dc1bda2bfcdf
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - flame
-id: banner_5
+id: banner_6
 theme: flame
 region: sidebar_right
-weight: -18
+weight: -20
 provider: null
 plugin: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
 settings:
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '/taxonomy/*'
+    pages: '/node/*'

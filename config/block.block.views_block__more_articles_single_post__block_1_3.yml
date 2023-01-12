@@ -1,0 +1,33 @@
+uuid: 38708a3c-514c-4957-8460-4a20757215d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.more_articles_single_post_
+  module:
+    - node
+    - views
+  theme:
+    - flame
+id: views_block__more_articles_single_post__block_1_3
+theme: flame
+region: comments_sidebar
+weight: 0
+provider: null
+plugin: 'views_block:more_articles_single_post_-block_1'
+settings:
+  id: 'views_block:more_articles_single_post_-block_1'
+  label: 'More articles'
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: 'More articles'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
