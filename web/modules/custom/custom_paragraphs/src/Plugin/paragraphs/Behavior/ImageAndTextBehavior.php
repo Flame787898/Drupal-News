@@ -11,6 +11,8 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
+ * Image and text paragraphs plugin.
+ *
  * @ParagraphsBehavior(
  *   id = "custom_paragraphs_image_and_text",
  *   label = @Translation("Image and text settings"),
@@ -21,18 +23,14 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 class ImageAndTextBehavior extends ParagraphsBehaviorBase {
 
   /**
-   *
-   * {@inheritDoc}
-   *
+   * {@inheritdoc}
    */
   public static function isApplicable(ParagraphsType $paragraphs_type): bool {
     return $paragraphs_type->id() == "image_and_text";
   }
 
   /**
-   *
-   * {@inheritDoc}
-   *
+   * {@inheritdoc}
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     $bem_block = 'paragraph-' . $paragraph->bundle();
@@ -46,9 +44,7 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
   }
 
   /**
-   *
-   * {@inheritDoc}
-   *
+   * {@inheritdoc}
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
 
