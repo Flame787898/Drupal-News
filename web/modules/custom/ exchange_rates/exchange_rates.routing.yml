@@ -1,0 +1,7 @@
+exchange_rates.admin_settings:
+  path: '/admin/config/exchange-rates'
+  defaults:
+    _form: '\Drupal\exchange_rates\Form\ExchangeAPI'
+    _title: 'Exchange rates configuration screen'
+  requirements:
+    _permission: 'administer site configuration'

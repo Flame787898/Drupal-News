@@ -1,7 +1,6 @@
 <?php
 
 namespace Drupal\exchange_rates\Plugin\Block;
-
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -37,8 +36,17 @@ class ExchangeRatesBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $url = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json';
-    $data = $this->get_api($url);
+    $api_url = \Drupal::config('exchange_rates.settings')->get('api_base_url');
+    $allow_request = \Drupal::config('exchange_rates.settings')->get('disabled_api');
+    if($allow_request == 0){
+      $data = $this->get_api($api_url);
+    }
+    else{
+      return [
+        '#theme' => 'exchange-block',
+        '#data' => ' ',
+      ];
+    }
     return [
       '#theme' => 'exchange-block',
       '#data' => $data,
