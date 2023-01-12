@@ -23,13 +23,11 @@ class GreenCommentsSidebarBlock extends BlockBase {
   }
 
   /**
-   *  Function is rendered region
+   * Function is rendered region
    *
    * @param string $region
    *
-   *
    * @return array
-   *
    */
   private function renderRegion($region) {
     $build = [];
@@ -57,5 +55,4 @@ class GreenCommentsSidebarBlock extends BlockBase {
         'region' => $region,
       ]);
   }
-
 }
