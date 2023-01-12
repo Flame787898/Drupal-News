@@ -1,0 +1,5 @@
+name: Green custom sidebar
+description: Creates a custom sidebar in the post item page inside the content block on the Full content view.
+package: Custom
+type: module
+core_version_requirement: ^9 || ^10
