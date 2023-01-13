@@ -50,7 +50,7 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
     $form['hide_mobile'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Hide mobile'),
-      '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'hide_mobile', 0),
+      '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'hide_mobile', FALSE),
     ];
 
     $form['image_position'] = [
