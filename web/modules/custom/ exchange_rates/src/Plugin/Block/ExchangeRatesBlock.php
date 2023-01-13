@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Block rendered exchange value.
+ */
+
 namespace Drupal\exchange_rates\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -20,10 +25,10 @@ class ExchangeRatesBlock extends BlockBase {
    * @param string $url
    *   Get url.
    *
-   * @return mixed
+   * @return array
    *   Get json data.
    */
-  function get_api($url): mixed {
+  function getApi($url): mixed {
     try {
       $client = \Drupal::httpClient();
       $get_request = $client->get($url);
@@ -45,7 +50,6 @@ class ExchangeRatesBlock extends BlockBase {
       '#theme' => 'exchange-block',
       '#data' => $data,
     ];
-
   }
 
 }

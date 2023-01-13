@@ -9,6 +9,6 @@ function exchange_rates_theme($existing, $type, $theme, $path) {
       'variables' => [
         'data' => NULL
       ]
-    ],
+    ]
   ];
 }
