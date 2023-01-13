@@ -1,0 +1,70 @@
+.author_view {
+  border: 1px solid rgb(234, 234, 234);
+  padding: 19px;
+  margin-bottom: 20px;
+
+  .views-field-user-picture {
+    margin-bottom: 10px;
+
+    a {
+      display: block;
+
+      img {
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    //End a.
+  }
+
+  //End .views-field-user-picture.
+
+  .views-field-name {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+
+    span a {
+      transition: $transition;
+      text-decoration: none;
+      color: $black;
+      font-size: 20px;
+      font-weight: 700;
+
+      &:hover{
+        color: rgb(76, 64, 132);
+      }
+    }
+  }
+
+  //End .views-field-name.
+
+  .views-field-field-about-user {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  //End .views-field-field-about-user.
+
+  .views-field-field-social-link- ul{
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    font-weight: 700;
+
+    & li:hover{
+      color: rgb(76, 64, 132);
+      cursor: pointer;
+    }
+  }//End .views-field-field-social-link-.
+}
+
+// End .author_view.

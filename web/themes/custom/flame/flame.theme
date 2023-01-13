@@ -1,0 +1,32 @@
+<?php
+
+/** Implements hook_preprocess_node() for node.html.twig. */
+function flame_preprocess_node(array &$variables)
+{
+
+  if (isset($variables['node'])) {
+
+    $node = $variables['node'];
+    if (($node->getType() == 'article')) {
+
+      /** @var \Drupal\Core\Block\BlockManagerInterface $block_manager */
+      $block_manager = \Drupal::service('plugin.manager.block');
+      $block = $block_manager->createInstance('green_custom_sidebar_block');
+      $block2 = $block_manager->createInstance('green_comments_sidebar_block');
+      $variables['green_custom_sidebar'] = $block->build();
+      $variables['green_comments_sidebar'] = $block2->build();
+    }
+  }
+}
+
+/** Implements hook_form_alter(). */
+function flame_form_alter(&$form, $form_state, $form_id)
+{
+  if ($form_id == 'comment_comment_form') {
+    $form['actions']['submit']['#value'] = t('Post comment');
+  }
+}
+
+
+
+

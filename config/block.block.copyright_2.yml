@@ -11,7 +11,7 @@ dependencies:
 id: copyright_2
 theme: flame
 region: footer_sidebar_first
-weight: -15
+weight: -21
 provider: null
 plugin: 'block_content:26d112da-88dd-4e65-a7f5-c71923bb23b6'
 settings:

@@ -13,6 +13,7 @@
 /web/themes/custom/flame/node_modules
 # Ignore Drupal's file directory
 /web/sites/*/files/
+/web/sites/default/
 /web/false,
 /web/sites/default
 # Ignore SimpleTest multi-site environment
