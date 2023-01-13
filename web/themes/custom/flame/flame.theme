@@ -37,7 +37,7 @@ function flame_preprocess_node(array &$variables) {
  *   Return form.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   Return form state.
- * @param $form_id
+ * @param string $form_id
  *   Return form id.
  */
 function flame_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
