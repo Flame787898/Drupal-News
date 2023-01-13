@@ -4,7 +4,7 @@ namespace Drupal\exchange_rates\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Displays block
+ * Displays block.
  *
  * @Block(
  *   id = "exchange_rates_block",
@@ -14,17 +14,20 @@ use Drupal\Core\Block\BlockBase;
 class ExchangeRatesBlock extends BlockBase {
 
   /**
-   * Get all exchange rate from api
+   * Get all exchange rate from api.
    *
-   * @param $url
+   * @param string $url
+   *   Get url.
    *
-   * @return mixed
+   * @return array
+   *   Get json data.
    */
-  function get_api($url): mixed {
+  public function getApi($url) {
     try {
       $client = \Drupal::httpClient();
       $get_request = $client->get($url);
-    } catch (\Exception $error) {
+    }
+    catch (\Exception $error) {
       $logger = \Drupal::logger('HTTP Client error');
       $logger->error($error->getMessage());
     }
@@ -51,7 +54,6 @@ class ExchangeRatesBlock extends BlockBase {
       '#theme' => 'exchange-block',
       '#data' => $data,
     ];
-
   }
 
 }
