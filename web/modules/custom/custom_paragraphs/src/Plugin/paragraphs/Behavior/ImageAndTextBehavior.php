@@ -66,4 +66,5 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
     ];
     return $form;
   }
+
 }

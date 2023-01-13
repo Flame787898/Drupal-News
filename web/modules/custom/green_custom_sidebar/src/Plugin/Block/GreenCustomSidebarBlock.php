@@ -14,6 +14,7 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class GreenCustomSidebarBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -27,10 +28,10 @@ class GreenCustomSidebarBlock extends BlockBase {
    * Rendered region.
    *
    * @param string $region
-   *   return region.
+   *   get region.
    *
    * @return array
-   *   return view.
+   *   get view.
    */
   private function renderRegion($region) {
     $build = [];
@@ -46,10 +47,10 @@ class GreenCustomSidebarBlock extends BlockBase {
    * Get blocks in region.
    *
    * @param string $region
-   *   return block region.
+   *   get block region.
    *
    * @return array
-   *   return block array.
+   *   get block array.
    */
   private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()
@@ -60,4 +61,6 @@ class GreenCustomSidebarBlock extends BlockBase {
         'region' => $region,
       ]);
   }
+
 }
+
