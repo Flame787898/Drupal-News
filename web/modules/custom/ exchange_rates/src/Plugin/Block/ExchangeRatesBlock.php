@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Block rendered exchange value.
- */
-
 namespace Drupal\exchange_rates\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -28,11 +23,12 @@ class ExchangeRatesBlock extends BlockBase {
    * @return array
    *   Get json data.
    */
-  function getApi($url): mixed {
+  public function getApi($url) {
     try {
       $client = \Drupal::httpClient();
       $get_request = $client->get($url);
-    } catch (\Exception $error) {
+    }
+    catch (\Exception $error) {
       $logger = \Drupal::logger('HTTP Client error');
       $logger->error($error->getMessage());
     }
