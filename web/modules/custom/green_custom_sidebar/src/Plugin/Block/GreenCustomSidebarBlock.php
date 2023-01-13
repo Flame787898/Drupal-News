@@ -47,10 +47,10 @@ class GreenCustomSidebarBlock extends BlockBase {
    * Get blocks in region.
    *
    * @param string $region
-   *   get block region.
+   *   Get block region.
    *
    * @return array
-   *   get block array.
+   *   Get block array.
    */
   private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()

@@ -26,10 +26,10 @@ class GreenCommentsSidebarBlock extends BlockBase {
    * Function is rendered region.
    *
    * @param string $region
-   *   get region.
+   *   Get region.
    *
    * @return array
-   *   get block.
+   *   Get block.
    */
   private function renderRegion($region) {
     $build = [];
@@ -45,10 +45,10 @@ class GreenCommentsSidebarBlock extends BlockBase {
    * Function get block in regin.
    *
    * @param string $region
-   *   get region.
+   *   Get region.
    *
    * @return array
-   *   get array.
+   *   Get array.
    */
   private function getBlocksInRegion(string $region): array {
     return \Drupal::entityTypeManager()
