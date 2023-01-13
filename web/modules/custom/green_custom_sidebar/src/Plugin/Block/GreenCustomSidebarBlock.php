@@ -28,10 +28,10 @@ class GreenCustomSidebarBlock extends BlockBase {
    * Rendered region.
    *
    * @param string $region
-   *   get region.
+   *   Get region.
    *
    * @return array
-   *   get view.
+   *   Get view.
    */
   private function renderRegion($region) {
     $build = [];
@@ -63,4 +63,3 @@ class GreenCustomSidebarBlock extends BlockBase {
   }
 
 }
-
