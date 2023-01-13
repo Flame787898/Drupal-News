@@ -6,9 +6,13 @@ dependencies:
     - comment.type.comment
     - core.entity_view_mode.comment.full
     - field.field.comment.comment.comment_body
+    - field.field.comment.comment.field_email_
+    - field.field.comment.comment.field_website_
+    - field.field.comment.comment.field_your_name
   module:
     - field_layout
     - layout_builder
+    - link
     - text
 third_party_settings:
   field_layout:
@@ -32,9 +36,32 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
+  field_email_:
+    type: basic_string
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
-hidden: {  }
+  field_website_:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_your_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  links: true

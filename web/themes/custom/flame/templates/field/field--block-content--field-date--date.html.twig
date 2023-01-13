@@ -14,7 +14,7 @@
  * on an article node type:
  * - field--node--field-foo--article.html.twig
  * - field--node--field-foo.html.twig
- * - field--node--article.html.twig
+ * - field--node--article--full.html.twig
  * - field--field-foo.html.twig
  * - field--text-with-summary.html.twig
  * - field.html.twig
@@ -36,11 +36,9 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
+{% set title_classes = [
+  label_display == 'visually_hidden' ? 'visually-hidden',
+] %}
 
 {% if label_hidden %}
   {% if multiple %}
@@ -55,12 +53,12 @@
     {% endfor %}
   {% endif %}
 {% else %}
-  <div {{ attributes }}>
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
+<div {{ attributes }}>
+  {% for item in items %}
+    <div{{ item.attributes }}>{{ item.content }}</div>
+  {% endfor %}
+  {% if multiple %}
+    </div>
+  {% endif %}
   </div>
 {% endif %}

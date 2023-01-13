@@ -1,0 +1,5 @@
+name: Green comments sidebar
+description: Creates a custom sidebar in the post item page inside the comments block.
+package: Custom
+type: module
+core_version_requirement: ^9 || ^10

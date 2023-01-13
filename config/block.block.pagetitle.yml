@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: flame
 region: title_page
-weight: -19
+weight: -22
 provider: null
 plugin: page_title_block
 settings:
