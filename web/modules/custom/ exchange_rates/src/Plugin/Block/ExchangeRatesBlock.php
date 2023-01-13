@@ -29,12 +29,10 @@ class ExchangeRatesBlock extends BlockBase {
         '#data' => '',
       ];
     }
-
     return [
       '#theme' => 'exchange-block',
       '#data' => $data,
     ];
-
   }
 
 }
