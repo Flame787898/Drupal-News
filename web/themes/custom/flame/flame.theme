@@ -31,11 +31,11 @@ function flame_preprocess_node(array &$variables) {
 /**
  * Implements hook_form_alter().
  *
- * @param $form
+ * @param array $form
  *   Return form.
- * @param $form_state
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   Return form state.
- * @param $form_id
+ * @param string $form_id
  *   Return form id.
  */
 function flame_form_alter(&$form, $form_state, $form_id) {
