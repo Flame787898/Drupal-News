@@ -1,4 +1,5 @@
-/* Setup */ /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/* Setup */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
@@ -97,6 +98,24 @@ a {
 
 main.open {
   display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.paragraph-image-and-text--image-position-right img {
+  float: right;
+}
+.paragraph-image-and-text--image-position-left img {
+  float: left;
+}
+.paragraph-image-and-text--image-position-center img {
+  float: none;
+  margin: 0 auto;
+  display: block;
 }
 
 /* =======================================================================
@@ -1336,7 +1355,7 @@ main.open {
   }
 }
 .news__list .views-element-container .views-row .views-field-field-announcement p {
-  color: #555555;
+  color: #555;
   font-size: 15px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -1760,6 +1779,24 @@ main.open {
   display: none;
 }
 
+@media screen and (max-width: 940px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.paragraph-image-and-text--image-position-right img {
+  float: right;
+}
+.paragraph-image-and-text--image-position-left img {
+  float: left;
+}
+.paragraph-image-and-text--image-position-center img {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
 /* =======================================================================
 ## ++ Cleafix
 ========================================================================== */
@@ -1930,7 +1967,7 @@ main.open {
   width: 100%;
 }
 .main-content .article__right-part .announcement {
-  color: #555555;
+  color: #555;
   column-count: 1;
   column-gap: 48px;
   font-family: "Source Sans Pro", sans-serif;
@@ -2138,7 +2175,7 @@ footer[role=contentinfo] .wrap-content .col:nth-child(1) h2 {
   display: none;
 }
 footer[role=contentinfo] .wrap-content .col:nth-child(1) p {
-  color: #ffffff;
+  color: #fff;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   line-height: 1.4;

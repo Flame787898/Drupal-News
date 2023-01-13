@@ -17,6 +17,7 @@ module:
   contact: 0
   contextual: 0
   ctools: 0
+  custom_paragraphs: 0
   datetime: 0
   dblog: 0
   devel: 0

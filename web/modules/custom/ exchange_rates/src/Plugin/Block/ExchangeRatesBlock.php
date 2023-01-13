@@ -5,7 +5,7 @@ namespace Drupal\exchange_rates\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Displays block
+ * Displays block.
  *
  * @Block(
  *   id = "exchange_rates_block",
