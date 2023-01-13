@@ -27,7 +27,8 @@ class ExchangeRatesBlock extends BlockBase {
     try {
       $client = \Drupal::httpClient();
       $get_request = $client->get($url);
-    } catch (\Exception $error) {
+    }
+    catch (\Exception $error) {
       $logger = \Drupal::logger('HTTP Client error');
       $logger->error($error->getMessage());
     }
