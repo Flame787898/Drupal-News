@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\exchange_rates\Plugin\Block;
+
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -26,8 +27,7 @@ class ExchangeRatesBlock extends BlockBase {
     try {
       $client = \Drupal::httpClient();
       $get_request = $client->get($url);
-    }
-    catch (\Exception $error) {
+    } catch (\Exception $error) {
       $logger = \Drupal::logger('HTTP Client error');
       $logger->error($error->getMessage());
     }
@@ -40,11 +40,12 @@ class ExchangeRatesBlock extends BlockBase {
    */
   public function build() {
     $api_url = \Drupal::config('exchange_rates.settings')->get('api_base_url');
-    $allow_request = \Drupal::config('exchange_rates.settings')->get('disabled_api');
-    if($allow_request == 0){
-      $data = $this->get_api($api_url);
+    $allow_request = \Drupal::config('exchange_rates.settings')
+      ->get('disabled_api');
+    if ($allow_request == 0) {
+      $data = $this->getApi($api_url);
     }
-    else{
+    else {
       return [
         '#theme' => 'exchange-block',
         '#data' => ' ',
