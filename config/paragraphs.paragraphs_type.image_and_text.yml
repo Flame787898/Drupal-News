@@ -1,10 +1,14 @@
 uuid: 0549c751-2822-4ff8-9caa-13edf020aa55
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - custom_paragraphs
 id: image_and_text
 label: image_and_text
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  custom_paragraphs_image_and_text:
+    enabled: true

@@ -30,6 +30,34 @@ main {
   }
 }
 
+.hidden-mobile {
+  @include phones {
+    display: none;
+  }
+}
+
+.paragraph-image-and-text--image-position {
+  &-right {
+    img {
+      float: right;
+    }
+  }
+
+  &-left {
+    img {
+      float: left;
+    }
+  }
+
+  &-center {
+    img {
+      float: none;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
 /* =======================================================================
 ## ++ Cleafix
 ========================================================================== */
