@@ -39,7 +39,7 @@ class ExchangeAPIConnector {
   /**
    * Get all form settings.
    *
-   * @return object $config_form
+   * @return object
    *   Rerun config form seating.
    */
   public function getExchangeConfig() {
@@ -50,7 +50,7 @@ class ExchangeAPIConnector {
   /**
    * Send request from api.
    *
-   * @return array $data
+   * @return array
    *   Return exchanges rates from request.
    */
   public function getExchangeRates() {
