@@ -3,20 +3,23 @@
 namespace Drupal\exchange_rates;
 
 use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Queue\RequeueException;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 
 class ExchangeAPIConnector {
 
   /**
-   * @var \GuzzleHttp\ClientInterface
+   * This variable send http request.
+   *
+   * @var object
    *   This variable send http request.
    */
   private $httpClient;
 
   /**
-   * @var \Drupal\Core\Config\ConfigFactory
+   * This variable get config form seating.
+   *
+   * @var object
    *   This variable get config form seating.
    */
   private $configForm;
@@ -25,7 +28,7 @@ class ExchangeAPIConnector {
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
    * @param \Drupal\Core\Config\ConfigFactory $config
-   *   Config factory
+   *   Config factory.
    */
   public function __construct(ClientInterface $client, ConfigFactory $config) {
     $this->httpClient = $client;
