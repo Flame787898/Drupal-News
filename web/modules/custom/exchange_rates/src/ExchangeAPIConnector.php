@@ -6,13 +6,15 @@ use Drupal\Core\Config\ConfigFactory;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 
+/**
+ * Exchange rates service.
+ */
 class ExchangeAPIConnector {
 
   /**
    * This variable send http request.
    *
    * @var object
-   *   This variable send http request.
    */
   private $httpClient;
 
@@ -20,7 +22,6 @@ class ExchangeAPIConnector {
    * This variable get config form seating.
    *
    * @var object
-   *   This variable get config form seating.
    */
   private $configForm;
 
@@ -36,6 +37,8 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * Get all form settings.
+   *
    * @return object $config_form
    *   Rerun config form seating.
    */
@@ -45,6 +48,8 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * Send request from api.
+   *
    * @return array $data
    *   Return exchanges rates from request.
    */
@@ -65,4 +70,3 @@ class ExchangeAPIConnector {
   }
 
 }
-
