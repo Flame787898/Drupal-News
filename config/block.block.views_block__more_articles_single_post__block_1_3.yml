@@ -1,6 +1,6 @@
 uuid: 38708a3c-514c-4957-8460-4a20757215d9
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.more_articles_single_post_
@@ -11,7 +11,7 @@ dependencies:
     - flame
 id: views_block__more_articles_single_post__block_1_3
 theme: flame
-region: comments_sidebar
+region: top_bar
 weight: 0
 provider: null
 plugin: 'views_block:more_articles_single_post_-block_1'

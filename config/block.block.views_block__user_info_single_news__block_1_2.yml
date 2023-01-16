@@ -1,6 +1,6 @@
 uuid: a3a4fbf4-8289-4ec6-9cf2-154aac83d911
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.user_info_single_news_
@@ -11,7 +11,7 @@ dependencies:
     - flame
 id: views_block__user_info_single_news__block_1_2
 theme: flame
-region: content_left_sidebar
+region: top_bar
 weight: -23
 provider: null
 plugin: 'views_block:user_info_single_news_-block_1'

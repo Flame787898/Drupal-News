@@ -17,7 +17,7 @@ class ExchangeAPIConnector {
 
   /**
    * @var \Drupal\Core\Config\ConfigFactory
-   *   This variable get config form seating
+   *   This variable get config form seating.
    */
   private $configForm;
 
@@ -33,8 +33,8 @@ class ExchangeAPIConnector {
   }
 
   /**
-   * @return \Drupal\Core\Config\Config|\Drupal\Core\Config\ImmutableConfig
-   *   Rerun config form seating
+   * @return object $config_form
+   *   Rerun config form seating.
    */
   public function getExchangeConfig() {
     $config_form = $this->configForm->get('exchange_rates.settings');
@@ -42,9 +42,8 @@ class ExchangeAPIConnector {
   }
 
   /**
-   * @return \Psr\Http\Message\StreamInterface|void
-   *   Return data from request
-   * @throws \GuzzleHttp\Exception\GuzzleException
+   * @return array $data
+   *   Return exchanges rates from request.
    */
   public function getExchangeRates() {
     $url = $this->getExchangeConfig()->get('api_base_url');

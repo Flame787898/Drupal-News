@@ -12,7 +12,7 @@ dependencies:
 id: banner_5
 theme: flame
 region: sidebar_right
-weight: -21
+weight: -22
 provider: null
 plugin: 'block_content:479d2a10-d65d-4b14-85e2-add4037d63dc'
 settings:

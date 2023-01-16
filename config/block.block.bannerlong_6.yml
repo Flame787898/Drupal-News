@@ -1,6 +1,6 @@
 uuid: 8e3935c0-e63a-43bc-bc64-2d9200ff6f6b
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:basic:7d6a3a9f-762a-4531-8047-623ae9a76daf'
@@ -11,7 +11,7 @@ dependencies:
     - flame
 id: bannerlong_6
 theme: flame
-region: content_footer_sidebar
+region: top_bar
 weight: -22
 provider: null
 plugin: 'block_content:7d6a3a9f-762a-4531-8047-623ae9a76daf'
