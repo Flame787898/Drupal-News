@@ -1,0 +1,3 @@
+example_thing: 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json'
+api_base_url: 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json'
+disabled_api: 0
