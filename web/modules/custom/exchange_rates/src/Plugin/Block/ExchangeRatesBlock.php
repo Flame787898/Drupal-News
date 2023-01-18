@@ -64,9 +64,10 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
    */
   public function build() {
     $data = $this->exchangeAPIConnector->getExchangeRates();
+    $filter = $this->exchangeAPIConnector->getFilterData($data);
     return [
       '#theme' => 'exchange-block',
-      '#data' => $data,
+      '#data' => $filter,
     ];
   }
 
