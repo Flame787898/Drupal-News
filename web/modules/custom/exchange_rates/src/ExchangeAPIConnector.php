@@ -52,10 +52,11 @@ class ExchangeAPIConnector {
    *
    * @param object $data
    *   All exchange rates.
+   *
    * @return array
    *   Return filter data.
    */
-  function getFilterData($data) {
+  public function getFilterData($data) {
     $filter_data = [];
     $current_rates = $this->getExchangeConfig()->get('list_course');
 
@@ -70,7 +71,6 @@ class ExchangeAPIConnector {
     }
     return $filter_data;
   }
-
 
   /**
    * Send request from api.
@@ -90,7 +90,8 @@ class ExchangeAPIConnector {
           $data = $value;
         }
         return $data;
-      } catch (ClientException $e) {
+      }
+      catch (ClientException $e) {
         watchdog_exception('exchange_rate', $e, $e->getMessage());
       }
     }

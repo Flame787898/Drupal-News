@@ -49,6 +49,7 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
    *   Plugin definition.
    *
    * @return \Drupal\exchange_rates\Plugin\Block\ExchangeRatesBlock|static
+   *   Return ExchangeRatesBlock.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -72,4 +73,3 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
 }
-
