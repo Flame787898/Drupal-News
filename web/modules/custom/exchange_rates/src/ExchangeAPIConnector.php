@@ -5,8 +5,6 @@ namespace Drupal\exchange_rates;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\ClientException;
-use mysql_xdevapi\Exception;
 
 /**
  * Exchange rates service.
@@ -38,8 +36,10 @@ class ExchangeAPIConnector {
    *   Client interface.
    * @param \Drupal\Core\Config\ConfigFactory $config
    *   Config factory.
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $error_log
+   *   Error log.
    */
-  public function __construct(ClientInterface $client, ConfigFactory $config,LoggerChannelFactoryInterface $error_log) {
+  public function __construct(ClientInterface $client, ConfigFactory $config, LoggerChannelFactoryInterface $error_log) {
     $this->httpClient = $client;
     $this->configForm = $config;
     $this->errorLog = $error_log;
