@@ -62,25 +62,11 @@ class ExchangeAPI extends ConfigFormBase {
   }
 
   /**
-   * Return all currency name.
-   *
-   * @return array
-   */
-  function getCurrencyName() {
-    $data = [];
-    $json = $this->exchangeApiService->getExchangeRates();
-    foreach ($json as $key => $val) {
-      $data[$key] = $val->currency;
-    }
-    return $data;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
-    $data = $this->getCurrencyName();
+    $data = $this->exchangeApiService->getCurrencyName();
 
     $form['disabled_api'] = [
       '#type' => 'checkbox',
@@ -101,6 +87,18 @@ class ExchangeAPI extends ConfigFormBase {
       '#options' => $data,
     ];
     return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    if (strlen($form_state->getValue('api_base_url') == '')) {
+      $form_state->setErrorByName('api_base_url', $this->t('Url is required'));
+    }
+    if (!$this->exchangeApiService->checkRequest($form_state->getValue('api_base_url'))) {
+      $form_state->setErrorByName('api_base_url', $this->t('Url is not valid'));
+    }
   }
 
   /**
