@@ -33,6 +33,8 @@ class ExchangeAPIConnector {
   private $errorLog;
 
   /**
+   * Initialize constructor.
+   *
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
    * @param \Drupal\Core\Config\ConfigFactory $config
@@ -47,11 +49,10 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * This function return error.
+   *
    * @param string $message
    *   Error message.
-   *
-   * @return void
-   *   Return message.
    */
   public function getError($message) {
     $this->errorLog->get('exchange_rates')->error($message);
@@ -115,17 +116,17 @@ class ExchangeAPIConnector {
    * Return checkbox from config form.
    *
    * @return mixed
-   *    Return checkbox from config form.
+   *   Return checkbox from config form.
    */
   public function getDisableButtonConfig() {
     return $this->getExchangeConfig()->get('disabled_api');
   }
 
   /**
-   *  Return count days from config form.
+   * Return count days from config form.
    *
    * @return mixed
-   *    Return count days from config form.
+   *   Return count days from config form.
    */
   public function getCoundDaysConfig() {
     return $this->getExchangeConfig()->get('count_days');
@@ -194,7 +195,7 @@ class ExchangeAPIConnector {
           $request = $this->httpClient->request('GET', $end_point);
           $body = $request->getBody();
           $data[$i] = json_decode($body);
-          for($j =0 ; $j< count($data[0]->exchangeRate); $j++){
+          for($j =0 ; $j< count($data[0]->exchangeRate); $j++) {
             $data[$i]->exchangeRate[$j]->date = $data[$i]->date;
             $full_data[$i] = $data[$i]->exchangeRate;
           }
