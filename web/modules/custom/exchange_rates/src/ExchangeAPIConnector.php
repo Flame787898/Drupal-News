@@ -51,7 +51,7 @@ class ExchangeAPIConnector {
    *   Error message.
    *
    * @return void
-   *   return
+   *   Return message.
    */
   public function getError($message) {
     $this->errorLog->get('exchange_rates')->error($message);
@@ -112,7 +112,7 @@ class ExchangeAPIConnector {
   }
 
   /**
-   *  Return checkbox from config form.
+   * Return checkbox from config form.
    *
    * @return mixed
    *    Return checkbox from config form.
