@@ -195,7 +195,7 @@ class ExchangeAPIConnector {
           $request = $this->httpClient->request('GET', $end_point);
           $body = $request->getBody();
           $data[$i] = json_decode($body);
-          for($j =0 ; $j< count($data[0]->exchangeRate); $j++) {
+          for ($j = 0; $j < count($data[0]->exchangeRate); $j++) {
             $data[$i]->exchangeRate[$j]->date = $data[$i]->date;
             $full_data[$i] = $data[$i]->exchangeRate;
           }
@@ -213,6 +213,7 @@ class ExchangeAPIConnector {
    * Return all currency name.
    *
    * @return array
+   *   Return all currency name.
    */
   public function getCurrencyName() {
     $data = [];
