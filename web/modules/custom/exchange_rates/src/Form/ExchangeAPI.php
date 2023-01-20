@@ -83,8 +83,16 @@ class ExchangeAPI extends ConfigFormBase {
     $form['list_course'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Exchange Rate'),
-      '#default_value' => $config->get('list_course') ?? [],
+      '#default_value' => $config->get('list_course') ?: [],
       '#options' => $data,
+    ];
+
+    $form['count_days'] = [
+      '#type' => 'number',
+      '#title' => t('Last days period'),
+      '#default_value' => $config->get('count_days') ? : 1,
+      '#min' => 1,
+      '#max' => 31,
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -109,6 +117,7 @@ class ExchangeAPI extends ConfigFormBase {
       ->set('api_base_url', $form_state->getValue('api_base_url'))
       ->set('disabled_api', $form_state->getValue('disabled_api'))
       ->set('list_course', $form_state->getValue('list_course'))
+      ->set('count_days', $form_state->getValue('count_days'))
       ->save();
     parent::submitForm($form, $form_state);
   }

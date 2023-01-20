@@ -31,6 +31,7 @@ class ExchangeAPIConnector {
    * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
    */
   private $errorLog;
+
   /**
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
@@ -55,6 +56,7 @@ class ExchangeAPIConnector {
   public function getError($message) {
     $this->errorLog->get('exchange_rates')->error($message);
   }
+
   /**
    * Get all form settings.
    *
@@ -82,16 +84,21 @@ class ExchangeAPIConnector {
       $active_currency = array_filter($current_rates, function ($item) {
         return $item !== 0;
       });
-      for ($i = 0; $i < count($data); $i++) {
-        if ($active_currency[$i] == $i) {
-          $filter_data[$i] = $data[$i];
+      foreach ($active_currency as $item) {
+        for ($i = 0; $i < count($active_currency); $i++) {
+          for ($j = 0; $j < count($data[0]); $j++) {
+            if ($item == $data[$i][$j]->currency) {
+              $filter_data[$i][$j] = $data[$i][$j];
+            }
+          }
         }
       }
       return $filter_data;
     }
-    catch (\Exception $e){
+    catch (\Exception $e) {
       $this->getError($e->getMessage());
     }
+    return [];
   }
 
   /**
@@ -100,8 +107,8 @@ class ExchangeAPIConnector {
    * @return mixed
    *   Return url from config form.
    */
-  public function getUrlConfig(){
-    return  $this->getExchangeConfig()->get('api_base_url');
+  public function getUrlConfig() {
+    return $this->getExchangeConfig()->get('api_base_url');
   }
 
   /**
@@ -110,8 +117,18 @@ class ExchangeAPIConnector {
    * @return mixed
    *    Return checkbox from config form.
    */
-  public function getDisableButtonConfig(){
-    return  $this->getExchangeConfig()->get('disabled_api');
+  public function getDisableButtonConfig() {
+    return $this->getExchangeConfig()->get('disabled_api');
+  }
+
+  /**
+   *  Return count days from config form.
+   *
+   * @return mixed
+   *    Return count days from config form.
+   */
+  public function getCoundDaysConfig() {
+    return $this->getExchangeConfig()->get('count_days');
   }
 
   /**
@@ -120,9 +137,22 @@ class ExchangeAPIConnector {
    * @return string
    *   Return full api request.
    */
-  public function getEndPoint(){
-    $today = date("d.m.Y");
+  public function getEndPoint($count_days) {
+    $today = $this->getDate($count_days);
     return $this->getUrlConfig() . "?json&date=$today";
+  }
+
+  /**
+   * This function get date.
+   *
+   * @param int $count_days
+   *   Days count.
+   *
+   * @return string
+   *   Return date.
+   */
+  public function getDate($count_days) {
+    return date("d.m.Y", strtotime("-$count_days day"));
   }
 
   /**
@@ -134,7 +164,7 @@ class ExchangeAPIConnector {
    * @return bool
    *   Return true or false.
    */
-  public function checkRequest($url){
+  public function checkRequest($url) {
     try {
       $today = date("d.m.Y");
       $end_point = $url . "?json&date=$today";;
@@ -155,23 +185,27 @@ class ExchangeAPIConnector {
    */
   public function getExchangeRates() {
     $url = $this->getUrlConfig();
+    $full_data = [];
     $disabled_request = $this->getDisableButtonConfig();
-    $end_point = $this->getEndPoint();
     if (!$disabled_request && $url !== '') {
       try {
-        $request = $this->httpClient->request('GET', $end_point);
-        $body = $request->getBody();
-        $data = json_decode($body);
-        foreach ($data as $key => $value) {
-          $data = $value;
+        for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
+          $end_point = $this->getEndPoint($i);
+          $request = $this->httpClient->request('GET', $end_point);
+          $body = $request->getBody();
+          $data[$i] = json_decode($body);
+          for($j =0 ; $j< count($data[0]->exchangeRate); $j++){
+            $data[$i]->exchangeRate[$j]->date = $data[$i]->date;
+            $full_data[$i] = $data[$i]->exchangeRate;
+          }
         }
-        return $data;
+        return $full_data;
       }
       catch (\Exception $e) {
-          $this->getError($e->getMessage());
+        $this->getError($e->getMessage());
       }
     }
-
+    return [];
   }
 
   /**
@@ -180,15 +214,17 @@ class ExchangeAPIConnector {
    * @return array
    */
   public function getCurrencyName() {
-      $data = [];
+    $data = [];
     $disabled_request = $this->getDisableButtonConfig();
-    if(!$disabled_request){
-        $json = $this->getExchangeRates();
-        foreach ($json as $key => $val) {
-          $data[$key] = $val->currency;
-        }
-        return $data;
+    if (!$disabled_request) {
+      $json = $this->getExchangeRates();
+      foreach ($json[0] as $key => $val) {
+        $key = $val->currency;
+        $data[$key] = $val->currency;
       }
+      return $data;
+    }
+    return $data;
   }
 
 }

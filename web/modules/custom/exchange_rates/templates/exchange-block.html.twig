@@ -1,3 +1,5 @@
 {% for item in data %}
-    <li>{{item.baseCurrency}} - {{ item.currency }} - {{ item.saleRateNB}}</li>
+    {% for items in item %}
+        <li>{{items.baseCurrency}} - {{ items.currency }} - {{ items.saleRateNB}} - {{ items.date }}</li>
+    {% endfor %}
 {% endfor %}
