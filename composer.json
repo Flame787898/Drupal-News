@@ -22,6 +22,7 @@
         "drupal/core-recommended": "^9.4",
         "drupal/ctools": "^4.0",
         "drupal/devel": "^5.1",
+        "drupal/eck": "^1.0@beta",
         "drupal/field_group": "^3.4",
         "drupal/nextpre": "^9.0",
         "drupal/paragraphs": "^1.15",

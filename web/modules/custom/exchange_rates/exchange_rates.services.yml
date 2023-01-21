@@ -1,4 +1,7 @@
 services:
   exchange_rates.api_connector:
     class: Drupal\exchange_rates\ExchangeAPIConnector
-    arguments: ['@http_client', '@config.factory', '@logger.factory']
+    arguments: ['@http_client', '@config.factory', '@logger.factory', '@exchange_rates.entity_service']
+  exchange_rates.entity_service:
+    class: Drupal\exchange_rates\ExchangeRatesEntityService
+    arguments: ['@entity_type.manager']
