@@ -4,6 +4,9 @@ namespace Drupal\exchange_rates;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
+/**
+ * Entity service.
+ */
 class ExchangeRatesEntityService {
 
   /**
@@ -53,9 +56,9 @@ class ExchangeRatesEntityService {
   /**
    * This function filtered entity by active currency and date.
    *
-   * @param  array $active_currency
+   * @param array $active_currency
    *   Active currency list.
-   * @param  string $date
+   * @param string $date
    *   Actual date.
    *
    * @return \Drupal\Core\Entity\EntityInterface[]
@@ -89,7 +92,7 @@ class ExchangeRatesEntityService {
       'field_base_currency' => $base_currency,
       'field_currency' => $currency,
       'field_date' => $date,
-      'field_sale_rate_nb' => $sale_rate
+      'field_sale_rate_nb' => $sale_rate,
     ]);
     $data->save();
   }
