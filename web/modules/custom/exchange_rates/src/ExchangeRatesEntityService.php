@@ -128,12 +128,12 @@ class ExchangeRatesEntityService {
    * This function builds entities array.
    *
    * @param array $data
-   * Entity.
+   *   Entity.
    *
    * @return array
    *   Return builds entities array.
    */
-  public function getEntityViewBuilder($data) {
+  public function getEntityViewBuilder(array $data) {
     $view_builder = $this->entityTypeManager->getViewBuilder('exchange_rates');
     $to_render = [];
     foreach ($data as $item) {
