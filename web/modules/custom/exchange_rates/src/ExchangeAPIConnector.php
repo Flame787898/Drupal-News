@@ -38,6 +38,7 @@ class ExchangeAPIConnector {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface|\Drupal\exchange_rates\ExchangeRatesEntityService
    */
   private $entityService;
+
   /**
    * Initialize service constructor.
    *
@@ -47,7 +48,7 @@ class ExchangeAPIConnector {
    *   Config factory.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $error_log
    *   Error log.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_service
+   * @param \Drupal\exchange_rates\ExchangeRatesEntityService $entity_service
    *   The entity  service.
    */
   public function __construct(ClientInterface $client, ConfigFactory $config, LoggerChannelFactoryInterface $error_log, ExchangeRatesEntityService $entity_service) {
@@ -193,6 +194,8 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * Send request to api.
+   *
    * @param string $count_days
    *   Get days count.
    *

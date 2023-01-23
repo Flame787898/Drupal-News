@@ -64,7 +64,7 @@ class ExchangeRatesEntityService {
    * @return \Drupal\Core\Entity\EntityInterface[]
    *   Return entity.
    */
-  public function getEntityByCurrency($active_currency, $date) {
+  public function getEntityByCurrency(array $active_currency, string $date) {
     return $this->getStorageEntity()
       ->loadByProperties([
         'field_currency' => $active_currency,
@@ -83,8 +83,6 @@ class ExchangeRatesEntityService {
    *   Sale rate.
    * @param string $date
    *   Date.
-   *
-   * @return void
    */
   public function createEntityData($base_currency, $currency, $sale_rate, $date) {
     $data = $this->getStorageEntity()->create([
@@ -102,7 +100,6 @@ class ExchangeRatesEntityService {
    *
    * @param string $date
    *   Date.
-   * @return void
    */
   public function removeEntityByDate($date) {
     $entites = $this->loadEntityByDate($date);
@@ -112,12 +109,10 @@ class ExchangeRatesEntityService {
   /**
    * This function generates entities in the loop.
    *
-   * @param object $dataExchange
+   * @param array|mixed $dataExchange
    *   All currencies.
-   * @param object $data
+   * @param array|mixed $data
    *   Date.
-   *
-   * @return void
    */
   public function generateEntityLoop($dataExchange, $data) {
     $dataExchange->date = $data->date;
