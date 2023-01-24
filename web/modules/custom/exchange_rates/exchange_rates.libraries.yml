@@ -1,0 +1,7 @@
+exchange_rates_chart:
+  js:
+    /libraries/chart.js/dist/chart.umd.js: {}
+    js/exchangeRates.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

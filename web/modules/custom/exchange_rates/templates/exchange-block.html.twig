@@ -1,3 +1,10 @@
-{% for entity in data %}
-    {{ entity }}
-{% endfor %}
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+<ul>
+    {% for item in data %}
+        {% for entity in item %}
+           <li>{{ entity.currency }} - {{ entity.date }} - {{ entity.saleRateNB }}</li>
+        {% endfor %}
+    {% endfor %}
+</ul>

@@ -125,6 +125,30 @@ class ExchangeRatesEntityService {
   }
 
   /**
+   * This function get entity and generate new data.
+   *
+   * @param array $active_currency
+   *   Currency list.
+   * @param string $date
+   *   Date.
+   * @return array
+   *   Array with new fields.
+   */
+  public function getEntityFields($active_currency,$date) {
+    $entity =  $this->getEntityByCurrency($active_currency,$date);
+    $courses = [];
+    foreach ($entity as $item){
+      $courses[] = [
+        "baseCurrency" => $item->field_base_currency->getValue()[0]['value'],
+        "currency" => $item->field_currency->getValue()[0]['value'],
+        "date" => $item->field_date->getValue()[0]['value'],
+        "saleRateNB" => $item->field_sale_rate_nb->getValue()[0]['value'],
+      ];
+    }
+    return $courses;
+  }
+
+  /**
    * This function builds entities array.
    *
    * @param array $data
