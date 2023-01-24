@@ -131,13 +131,14 @@ class ExchangeRatesEntityService {
    *   Currency list.
    * @param string $date
    *   Date.
+   *
    * @return array
    *   Array with new fields.
    */
-  public function getEntityFields($active_currency,$date) {
-    $entity =  $this->getEntityByCurrency($active_currency,$date);
+  public function getEntityFields($active_currency, $date) {
+    $entity = $this->getEntityByCurrency($active_currency, $date);
     $courses = [];
-    foreach ($entity as $item){
+    foreach ($entity as $item) {
       $courses[] = [
         "baseCurrency" => $item->field_base_currency->getValue()[0]['value'],
         "currency" => $item->field_currency->getValue()[0]['value'],

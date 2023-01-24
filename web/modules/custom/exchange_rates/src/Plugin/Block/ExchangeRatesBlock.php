@@ -71,7 +71,6 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
   public function build() {
     $data = $this->exchangeAPIConnector->getExchangeRates();
     $currency = $this->exchangeAPIConnector->getActiveCurrency();
-    $count_days = $this->exchangeAPIConnector->getCoundDaysConfig();
     return [
       '#theme' => 'exchange_block',
       '#data' => $data,
