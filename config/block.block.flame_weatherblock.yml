@@ -1,4 +1,4 @@
-uuid: 1cebc8aa-a474-4905-9039-b33aac68f463
+uuid: 52039daf-a988-4eda-9203-20f9690e40b3
 langcode: en
 status: true
 dependencies:
@@ -8,16 +8,16 @@ dependencies:
     - block_content
   theme:
     - flame
-id: weatherblock_2
+id: flame_weatherblock
 theme: flame
 region: header_left
-weight: 0
+weight: -25
 provider: null
 plugin: 'block_content:0a5787f4-dcc1-4ec2-8114-60acf4f264e9'
 settings:
   id: 'block_content:0a5787f4-dcc1-4ec2-8114-60acf4f264e9'
-  label: 'Weather block'
-  label_display: visible
+  label: 'weather block'
+  label_display: '0'
   provider: block_content
   status: true
   info: ''

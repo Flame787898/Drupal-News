@@ -1,4 +1,4 @@
-uuid: b0bd4058-1388-4846-88b5-cb32c93c2c42
+uuid: ce593797-2d83-463e-8a06-7f6ea77ba7bb
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: exchangerates
 theme: flame
 region: right_sidebar_home_first
-weight: -21
+weight: -24
 provider: null
 plugin: exchange_rates_block
 settings:
