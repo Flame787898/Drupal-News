@@ -2,6 +2,8 @@
 
 namespace Drupal\exchange_rates\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\MessageCommand;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -66,7 +68,8 @@ class ExchangeAPI extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
-    $data = $this->exchangeApiService->getCurrencyName();
+    $url = $form_state->getValue('api_base_url');
+    $data = $this->exchangeApiService->getCurrencyName($url);
 
     $form['disabled_api'] = [
       '#type' => 'checkbox',
@@ -75,15 +78,51 @@ class ExchangeAPI extends ConfigFormBase {
     ];
 
     $form['api_base_url'] = [
+      '#name' => 'api_base_url',
       '#type' => 'textfield',
       '#title' => $this->t('Api base url'),
       '#default_value' => $config->get('api_base_url'),
+      '#ajax' => [
+        'callback' => '::checkInputUrl',
+        'event' => 'change',
+      ],
     ];
 
-    $form['list_course'] = [
+    $form['check_url'] = [
+      '#type' => 'button',
+      '#value' => $this->t('Check URL'),
+      '#ajax' => [
+        'callback' => '::checkURL',
+        'event' => 'click',
+      ],
+
+    ];
+
+    $form['get_currency'] = [
+      '#type' => 'button',
+      "#name" => 'get',
+      '#value' => $this->t('Get currency'),
+      '#ajax' => [
+        'callback' => '::getCurrency',
+        'event' => 'click',
+        'wrapper' => 'list-course',
+      ],
+    ];
+
+    $form['list_courses_wrap'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Exchange rates list'),
+      '#description' => $this->t('The listed configuration will be updated.'),
+      '#open' => TRUE,
+      '#attributes' => [
+        'id' => 'list-course',
+      ],
+    ];
+
+    $form['list_courses_wrap']['list_course'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Exchange Rate'),
-      '#default_value' => $config->get('list_course') ?: [],
+      '#default_value' => $data == [] ? [] : $config->get('list_course'),
       '#options' => $data,
     ];
 
@@ -95,6 +134,64 @@ class ExchangeAPI extends ConfigFormBase {
       '#max' => 34,
     ];
     return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * Rerender courses list.
+   *
+   * @param array $form
+   *   Form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Form state.
+   *
+   * @return mixed
+   *   Return courses list.
+   */
+  public function getCurrency(array &$form, FormStateInterface $form_state) {
+    return $form['list_courses_wrap'];
+  }
+
+  /**
+   * Check api url.
+   *
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   */
+  public function checkURL(array &$form, FormStateInterface $form_state) {
+    $ajax_response = new AjaxResponse();
+    if ($this->exchangeApiService->checkRequest($form_state->getValue('api_base_url'))) {
+      $data = $this->exchangeApiService->sendRequest(1, $form_state->getValue('api_base_url'));
+      $ajax_response->addCommand(new MessageCommand(json_encode($data)));
+    }
+    else {
+      $ajax_response->addCommand(new MessageCommand('Url is not valid !', NULL, ['type' => 'error']));
+    }
+    return $ajax_response;
+  }
+
+  /**
+   * Validate input url.
+   *
+   * @param array $form
+   *   Form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Form state.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Return errors.
+   */
+  public function checkInputUrl(array &$form, FormStateInterface $form_state) {
+    $ajax_response = new AjaxResponse();
+    $config = $this->config(static::SETTINGS);
+    if ($this->exchangeApiService->checkRequest($form_state->getValue('api_base_url'))) {
+      $ajax_response->addCommand(new MessageCommand('Url is valid !'));
+    }
+    else {
+      $ajax_response->addCommand(new MessageCommand('Url is not valid !', NULL, ['type' => 'error']));
+    }
+    return $ajax_response;
   }
 
   /**

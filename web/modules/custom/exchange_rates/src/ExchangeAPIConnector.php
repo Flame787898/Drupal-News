@@ -125,12 +125,19 @@ class ExchangeAPIConnector {
   /**
    * This function generate full api request.
    *
+   * @param int $count_days
+   *   Counter days.
+   * @param string $url
+   *   Api url.
+   *
    * @return string
-   *   Return full api request.
+   *   Return full api link.
    */
-  public function getEndPoint($count_days) {
-    $today = $this->getDate($count_days);
-    return $this->getUrlConfig() . "?json&date=$today";
+  public function getEndPoint($count_days, $url) {
+    if ($url == NULL) {
+      return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);
+    }
+    return $url . "?json&date=" . $this->getDate($count_days);
   }
 
   /**
@@ -157,8 +164,7 @@ class ExchangeAPIConnector {
    */
   public function checkRequest($url) {
     try {
-      $today = date("d.m.Y");
-      $end_point = $url . "?json&date=$today";;
+      $end_point = $url . "?json&date=" . date("d.m.Y");
       $this->httpClient->request('GET', $end_point)->getBody();
       return TRUE;
     }
@@ -196,20 +202,22 @@ class ExchangeAPIConnector {
   /**
    * Send request to api.
    *
-   * @param string $count_days
-   *   Get days count.
+   * @param int $count_days
+   *    Get days count.
+   * @param string $url
+   *   Get url from form state.
    *
    * @return array|mixed
    *   Return json from api.
+   * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  public function sendRequest($count_days) {
+  public function sendRequest($count_days, $url) {
     try {
-      $end_point = $this->getEndPoint($count_days);
+      $end_point = $this->getEndPoint($count_days, $url);
       $request = $this->httpClient->request('GET', $end_point);
       $body = $request->getBody();
       return json_decode($body);
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->getError($e->getMessage());
     }
     return [];
@@ -218,14 +226,17 @@ class ExchangeAPIConnector {
   /**
    * Return all currency name.
    *
+   * @param string $url
+   *   Url from form state.
+   *
    * @return array
    *   Return all currency name.
    */
-  public function getCurrencyName() {
+  public function getCurrencyName($url) {
     $data = [];
     $disabled_request = $this->getDisableButtonConfig();
     if (!$disabled_request) {
-      $json = $this->sendRequest(1);
+      $json = $this->sendRequest(1, $url);
       foreach ($json->exchangeRate as $key => $val) {
         $key = $val->currency;
         $data[$key] = $val->currency;
