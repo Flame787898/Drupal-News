@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Add variable to block.
+ */
 
 /**
  * Implements hook_theme().
