@@ -26,6 +26,8 @@ class ExchangeAPIConnector {
   private $configForm;
 
   /**
+   * Constructs an ExchangeAPIConnector.
+   *
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
    * @param \Drupal\Core\Config\ConfigFactory $config
