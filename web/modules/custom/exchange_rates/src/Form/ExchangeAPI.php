@@ -92,7 +92,7 @@ class ExchangeAPI extends ConfigFormBase {
       '#type' => 'button',
       '#value' => $this->t('Check URL'),
       '#ajax' => [
-        'callback' => '::checkURL',
+        'callback' => '::checkUrl',
         'event' => 'click',
       ],
 
@@ -128,7 +128,7 @@ class ExchangeAPI extends ConfigFormBase {
 
     $form['count_days'] = [
       '#type' => 'number',
-      '#title' => t('Last days period'),
+      '#title' => $this->t('Last days period'),
       '#default_value' => $config->get('count_days') ?: 1,
       '#min' => 1,
       '#max' => 34,
@@ -155,11 +155,14 @@ class ExchangeAPI extends ConfigFormBase {
    * Check api url.
    *
    * @param array $form
+   *   Form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   From state.
    *
    * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Return validation message.
    */
-  public function checkURL(array &$form, FormStateInterface $form_state) {
+  public function checkUrl(array &$form, FormStateInterface $form_state) {
     $ajax_response = new AjaxResponse();
     if ($this->exchangeApiService->checkRequest($form_state->getValue('api_base_url'))) {
       $data = $this->exchangeApiService->sendRequest(1, $form_state->getValue('api_base_url'));
@@ -184,7 +187,6 @@ class ExchangeAPI extends ConfigFormBase {
    */
   public function checkInputUrl(array &$form, FormStateInterface $form_state) {
     $ajax_response = new AjaxResponse();
-    $config = $this->config(static::SETTINGS);
     if ($this->exchangeApiService->checkRequest($form_state->getValue('api_base_url'))) {
       $ajax_response->addCommand(new MessageCommand('Url is valid !'));
     }

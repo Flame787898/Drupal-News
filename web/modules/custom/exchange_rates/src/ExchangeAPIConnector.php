@@ -203,12 +203,13 @@ class ExchangeAPIConnector {
    * Send request to api.
    *
    * @param int $count_days
-   *    Get days count.
+   *   Get days count.
    * @param string $url
    *   Get url from form state.
    *
    * @return array|mixed
    *   Return json from api.
+   *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   public function sendRequest($count_days, $url) {
@@ -217,7 +218,8 @@ class ExchangeAPIConnector {
       $request = $this->httpClient->request('GET', $end_point);
       $body = $request->getBody();
       return json_decode($body);
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $this->getError($e->getMessage());
     }
     return [];
