@@ -124,8 +124,7 @@ class ExchangeAPIConnector {
    *   Return full api request.
    */
   public function getEndPoint(){
-    $today = date("d.m.Y");
-    return $this->getUrlConfig() . "?json&date=$today";
+    return $this->getUrlConfig() . "?json&date=" .  date("d.m.Y");
   }
 
   /**
@@ -139,8 +138,7 @@ class ExchangeAPIConnector {
    */
   public function checkRequest($url){
     try {
-      $today = date("d.m.Y");
-      $end_point = $url . "?json&date=$today";;
+      $end_point = $url . "?json&date=" . date("d.m.Y");
       $this->httpClient->request('GET', $end_point)->getBody();
       return TRUE;
     }
