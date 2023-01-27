@@ -81,9 +81,7 @@ class ExchangeAPIConnector {
     try {
       $filter_data = [];
       $current_rates = $this->getExchangeConfig()->get('list_course');
-      $active_currency = array_filter($current_rates, function ($item) {
-        return $item !== 0;
-      });
+      $active_currency = array_filter($current_rates);
       for ($i = 0; $i < count($data); $i++) {
         if ($active_currency[$i] == $i) {
           $filter_data[$i] = $data[$i];
