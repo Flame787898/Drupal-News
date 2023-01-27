@@ -130,9 +130,9 @@ class ExchangeAPIConnector {
    * @return string
    *   Return full api link.
    */
-  public function getEndPoint($count_days, $url) {
+  public function getEndPoint($count_days, $url = NULL) {
     if ($url == NULL) {
-      return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);
+      $url = $this->getUrlConfig();
     }
     return $url . "?json&date=" . $this->getDate($count_days);
   }
@@ -185,7 +185,7 @@ class ExchangeAPIConnector {
       for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
         $full_data[$i] = $this->entityService->getEntityFields($this->getActiveCurrency(), $this->getDate($i));
         if (!$this->entityService->loadEntityByDate($this->getDate($i))) {
-          $data = $this->sendRequest($i, NULL);
+          $data = $this->sendRequest($i);
           for ($j = 0; $j < count($data->exchangeRate); $j++) {
             $this->entityService->generateEntityLoop($data->exchangeRate[$j], $data);
           }
@@ -236,6 +236,7 @@ class ExchangeAPIConnector {
     if (!$disabled_request) {
       $json = $this->sendRequest(1, $url);
       foreach ($json->exchangeRate as $key => $val) {
+        $key = $val->currency;
         $data[$key] = $val->currency;
       }
     }
