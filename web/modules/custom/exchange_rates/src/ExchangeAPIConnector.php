@@ -33,8 +33,6 @@ class ExchangeAPIConnector {
   private $errorLog;
 
   /**
-   * Constructs an ExchangeAPIConnector.
-   *
    * The entity type manager service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface|\Drupal\exchange_rates\ExchangeRatesEntityService
