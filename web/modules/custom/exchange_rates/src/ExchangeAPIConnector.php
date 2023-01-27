@@ -50,6 +50,31 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * This Function is filtered data.
+   *
+   * @param object $data
+   *   All exchange rates.
+   *
+   * @return array
+   *   Return filter data.
+   */
+  public function getFilterData($data) {
+    $filter_data = [];
+    $current_rates = $this->getExchangeConfig()->get('list_course');
+
+    $active_currency = array_filter($current_rates, function ($item) {
+      return $item !== 0;
+    });
+
+    for ($i = 0; $i < count($data); $i++) {
+      if ($active_currency[$i] == $i) {
+        $filter_data[$i] = $data[$i];
+      }
+    }
+    return $filter_data;
+  }
+
+  /**
    * Send request from api.
    *
    * @return array
@@ -63,11 +88,14 @@ class ExchangeAPIConnector {
         $request = $this->httpClient->request('GET', $url);
         $body = $request->getBody();
         $data = json_decode($body);
+        foreach ($data as $key => $value) {
+          $data = $value;
+        }
+        return $data;
       }
       catch (ClientException $e) {
         watchdog_exception('exchange_rate', $e, $e->getMessage());
       }
-      return $data;
     }
   }
 

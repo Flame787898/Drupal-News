@@ -2,13 +2,41 @@
 
 namespace Drupal\exchange_rates\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\exchange_rates\ExchangeAPIConnector;
+use Psr\Container\ContainerInterface;
 
 /**
  * Configure example settings for this site.
  */
 class ExchangeAPI extends ConfigFormBase {
+
+  /**
+   * The exchange rates service.
+   *
+   * @var \Drupal\exchange_rates\ExchangeAPIConnector
+   */
+  protected $exchangeApiService;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory, ExchangeAPIConnector $exchangeApiService) {
+    parent::__construct($config_factory);
+    $this->exchangeApiService = $exchangeApiService;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('exchange_rates.api_connector')
+    );
+  }
 
   /**
    * Config settings.
@@ -34,10 +62,26 @@ class ExchangeAPI extends ConfigFormBase {
   }
 
   /**
+   * Get currency name.
+   *
+   * @return array
+   *   The render array that results from send request to api.
+   */
+  public function getCurrencyName() {
+    $data = [];
+    $json = $this->exchangeApiService->getExchangeRates();
+    foreach ($json as $key => $val) {
+      $data[$key] = $val->currency;
+    }
+    return $data;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
+    $data = $this->getCurrencyName();
 
     $form['disabled_api'] = [
       '#type' => 'checkbox',
@@ -50,6 +94,13 @@ class ExchangeAPI extends ConfigFormBase {
       '#title' => $this->t('Api base url'),
       '#default_value' => $config->get('api_base_url'),
     ];
+
+    $form['list_course'] = [
+      '#type' => 'checkboxes',
+      '#title' => $this->t('Exchange Rate'),
+      '#default_value' => $config->get('list_course') ?? [],
+      '#options' => $data,
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -60,6 +111,7 @@ class ExchangeAPI extends ConfigFormBase {
     $this->config(static::SETTINGS)
       ->set('api_base_url', $form_state->getValue('api_base_url'))
       ->set('disabled_api', $form_state->getValue('disabled_api'))
+      ->set('list_course', $form_state->getValue('list_course'))
       ->save();
     parent::submitForm($form, $form_state);
   }
