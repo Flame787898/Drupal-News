@@ -62,12 +62,12 @@ class ExchangeAPI extends ConfigFormBase {
   }
 
   /**
-   * Get currency name
+   * Get currency name.
    *
    * @return array
    *   The render array that results from send request to api.
    */
-  function getCurrencyName() {
+  public function getCurrencyName() {
     $data = [];
     $json = $this->exchangeApiService->getExchangeRates();
     foreach ($json as $key => $val) {
