@@ -135,7 +135,7 @@ class ExchangeRatesEntityService {
    * @return array
    *   Array with new fields.
    */
-  public function getEntityFields($active_currency, $date) {
+  public function getEntityFields(array $active_currency, $date) {
     $entity = $this->getEntityByCurrency($active_currency, $date);
     $courses = [];
     foreach ($entity as $item) {

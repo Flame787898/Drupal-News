@@ -89,7 +89,7 @@ class ExchangeAPI extends ConfigFormBase {
 
     $form['count_days'] = [
       '#type' => 'number',
-      '#title' => t('Last days period'),
+      '#title' => $this->t('Last days period'),
       '#default_value' => $config->get('count_days') ?: 1,
       '#min' => 1,
       '#max' => 34,
