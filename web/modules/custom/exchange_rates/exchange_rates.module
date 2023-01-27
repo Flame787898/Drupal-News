@@ -10,7 +10,7 @@
  */
 function exchange_rates_theme($existing, $type, $theme, $path) {
   return [
-    'exchange-block' => [
+    'exchange_block' => [
       'variables' => [
         'data' => NULL,
       ],

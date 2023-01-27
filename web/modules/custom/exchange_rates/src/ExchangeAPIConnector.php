@@ -33,6 +33,13 @@ class ExchangeAPIConnector {
   private $errorLog;
 
   /**
+   * The entity type manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface|\Drupal\exchange_rates\ExchangeRatesEntityService
+   */
+  private $entityService;
+
+  /**
    * Constructs an ExchangeAPIConnector.
    *
    * @param \GuzzleHttp\ClientInterface $client
@@ -41,11 +48,14 @@ class ExchangeAPIConnector {
    *   Config factory.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $error_log
    *   Error log.
+   * @param \Drupal\exchange_rates\ExchangeRatesEntityService $entity_service
+   *   The entity  service.
    */
-  public function __construct(ClientInterface $client, ConfigFactory $config, LoggerChannelFactoryInterface $error_log) {
+  public function __construct(ClientInterface $client, ConfigFactory $config, LoggerChannelFactoryInterface $error_log, ExchangeRatesEntityService $entity_service) {
     $this->httpClient = $client;
     $this->configForm = $config;
     $this->errorLog = $error_log;
+    $this->entityService = $entity_service;
   }
 
   /**
@@ -71,32 +81,12 @@ class ExchangeAPIConnector {
   /**
    * This Function is filtered data.
    *
-   * @param object $data
-   *   All exchange rates.
-   *
    * @return array
    *   Return filter data.
    */
-  public function getFilterData($data) {
-    try {
-      $filter_data = [];
-      $current_rates = $this->getExchangeConfig()->get('list_course');
-      $active_currency = array_filter($current_rates);
-      foreach ($active_currency as $item) {
-        for ($i = 0; $i < count($active_currency); $i++) {
-          for ($j = 0; $j < count($data[0]); $j++) {
-            if ($item == $data[$i][$j]->currency) {
-              $filter_data[$i][$j] = $data[$i][$j];
-            }
-          }
-        }
-      }
-      return $filter_data;
-    }
-    catch (\Exception $e) {
-      $this->getError($e->getMessage());
-    }
-    return [];
+  public function getActiveCurrency() {
+    $current_rates = $this->getExchangeConfig()->get('list_course');
+    return array_filter($current_rates);
   }
 
   /**
@@ -136,7 +126,7 @@ class ExchangeAPIConnector {
    *   Return full api request.
    */
   public function getEndPoint($count_days) {
-    return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);;
+    return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);
   }
 
   /**
@@ -184,22 +174,38 @@ class ExchangeAPIConnector {
     $full_data = [];
     $disabled_request = $this->getDisableButtonConfig();
     if (!$disabled_request && $url !== '') {
-      try {
-        for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
-          $end_point = $this->getEndPoint($i);
-          $request = $this->httpClient->request('GET', $end_point);
-          $body = $request->getBody();
-          $data[$i] = json_decode($body);
-          for ($j = 0; $j < count($data[0]->exchangeRate); $j++) {
-            $data[$i]->exchangeRate[$j]->date = $data[$i]->date;
-            $full_data[$i] = $data[$i]->exchangeRate;
+      for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
+        $full_data[$i] = $this->entityService->getEntityByCurrency($this->getActiveCurrency(), $this->getDate($i));
+        if (!$this->entityService->loadEntityByDate($this->getDate($i))) {
+          $data = $this->sendRequest($i);
+          for ($j = 0; $j < count($data->exchangeRate); $j++) {
+            $this->entityService->generateEntityLoop($data->exchangeRate[$j], $data);
           }
         }
-        return $full_data;
       }
-      catch (\Exception $e) {
-        $this->getError($e->getMessage());
-      }
+      return $this->entityService->getEntityViewBuilder($full_data);
+    }
+    return $full_data;
+  }
+
+  /**
+   * Send request to api.
+   *
+   * @param string $count_days
+   *   Get days count.
+   *
+   * @return array|mixed
+   *   Return json from api.
+   */
+  public function sendRequest($count_days) {
+    try {
+      $end_point = $this->getEndPoint($count_days);
+      $request = $this->httpClient->request('GET', $end_point);
+      $body = $request->getBody();
+      return json_decode($body);
+    }
+    catch (\Exception $e) {
+      $this->getError($e->getMessage());
     }
     return [];
   }
@@ -214,8 +220,8 @@ class ExchangeAPIConnector {
     $data = [];
     $disabled_request = $this->getDisableButtonConfig();
     if (!$disabled_request) {
-      $json = $this->getExchangeRates();
-      foreach ($json as $key => $val) {
+      $json = $this->sendRequest(1);
+      foreach ($json->exchangeRate as $key => $val) {
         $data[$key] = $val->currency;
       }
     }
