@@ -14,9 +14,9 @@ use Psr\Container\ContainerInterface;
 class ExchangeAPI extends ConfigFormBase {
 
   /**
-   * All methods on service.
+   * The exchange rates service.
    *
-   * @var ExchangeAPIConnector $exchangeApiService
+   * @var \Drupal\exchange_rates\ExchangeAPIConnector
    */
   protected $exchangeApiService;
 
@@ -62,9 +62,10 @@ class ExchangeAPI extends ConfigFormBase {
   }
 
   /**
-   * Return all currency name.
+   * Get currency name
    *
    * @return array
+   *   The render array that results from send request to api.
    */
   function getCurrencyName() {
     $data = [];
