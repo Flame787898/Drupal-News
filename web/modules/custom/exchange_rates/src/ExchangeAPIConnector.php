@@ -40,7 +40,7 @@ class ExchangeAPIConnector {
   private $entityService;
 
   /**
-   * Initialize service constructor.
+   * Constructs an ExchangeAPIConnector.
    *
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
@@ -59,7 +59,7 @@ class ExchangeAPIConnector {
   }
 
   /**
-   * This function return error.
+   * Get error message.
    *
    * @param string $message
    *   Error message.
@@ -75,8 +75,7 @@ class ExchangeAPIConnector {
    *   Rerun config form seating.
    */
   public function getExchangeConfig() {
-    $config_form = $this->configForm->get('exchange_rates.settings');
-    return $config_form;
+    return $this->configForm->get('exchange_rates.settings');
   }
 
   /**
@@ -87,9 +86,7 @@ class ExchangeAPIConnector {
    */
   public function getActiveCurrency() {
     $current_rates = $this->getExchangeConfig()->get('list_course');
-    return array_filter($current_rates, function ($item) {
-      return $item !== 0;
-    });
+    return array_filter($current_rates);
   }
 
   /**
@@ -129,8 +126,7 @@ class ExchangeAPIConnector {
    *   Return full api request.
    */
   public function getEndPoint($count_days) {
-    $today = $this->getDate($count_days);
-    return $this->getUrlConfig() . "?json&date=$today";
+    return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);
   }
 
   /**
@@ -157,8 +153,7 @@ class ExchangeAPIConnector {
    */
   public function checkRequest($url) {
     try {
-      $today = date("d.m.Y");
-      $end_point = $url . "?json&date=$today";;
+      $end_point = $url . "?json&date=" . date("d.m.Y");
       $this->httpClient->request('GET', $end_point)->getBody();
       return TRUE;
     }
@@ -190,7 +185,7 @@ class ExchangeAPIConnector {
       }
       return $this->entityService->getEntityViewBuilder($full_data);
     }
-    return [];
+    return $full_data;
   }
 
   /**
@@ -227,10 +222,8 @@ class ExchangeAPIConnector {
     if (!$disabled_request) {
       $json = $this->sendRequest(1);
       foreach ($json->exchangeRate as $key => $val) {
-        $key = $val->currency;
         $data[$key] = $val->currency;
       }
-      return $data;
     }
     return $data;
   }
