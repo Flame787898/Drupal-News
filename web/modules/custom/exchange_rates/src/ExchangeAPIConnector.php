@@ -111,7 +111,7 @@ class ExchangeAPIConnector {
    * Return checkbox from config form.
    *
    * @return mixed
-   *    Return checkbox from config form.
+   *   Return checkbox from config form.
    */
   public function getDisableButtonConfig() {
     return $this->getExchangeConfig()->get('disabled_api');
