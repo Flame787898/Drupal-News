@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Add variable to block.
+ */
+
+/**
  * Implements hook_theme().
  */
 function exchange_rates_theme($existing, $type, $theme, $path) {

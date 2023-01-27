@@ -14,9 +14,9 @@ use Psr\Container\ContainerInterface;
 class ExchangeAPI extends ConfigFormBase {
 
   /**
-   * All methods on service.
+   * The exchange rates service.
    *
-   * @var ExchangeAPIConnector $exchangeApiService
+   * @var \Drupal\exchange_rates\ExchangeAPIConnector
    */
   protected $exchangeApiService;
 

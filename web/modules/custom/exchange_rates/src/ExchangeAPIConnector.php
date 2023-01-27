@@ -32,6 +32,8 @@ class ExchangeAPIConnector {
    */
   private $errorLog;
   /**
+   * Constructs an ExchangeAPIConnector.
+   *
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
    * @param \Drupal\Core\Config\ConfigFactory $config
@@ -46,6 +48,8 @@ class ExchangeAPIConnector {
   }
 
   /**
+   * Get Error message.
+   *
    * @param string $message
    *   Error message.
    *

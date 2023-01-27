@@ -18,12 +18,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * In this variable are stored service methods.
+   *
    * @var \Drupal\exchange_rates\ExchangeAPIConnector
-   *   In this variable are stored service methods.
    */
   protected $exchangeAPIConnector;
 
   /**
+   * Constructs an ExchangeRatesBlock.
+   *
    * @param array $configuration
    *   The configuration to use.
    * @param string $plugin_id
@@ -39,17 +42,7 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   Get Service.
-   * @param array $configuration
-   *   Configuration.
-   * @param string $plugin_id
-   *   Get plugin Id.
-   * @param string $plugin_definition
-   *   Plugin definition.
-   *
-   * @return \Drupal\exchange_rates\Plugin\Block\ExchangeRatesBlock|static
-   *   Return ExchangeRatesBlock.
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
