@@ -185,15 +185,14 @@ class ExchangeAPIConnector {
       for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
         $full_data[$i] = $this->entityService->getEntityFields($this->getActiveCurrency(), $this->getDate($i));
         if (!$this->entityService->loadEntityByDate($this->getDate($i))) {
-          $data = $this->sendRequest($i,NULL);
+          $data = $this->sendRequest($i, NULL);
           for ($j = 0; $j < count($data->exchangeRate); $j++) {
             $this->entityService->generateEntityLoop($data->exchangeRate[$j], $data);
           }
         }
       }
-      return $full_data;
     }
-    return [];
+    return $full_data;
   }
 
   /**
@@ -237,10 +236,8 @@ class ExchangeAPIConnector {
     if (!$disabled_request) {
       $json = $this->sendRequest(1, $url);
       foreach ($json->exchangeRate as $key => $val) {
-        $key = $val->currency;
         $data[$key] = $val->currency;
       }
-      return $data;
     }
     return $data;
   }
