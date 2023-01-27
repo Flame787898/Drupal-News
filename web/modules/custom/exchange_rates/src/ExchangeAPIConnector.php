@@ -236,8 +236,7 @@ class ExchangeAPIConnector {
     if (!$disabled_request) {
       $json = $this->sendRequest(1, $url);
       foreach ($json->exchangeRate as $key => $val) {
-        $key = $val->currency;
-        $data[$key] = $val->currency;
+        $data[$val->currency] = $val->currency;
       }
     }
     return $data;
