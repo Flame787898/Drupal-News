@@ -58,9 +58,21 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
    */
   public function build() {
     $data = $this->exchangeAPIConnector->getExchangeRates();
+    $currency = $this->exchangeAPIConnector->getActiveCurrency();
     return [
       '#theme' => 'exchange_block',
       '#data' => $data,
+      '#attached' => [
+        'library' => [
+          'exchange_rates/exchange_rates_chart',
+        ],
+        'drupalSettings' => [
+          'exchange_rates' => [
+            'exchange_data' => $data,
+            'currency_name' => $currency,
+          ],
+        ],
+      ],
     ];
   }
 
