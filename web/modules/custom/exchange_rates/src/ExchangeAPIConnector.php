@@ -33,7 +33,7 @@ class ExchangeAPIConnector {
   private $errorLog;
 
   /**
-   * Initialize constructor.
+   * Constructs an ExchangeAPIConnector.
    *
    * @param \GuzzleHttp\ClientInterface $client
    *   Client interface.
@@ -49,7 +49,7 @@ class ExchangeAPIConnector {
   }
 
   /**
-   * This function return error.
+   * Get error message.
    *
    * @param string $message
    *   Error message.
@@ -65,8 +65,7 @@ class ExchangeAPIConnector {
    *   Rerun config form seating.
    */
   public function getExchangeConfig() {
-    $config_form = $this->configForm->get('exchange_rates.settings');
-    return $config_form;
+    return $this->configForm->get('exchange_rates.settings');
   }
 
   /**
@@ -82,9 +81,7 @@ class ExchangeAPIConnector {
     try {
       $filter_data = [];
       $current_rates = $this->getExchangeConfig()->get('list_course');
-      $active_currency = array_filter($current_rates, function ($item) {
-        return $item !== 0;
-      });
+      $active_currency = array_filter($current_rates);
       foreach ($active_currency as $item) {
         for ($i = 0; $i < count($active_currency); $i++) {
           for ($j = 0; $j < count($data[0]); $j++) {
@@ -139,8 +136,7 @@ class ExchangeAPIConnector {
    *   Return full api request.
    */
   public function getEndPoint($count_days) {
-    $today = $this->getDate($count_days);
-    return $this->getUrlConfig() . "?json&date=$today";
+    return $this->getUrlConfig() . "?json&date=" . $this->getDate($count_days);;
   }
 
   /**
@@ -167,8 +163,7 @@ class ExchangeAPIConnector {
    */
   public function checkRequest($url) {
     try {
-      $today = date("d.m.Y");
-      $end_point = $url . "?json&date=$today";;
+      $end_point = $url . "?json&date=" . date("d.m.Y");
       $this->httpClient->request('GET', $end_point)->getBody();
       return TRUE;
     }
@@ -220,11 +215,9 @@ class ExchangeAPIConnector {
     $disabled_request = $this->getDisableButtonConfig();
     if (!$disabled_request) {
       $json = $this->getExchangeRates();
-      foreach ($json[0] as $key => $val) {
-        $key = $val->currency;
+      foreach ($json as $key => $val) {
         $data[$key] = $val->currency;
       }
-      return $data;
     }
     return $data;
   }

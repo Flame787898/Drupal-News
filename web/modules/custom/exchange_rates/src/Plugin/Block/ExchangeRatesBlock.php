@@ -25,7 +25,7 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
   protected $exchangeAPIConnector;
 
   /**
-   * Initialize api service.
+   * Constructs an ExchangeRatesBlock.
    *
    * @param array $configuration
    *   The configuration to use.
@@ -42,19 +42,7 @@ class ExchangeRatesBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
   /**
-   * Create api service.
-   *
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   Get Service.
-   * @param array $configuration
-   *   Configuration.
-   * @param string $plugin_id
-   *   Get plugin Id.
-   * @param string $plugin_definition
-   *   Plugin definition.
-   *
-   * @return \Drupal\exchange_rates\Plugin\Block\ExchangeRatesBlock|static
-   *   Return ExchangeRatesBlock.
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
