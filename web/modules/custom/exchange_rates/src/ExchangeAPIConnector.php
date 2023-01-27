@@ -185,9 +185,8 @@ class ExchangeAPIConnector {
           }
         }
       }
-      return $full_data;
     }
-    return [];
+    return $full_data;
   }
 
   /**
@@ -224,10 +223,8 @@ class ExchangeAPIConnector {
     if (!$disabled_request) {
       $json = $this->sendRequest(1);
       foreach ($json->exchangeRate as $key => $val) {
-        $key = $val->currency;
         $data[$key] = $val->currency;
       }
-      return $data;
     }
     return $data;
   }
