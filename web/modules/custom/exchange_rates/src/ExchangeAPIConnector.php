@@ -87,9 +87,7 @@ class ExchangeAPIConnector {
    */
   public function getActiveCurrency() {
     $current_rates = $this->getExchangeConfig()->get('list_course');
-    return array_filter($current_rates, function ($item) {
-      return $item !== 0;
-    });
+    return array_filter($current_rates);
   }
 
   /**
@@ -188,7 +186,7 @@ class ExchangeAPIConnector {
       for ($i = 0; $i < $this->getCoundDaysConfig(); $i++) {
         $full_data[$i] = $this->entityService->getEntityFields($this->getActiveCurrency(), $this->getDate($i));
         if (!$this->entityService->loadEntityByDate($this->getDate($i))) {
-          $data = $this->sendRequest($i);
+          $data = $this->sendRequest($i,NULL);
           for ($j = 0; $j < count($data->exchangeRate); $j++) {
             $this->entityService->generateEntityLoop($data->exchangeRate[$j], $data);
           }
