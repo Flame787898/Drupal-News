@@ -187,9 +187,8 @@ class ExchangeAPIConnector {
       foreach ($json as $key => $val) {
         $data[$key] = $val->currency;
       }
-      return $data;
     }
-    return [];
+    return $data;
   }
 
 }
