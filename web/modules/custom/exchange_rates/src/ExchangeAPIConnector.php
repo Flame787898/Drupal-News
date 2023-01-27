@@ -57,6 +57,7 @@ class ExchangeAPIConnector {
   public function getError($message) {
     $this->errorLog->get('exchange_rates')->error($message);
   }
+
   /**
    * Get all form settings.
    *
@@ -64,8 +65,7 @@ class ExchangeAPIConnector {
    *   Rerun config form seating.
    */
   public function getExchangeConfig() {
-    $config_form = $this->configForm->get('exchange_rates.settings');
-    return $config_form;
+    return $this->configForm->get('exchange_rates.settings');
   }
 
   /**
@@ -91,7 +91,7 @@ class ExchangeAPIConnector {
       }
       return $filter_data;
     }
-    catch (\Exception $e){
+    catch (\Exception $e) {
       $this->getError($e->getMessage());
     }
     return [];
@@ -103,8 +103,8 @@ class ExchangeAPIConnector {
    * @return mixed
    *   Return url from config form.
    */
-  public function getUrlConfig(){
-    return  $this->getExchangeConfig()->get('api_base_url');
+  public function getUrlConfig() {
+    return $this->getExchangeConfig()->get('api_base_url');
   }
 
   /**
@@ -113,8 +113,8 @@ class ExchangeAPIConnector {
    * @return mixed
    *    Return checkbox from config form.
    */
-  public function getDisableButtonConfig(){
-    return  $this->getExchangeConfig()->get('disabled_api');
+  public function getDisableButtonConfig() {
+    return $this->getExchangeConfig()->get('disabled_api');
   }
 
   /**
@@ -123,8 +123,8 @@ class ExchangeAPIConnector {
    * @return string
    *   Return full api request.
    */
-  public function getEndPoint(){
-    return $this->getUrlConfig() . "?json&date=" .  date("d.m.Y");
+  public function getEndPoint() {
+    return $this->getUrlConfig() . "?json&date=" . date("d.m.Y");
   }
 
   /**
@@ -136,7 +136,7 @@ class ExchangeAPIConnector {
    * @return bool
    *   Return true or false.
    */
-  public function checkRequest($url){
+  public function checkRequest($url) {
     try {
       $end_point = $url . "?json&date=" . date("d.m.Y");
       $this->httpClient->request('GET', $end_point)->getBody();
@@ -184,7 +184,7 @@ class ExchangeAPIConnector {
   public function getCurrencyName() {
     $data = [];
     $disabled_request = $this->getDisableButtonConfig();
-    if(!$disabled_request){
+    if (!$disabled_request) {
       $json = $this->getExchangeRates();
       foreach ($json as $key => $val) {
         $data[$key] = $val->currency;
